@@ -17,12 +17,4 @@ struct RealmConfiguration {
         config.fileURL = url
         return config
     }
-    
-    static func configuration(for account: WalletInfo) -> Realm.Configuration {
-        var config = Realm.Configuration()
-        let directory = config.fileURL!.deletingLastPathComponent()
-        let newURL = directory.appendingPathComponent("\(account.description).realm")
-
-        return Realm.Configuration(fileURL: newURL)
-    }
 }

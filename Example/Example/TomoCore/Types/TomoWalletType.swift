@@ -38,7 +38,7 @@ extension TomoWalletType: Equatable{
     /// - Parameters:
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
-    static func == (lhs: WalletType, rhs: WalletType) -> Bool {
+    static func == (lhs: TomoWalletType, rhs: TomoWalletType) -> Bool {
         switch (lhs, rhs) {
         case (let .privateKey(lhs), let .privateKey(rhs)):
             return lhs == rhs

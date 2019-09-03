@@ -8,6 +8,12 @@
 
 import Foundation
 import RealmSwift
+
+import Foundation
+protocol Initializer {
+    func perform()
+}
+
 final class SharedMigrationInitializer: Initializer{
     lazy var config: Realm.Configuration = {
         return RealmConfiguration.sharedConfiguration()
@@ -16,19 +22,9 @@ final class SharedMigrationInitializer: Initializer{
     init() { }
     
     func perform() {
-        self.config.schemaVersion = Config.dbMigrationSchemaVersion
+        self.config.schemaVersion = 1
         config.migrationBlock = { migration, oldSchemaVersion in
             switch oldSchemaVersion {
-            case 0...11:
-                migration.deleteData(forType: TokenObject.className())
-                migration.deleteData(forType: Transaction.className())
-                migration.deleteData(forType: LocalizeTransactionDataObject.className())
-            case 12...26:
-                migration.deleteData(forType: NewTransaction.className())
-                migration.enumerateObjects(ofType: TokenObject.className()) { oldObject, newObject in
-                // combine name fields into a single field
-                    newObject!["verified"] = false
-                }
             default:
                 break
             }

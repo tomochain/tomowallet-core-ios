@@ -7,7 +7,6 @@
 import CryptoSwift
 import Foundation
 import Security
-import TrustCore
 
 /// Key definition.
 public struct KeystoreKey {
@@ -198,11 +197,3 @@ extension KeystoreKey: Codable {
     }
 }
 
-private extension String {
-    func drop0x() -> String {
-        if hasPrefix("0x") {
-            return String(dropFirst(2))
-        }
-        return self
-    }
-}

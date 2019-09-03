@@ -8,6 +8,9 @@
 
 import Foundation
 import RealmSwift
+
+
+
 final class TomoWalletObject: Object{
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""

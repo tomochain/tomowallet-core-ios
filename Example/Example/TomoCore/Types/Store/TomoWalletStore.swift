@@ -16,7 +16,7 @@ class TomoWalletStorage {
         self.realm = realm
     }
     
-    func get(for type: WalletType) -> TomoWalletObject {
+    func get(for type: TomoWalletType) -> TomoWalletObject {
         let firstWallet = realm.objects(TomoWalletObject.self).filter { $0.id == type.description }.first
         guard let foundWallet = firstWallet else {
             return TomoWalletObject.from(type)
