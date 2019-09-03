@@ -11,6 +11,6 @@ import Result
 
 protocol TomoKeystoreProtocol {
     func createWallet(completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void)
-    func wallet() -> [TomoWallet]
+    func wallets() -> [TomoWallet]
     func getWallet(address: String, completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void)
 }

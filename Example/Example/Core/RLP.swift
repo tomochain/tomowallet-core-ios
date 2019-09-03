@@ -33,8 +33,6 @@ public struct RLP {
             return encodeBigInt(bigint)
         case let biguint as BigUInt:
             return encodeBigUInt(biguint)
-        case let transaction as Transaction:
-            return encodeTransaction(transaction)
         case let data as Data:
             return encodeData(data)
         default:
@@ -90,19 +88,7 @@ public struct RLP {
         return encodeData(encoded)
     }
 
-    static func encodeTransaction(_ transaction: Transaction) -> Data? {
-        return encodeList([
-            transaction.nonce,
-            transaction.gasPrice,
-            transaction.gasLimit,
-            transaction.to.data,
-            transaction.amount,
-            transaction.payload ?? Data(),
-            transaction.v,
-            transaction.r,
-            transaction.s,
-        ])
-    }
+
 
     static func encodeData(_ data: Data) -> Data {
         if data.count == 1 && data[0] <= 0x7f {

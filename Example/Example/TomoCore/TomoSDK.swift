@@ -22,8 +22,8 @@ public class TomoSDK {
     func getWallet(address: String, completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void) {
         tomoKeystoreProtocol.getWallet(address: address, completion: completion)
     }
-    func getWallet() -> [TomoWallet] {
-        return tomoKeystoreProtocol.wallet()
+    func getAllWallets() -> [TomoWallet] {
+        return tomoKeystoreProtocol.wallets()
     }
     
     

@@ -16,17 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let tomoSDK = TomoSDK()
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        tomoSDK.createWallet { (result) in
-            MBProgressHUD.hide(for: self.view, animated: true)
-            switch result{
-                case.success(let wallet):
-                print(wallet)
-            case .failure(let error):
-                print(error.errorDescription ?? "")
-                
-            }
-        }
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+       let wallets = tomoSDK.getAllWallets()
+//        tomoSDK.createWallet { (result) in
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//            switch result{
+//                case.success(let wallet):
+//                print(wallet)
+//            case .failure(let error):
+//                print(error.errorDescription ?? "")
+//
+//            }
+//        }
        
     }
 

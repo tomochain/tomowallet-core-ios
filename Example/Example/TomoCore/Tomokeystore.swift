@@ -11,6 +11,7 @@ import UIKit
 import KeychainSwift
 import RealmSwift
 import Result
+import BigInt
 
 enum WalletInfoField {
     case name(String)
@@ -25,10 +26,11 @@ enum ImportType{
 }
 class TomoKeystore {
  
-    
     var hasWallets: Bool{
         return true
     }
+    
+
     public static let keychainKeyPrefix = "tomowallet"
     private let datadir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
     let keysDirectory: URL
@@ -111,6 +113,69 @@ class TomoKeystore {
             storage.realm.add(object, update: true)
         }
     }
+    
+    func signPersonalMessage(_ message: Data, for account: Account) -> Result<Data, TomoKeystoreError> {
+        let prefix = "\u{19}Ethereum Signed Message:\n\(message.count)".data(using: .utf8)!
+        return signMessage(prefix + message, for: account)
+    }
+    
+    func signMessage(_ message: Data, for account: Account) -> Result<Data, TomoKeystoreError> {
+        return signHash(message.sha3(.keccak256), for: account)
+    }
+    func signTypedMessage(_ datas: [EthTypedData], for account: Account) -> Result<Data, TomoKeystoreError> {
+        let schemas = datas.map { $0.schemaData }.reduce(Data(), { $0 + $1 }).sha3(.keccak256)
+        let values = datas.map { $0.typedData }.reduce(Data(), { $0 + $1 }).sha3(.keccak256)
+        let combined = (schemas + values).sha3(.keccak256)
+        return signHash(combined, for: account)
+    }
+    
+    
+    func signHash(_ hash: Data, for account: Account) -> Result<Data, TomoKeystoreError> {
+        guard
+            let password = getPassword(for: account.wallet!) else {
+                return .failure(TomoKeystoreError.failedToSignMessage)
+        }
+        do {
+            var data = try account.sign(hash: hash, password: password)
+            // TODO: Make it configurable, instead of overriding last byte.
+            data[64] += 27
+            return .success(data)
+        } catch {
+            return .failure(TomoKeystoreError.failedToSignMessage)
+        }
+    }
+    
+    func signTransaction(_ transaction: SignTransaction) -> Result<Data, TomoKeystoreError> {
+        let account = transaction.account
+        guard let wallet  = account.wallet, let password = getPassword(for: wallet) else {
+            return .failure(.failedToSignTransaction)
+        }
+        let signer: Signer
+        if transaction.chainID == 0 {
+            signer = HomesteadSigner()
+        } else {
+            signer = EIP155Signer(chainId: BigInt(transaction.chainID))
+        }
+        
+        do {
+            let hash = signer.hash(transaction: transaction)
+            let signature = try account.sign(hash: hash, password: password)
+            let (r, s, v) = signer.values(transaction: transaction, signature: signature)
+            let data = RLP.encode([
+                transaction.nonce,
+                transaction.gasPrice,
+                transaction.gasLimit,
+                transaction.to?.data ?? Data(),
+                transaction.value,
+                transaction.data,
+                v, r, s,
+                ])!
+            return .success(data)
+        } catch {
+            return .failure(.failedToSignTransaction)
+        }
+    }
+    
 }
 extension TomoKeystore: TomoKeystoreProtocol{
  
@@ -130,7 +195,11 @@ extension TomoKeystore: TomoKeystoreProtocol{
         }
     }
     
-    func wallet() -> [TomoWallet] {
+    func wallets() -> [TomoWallet] {
+        
+        let wallets = keyStore.wallets
+        
+        print(wallets)
         return [TomoWallet]()
     }
     
