@@ -9,7 +9,7 @@
 import Foundation
 import Result
 
-public class TomoSDK {
+public class WalletCore {
     private let tomoKeystoreProtocol: TomoKeystoreProtocol
     
     init() {
@@ -23,7 +23,7 @@ public class TomoSDK {
         tomoKeystoreProtocol.getWallet(address: address, completion: completion)
     }
     func getAllWallets() -> [TomoWallet] {
-        return tomoKeystoreProtocol.wallets()
+        return tomoKeystoreProtocol.getwallets()
     }
     
     
