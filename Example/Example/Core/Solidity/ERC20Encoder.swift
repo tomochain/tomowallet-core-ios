@@ -8,7 +8,7 @@ import BigInt
 import Foundation
 
 /// Encodes ERC20 function calls.
-public final class ERC20Encoder {
+public class ERC20Encoder {
     /// Encodes a function call to `totalSupply`
     ///
     /// Solidity function: `function totalSupply() public constant returns (uint);`

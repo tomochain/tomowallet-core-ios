@@ -12,6 +12,7 @@ target 'Example' do
   pod 'KeychainSwift'
   pod 'RealmSwift'
   pod 'Moya', '~> 12.0.1'
+  pod 'PromiseKit'
   
   # UILibrary
   pod 'MBProgressHUD'

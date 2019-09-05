@@ -9,6 +9,15 @@ PODS:
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.4):
+    - PromiseKit/CorePromise
   - Realm (3.16.1):
     - Realm/Headers (= 3.16.1)
   - Realm/Headers (3.16.1)
@@ -24,6 +33,7 @@ DEPENDENCIES:
   - KeychainSwift
   - MBProgressHUD
   - Moya (~> 12.0.1)
+  - PromiseKit
   - RealmSwift
   - SwiftProtobuf
   - TrezorCrypto (= 0.0.9)
@@ -36,6 +46,7 @@ SPEC REPOS:
     - KeychainSwift
     - MBProgressHUD
     - Moya
+    - PromiseKit
     - Realm
     - RealmSwift
     - Result
@@ -49,12 +60,13 @@ SPEC CHECKSUMS:
   KeychainSwift: 4209611373ca4a098e09b1e547eebd87c544dcc4
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
   RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftProtobuf: 241400280f912735c1e1b9fe675fdd2c6c4d42e2
   TrezorCrypto: bfeea47a052dca2c77d4a39e1e183865e52de14d
 
-PODFILE CHECKSUM: 3bf2721c19ccb00183193caf83a13699002e4e7e
+PODFILE CHECKSUM: 004c9c73a5c421012201fc773f229c7c321b1af1
 
 COCOAPODS: 1.7.0

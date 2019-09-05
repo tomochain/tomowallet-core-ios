@@ -49,6 +49,7 @@ final class SendTransactionCoordinator{
             }
         }
     }
+    
     private func appendNonce(to: SignTransaction, currentNonce: BigInt) -> SignTransaction {
         return SignTransaction(
             value: to.value,
@@ -59,7 +60,6 @@ final class SendTransactionCoordinator{
             gasPrice: to.gasPrice,
             gasLimit: to.gasLimit,
             chainID: to.chainID
-            
         )
     }
     

@@ -45,7 +45,26 @@ class TomoKeystore {
     private func realm(for config: Realm.Configuration) -> Realm {
         return try! Realm(configuration: config)
     }
-    init() {
+    
+    var wallets: [TomoWalletService] {
+        return
+            keyStore.wallets.map {
+                switch $0.type{
+                case .encryptedKey:
+                    let type = TomoWalletType.privateKey($0)
+                    return TomoWalletService(type: type, keyStore: self)
+                case .hierarchicalDeterministicWallet:
+                    let type = TomoWalletType.hd($0)
+                    return TomoWalletService(type: type, keyStore: self)
+                }
+            }
+
+       
+    }
+    
+    let network: TomoChainNetwork
+
+    init(network: TomoChainNetwork) {
         // keystore init
         keysDirectory = URL(fileURLWithPath: datadir! + "/keystore")
         keyStore = try! KeyStore(keyDirectory: keysDirectory)
@@ -58,6 +77,8 @@ class TomoKeystore {
         sharedMigration.perform()
         let realm = try! Realm(configuration: sharedMigration.config)
         storage = TomoWalletStorage(realm: realm)
+        
+        self.network = network
     }
 
     func createAccout( password: String, coin: Coin) -> Wallet?  {
@@ -178,13 +199,16 @@ class TomoKeystore {
     
 }
 extension TomoKeystore: TomoKeystoreProtocol{
- 
+    func getwallets() -> [TomoWallet] {
+        return wallets
+    }
+    
     func createWallet(completion: @escaping (Result<TomoWallet, TomoKeystoreError>) -> Void) {
         let password = PasswordGenerator.generateRandom()
         DispatchQueue.global(qos: .userInitiated).async {
             if let wallet = self.createAccout(password: password, coin: .tomo){
                 DispatchQueue.main.async {
-                    let tomoWallet = TomoWallet(wallet: wallet, keyStore: self)
+                    let tomoWallet = TomoWalletService(type: TomoWalletType.hd(wallet), keyStore: self)
                     completion(.success(tomoWallet))
                 }
             }else{
@@ -195,20 +219,19 @@ extension TomoKeystore: TomoKeystoreProtocol{
         }
     }
     
-    func wallets() -> [TomoWallet] {
-        
-        let wallets = keyStore.wallets
-        
-        print(wallets)
-        return [TomoWallet]()
-    }
+
     
     func getWallet(address: String, completion: @escaping (Result<TomoWallet, TomoKeystoreError>) -> Void) {
         guard let etherAddress = EthereumAddress(string: address) else {
             completion(.failure(TomoKeystoreError.invalidAddress))
             return
         }
-        print(etherAddress)
+        let tomoWallet = wallets.filter{ $0.address.lowercased() == etherAddress.description.lowercased()}.first
+        if let wallet = tomoWallet{
+            completion(.success(wallet))
+        }else{
+            completion(.failure(TomoKeystoreError.accountNotFound))
+        }
     }
 }
 

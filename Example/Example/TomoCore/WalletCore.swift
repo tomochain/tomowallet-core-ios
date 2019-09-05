@@ -9,11 +9,23 @@
 import Foundation
 import Result
 
+public struct TRC2XToken {
+    let contract: String
+    let name: String?
+    let symbol: String?
+    let decimals: Int?
+}
+
+public enum TomoChainNetwork{
+    case Mainnet
+    case Testnet
+}
+
 public class WalletCore {
     private let tomoKeystoreProtocol: TomoKeystoreProtocol
     
-    init() {
-        self.tomoKeystoreProtocol = TomoKeystore()
+    init(network: TomoChainNetwork) {
+        self.tomoKeystoreProtocol = TomoKeystore(network: network)
     }
     
     func createWallet(completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void){

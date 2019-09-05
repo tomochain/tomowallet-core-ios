@@ -49,7 +49,6 @@ enum RPCServer {
     
     var coin: Coin {
         return Coin.tomo
-        
     }
 }
 

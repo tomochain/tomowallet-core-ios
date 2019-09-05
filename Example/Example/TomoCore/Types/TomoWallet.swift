@@ -7,15 +7,15 @@
 //
 
 import Foundation
-import Result
+
 
 protocol TomoWallet: class {
     // base
     func getAddress() -> String
-    func getTomoBabance(completion: @escaping(Result<String,Error>) -> Void)
-    func getTokenBalance(address: String, completion: @escaping(Result<String,Error>) -> Void)
-    func sendTomo(amount: String, toAddress: String, completion: @escaping(Result<String,Error>) -> Void)
-    func sendToken(amount: String, decimal: Int, toAddress: String, completion: @escaping(Result<String,Error>) -> Void)
+    func getTomoBabance(completion: @escaping(_ balance: String?, _ error: Error?) -> Void)
+    func getTokenBalance(tokenAddress: String, decimals: Int?, completion: @escaping(_ balance: String?, _ error: Error?) -> Void)
+    func sendTomo(amount: String, toAddress: String, completion: @escaping(_ txHash: String?, _ error: Error?) -> Void)
+    func sendToken(amount: String, decimal: Int, toAddress: String, completion: @escaping(_ txHash: String?, _ error: Error?) -> Void)
     
     // extentions
 //    func signPersonalMessage(_ data: Data, completion: @escaping(Result<Data, Error>) -> Void)
