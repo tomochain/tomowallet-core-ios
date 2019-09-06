@@ -34,9 +34,21 @@ class ViewController: UIViewController {
 
 
     @IBAction func getBalance(_ sender: Any) {
-        wallet?.getTokenBalance(tokenAddress: "0x8a2b61a7a1f7ddfa040267b67d2e347d8f08e66b", decimals: nil, completion: { (value, error) in
+        wallet?.sendToken(tokenAddress: "0x417a8c01a4ecc2b3dfd85cebe5fe34d9e0efb6ff", amount: "3", toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", completion: { (tx, error) in
             
         })
+        
+//        wallet?.getTokenInfo(token: "0xedabb249894d8bd3ca4a2ec2b76ce29e9619e43d", completion: { (token, error) in
+//            print(token)
+//        })
+//        wallet?.getTokenBalance(tokenAddress: "0x8a2b61a7a1f7ddfa040267b67d2e347d8f08e66b", decimals: nil, completion: { (value, error) in
+//            print( value)
+//
+//        })
+        
+//        wallet?.sendTomo(amount: "1", toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", completion: { (tx, error) in
+//            print(tx)
+//        })
 //        wallet?.getTomoBabance { (resutl) in
 //            switch resutl{
 //            case .success(let balance):

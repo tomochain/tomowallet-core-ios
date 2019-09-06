@@ -9,11 +9,12 @@
 import Foundation
 import Result
 
-public struct TRC2XToken {
-    let contract: String
-    let name: String?
-    let symbol: String?
-    let decimals: Int?
+public struct TRCToken {
+    let contract: EthereumAddress
+    let name: String
+    let symbol: String
+    let decimals: Int
+    let totalSupply: String
 }
 
 public enum TomoChainNetwork{
@@ -23,7 +24,7 @@ public enum TomoChainNetwork{
 
 public class WalletCore {
     private let tomoKeystoreProtocol: TomoKeystoreProtocol
-    
+
     init(network: TomoChainNetwork) {
         self.tomoKeystoreProtocol = TomoKeystore(network: network)
     }

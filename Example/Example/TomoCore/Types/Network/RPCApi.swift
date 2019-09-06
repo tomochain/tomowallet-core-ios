@@ -17,10 +17,7 @@ enum RPCApi{
     case sendRawTransaction(server: RPCServer, signedTransaction: String )
     case getTransactionCount(server: RPCServer, address: String)
     // TRC20
-    case getBalanceToken(server: RPCServer, contract: String, data: String)
-    case getTokenName(server: RPCServer, contract: String, data: String)
-    case getTokenSymbol(server: RPCServer, contract: String, data: String)
-    case getTokenDecimals(server: RPCServer, contract: String, data: String)
+    case getTokenInfo(server: RPCServer, contract: String, data: String)
     case checkIsContract(server: RPCServer, contract: String)
     
     // TRC 21
@@ -39,7 +36,7 @@ extension RPCApi: TargetType{
         switch self {
         case .getBalanceCoin(let server, _):
             return  server.rpcURL
-        case .getBalanceToken(let server, _, _):
+        case .getTokenInfo(let server, _, _):
             return  server.rpcURL
         case .lastBlock(let server):
             return  server.rpcURL
@@ -50,12 +47,6 @@ extension RPCApi: TargetType{
         case .sendRawTransaction(let server, _):
             return server.rpcURL
         case .getTransactionCount(let server, _):
-            return server.rpcURL
-        case .getTokenName(let server, _, _):
-            return server.rpcURL
-        case .getTokenSymbol(let server, _, _):
-            return server.rpcURL
-        case .getTokenDecimals(let server, _, _):
             return server.rpcURL
         case .getTransactionByHash(let server,_):
             return server.rpcURL
@@ -87,7 +78,7 @@ extension RPCApi: TargetType{
     var method: Moya.Method {
         switch self {
         case .getBalanceCoin: return .post
-        case .getBalanceToken, .getTokenName, .getTokenSymbol, .getTokenDecimals: return .post
+        case .getTokenInfo: return .post
         case .lastBlock: return .post
         case .getGasPrice: return.post
         case .estimateGasLimit: return .post
@@ -111,21 +102,6 @@ extension RPCApi: TargetType{
                 "params": ["\(address)", "latest"],
                 "id": 1
                 ] as [String : Any]
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .getBalanceToken(_, let contract, let data):
-            let parameters = [
-                "jsonrpc": "2.0",
-                "method": "eth_call",
-                "params": [
-                    [
-                        "to": "\(contract)",
-                        "data": "\(data)"
-                    ],
-                    "latest"
-                ],
-                "id": 1
-                ] as [String : Any]
-            
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .lastBlock:
             let parameters = [
@@ -173,35 +149,7 @@ extension RPCApi: TargetType{
                 "id": 1
                 ] as [String : Any]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .getTokenName(_, let contract, let data):
-            let parameters = [
-                "jsonrpc": "2.0",
-                "method": "eth_call",
-                "params": [
-                    [
-                        "to": "\(contract)",
-                        "data": "\(data)"
-                    ],
-                    "latest"
-                ],
-                "id": 1
-                ] as [String : Any]
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .getTokenSymbol(_, let contract, let data):
-            let parameters = [
-                "jsonrpc": "2.0",
-                "method": "eth_call",
-                "params": [
-                    [
-                        "to": "\(contract)",
-                        "data": "\(data)"
-                    ],
-                    "latest"
-                ],
-                "id": 1
-                ] as [String : Any]
-            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .getTokenDecimals(_, let contract, let data):
+        case .getTokenInfo(_, let contract, let data):
             let parameters = [
                 "jsonrpc": "2.0",
                 "method": "eth_call",

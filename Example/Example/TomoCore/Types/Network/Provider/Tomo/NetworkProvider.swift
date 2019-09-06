@@ -24,12 +24,12 @@ enum NetworkProviderError: LocalizedError{
 protocol NetworkProviderProtocol {
     func tomoBalance() -> Promise<BigInt>
     // TRC
-    func tokenBalance(tokenAddress: String) -> Promise<BigInt>
-    func tokenDecimals(tokenAddress: String) -> Promise<BigInt>
-    func tokenName(tokenAddress: String) -> Promise<String>
-    func tokenSymbol(tokenAddress: String) -> Promise<String>
-    func tokenTotalSupply(tokenAddress: String) -> Promise<BigInt>
-
+    func tokenBalance(contract: String) -> Promise<BigInt>
+    func tokenDecimals(contract: String) -> Promise<BigInt>
+    func tokenName(contract: String) -> Promise<String>
+    func tokenSymbol(contract: String) -> Promise<String>
+    func tokenTotalSupply(contract: String) -> Promise<BigInt>
+    func isContract(contract: String) -> Promise<Bool>
     
 }
 final class NetworkProvider {
@@ -77,7 +77,7 @@ final class NetworkProvider {
             }
             
             let balanceEncoder = ERC20Encoder.encodeBalanceOf(address: ownerAddress)
-            provider.request(.getBalanceToken(server: self.server, contract: contract.description, data: balanceEncoder.hexEncoded)) { (result) in
+            provider.request(.getTokenInfo(server: self.server, contract: contract.description, data: balanceEncoder.hexEncoded)) { (result) in
                 switch result {
                 case .success(let response):
                     do {
@@ -98,16 +98,39 @@ final class NetworkProvider {
     }
     
     
+    
 }
 extension NetworkProvider: NetworkProviderProtocol{
-    func tokenDecimals(tokenAddress: String) -> Promise<BigInt> {
+    func isContract(contract: String) -> Promise<Bool> {
+        return Promise { seal in
+            provider.request(.checkIsContract(server: server, contract: address.description), completion: { (result) in
+                switch result {
+                case .success(let response):
+                    do {
+                        let responesDecodable = try response.map(RPCResultsDecodable.self)
+                        if responesDecodable.result == "0x"{
+                            seal.fulfill(false)
+                        }else{
+                            seal.fulfill(true)
+                        }
+                    } catch {
+                        seal.reject(error)
+                    }
+                case .failure(let error):
+                    seal.reject(error)
+                }
+            })
+            
+        }
+    }
+    
+    func tokenDecimals(contract: String) -> Promise<BigInt> {
         return Promise{ seal in
-            guard let contract = EthereumAddress(string: tokenAddress) else {
+            guard let contract = EthereumAddress(string: contract) else {
                 return seal.reject(NetworkProviderError.invalidAddress)
             }
-            
             let balanceEncoder = ERC20Encoder.encodeDecimals()
-            provider.request(.getTokenDecimals(server: self.server, contract: contract.description, data: balanceEncoder.hexEncoded), completion: { (result) in
+            provider.request(.getTokenInfo(server: self.server, contract: contract.description, data: balanceEncoder.hexEncoded), completion: { (result) in
                 switch result {
                 case .success(let response):
                     do {
@@ -126,19 +149,19 @@ extension NetworkProvider: NetworkProviderProtocol{
         }
     }
     
-    func tokenTotalSupply(tokenAddress: String) -> Promise<BigInt> {
+    func tokenTotalSupply(contract: String) -> Promise<BigInt> {
         return Promise{ seal in
-            guard let contract = EthereumAddress(string: tokenAddress) else {
+            guard let contract = EthereumAddress(string: contract) else {
                 return seal.reject(NetworkProviderError.invalidAddress)
             }
             
-            let balanceEncoder = ERC20Encoder.encodeDecimals()
-            provider.request(.getTokenDecimals(server: self.server, contract: contract.description, data: balanceEncoder.hexEncoded), completion: { (result) in
+            let totalSypplyEncoder = ERC20Encoder.encodeTotalSupply()
+            provider.request(.getTokenInfo(server: self.server, contract: contract.description, data: totalSypplyEncoder.hexEncoded), completion: { (result) in
                 switch result {
                 case .success(let response):
                     do {
-                        let balanceDecodable = try response.map(RPCResultsDecodable.self)
-                        guard let value = BigInt(balanceDecodable.result.drop0x, radix: 16) else{
+                        let totalSupplyDecodable = try response.map(RPCResultsDecodable.self)
+                        guard let value = BigInt(totalSupplyDecodable.result.drop0x, radix: 16) else{
                              return seal.reject(NetworkProviderError.notCreateResponeValue)
                         }
                         seal.fulfill(value)
@@ -154,75 +177,51 @@ extension NetworkProvider: NetworkProviderProtocol{
     }
 
     
-    func tokenName(tokenAddress: String) -> Promise<String> {
+    func tokenName(contract: String) -> Promise<String> {
         return Promise{ seal in
-            guard let contract = EthereumAddress(string: tokenAddress) else {
+            guard let contract = EthereumAddress(string: contract) else {
                 return seal.reject(NetworkProviderError.invalidAddress)
             }
             
-            let balanceEncoder = ERC20Encoder.encodeDecimals()
-            provider.request(.getTokenDecimals(server: self.server, contract: contract.description, data: balanceEncoder.hexEncoded), completion: { (result) in
+            let nameEncoder = ERC20Encoder.encodeName()
+            provider.request(.getTokenInfo(server: self.server, contract: contract.description, data: nameEncoder.hexEncoded), completion: { (result) in
                 switch result {
                 case .success(let response):
                     do {
-                        let balanceDecodable = try response.map(RPCResultsDecodable.self)
-                        guard let value = BigInt(balanceDecodable.result.drop0x, radix: 16) else{
-                             return seal.reject(NetworkProviderError.notCreateResponeValue)
-                        }
-                        seal.fulfill("value")
-                    } catch {
-                        seal.reject(error)
-                    }
-                case .failure(let error):
-                    seal.reject(error)
-                }
-            })
-        }
-    
-    }
-    
-    func tokenSymbol(tokenAddress: String) -> Promise<String> {
-        return Promise{ seal in
-            guard let contract = EthereumAddress(string: tokenAddress) else {
-                return seal.reject(NetworkProviderError.invalidAddress)
-            }
-            
-            let balanceEncoder = ERC20Encoder.encodeDecimals()
-            provider.request(.getTokenDecimals(server: self.server, contract: contract.description, data: balanceEncoder.hexEncoded), completion: { (result) in
-                switch result {
-                case .success(let response):
-                    do {
-                        let balanceDecodable = try response.map(RPCResultsDecodable.self)
-                        guard let value = BigInt(balanceDecodable.result.drop0x, radix: 16) else{
-                             return seal.reject(NetworkProviderError.notCreateResponeValue)
-                        }
-                        seal.fulfill("")
-                    } catch {
-                        seal.reject(error)
-                    }
-                case .failure(let error):
-                    seal.reject(error)
-                }
-            })
-        }
-    }
-    
-    func tokenTotalSupply(tokenAddress: String) -> Promise<Int> {
-        return Promise{ seal in
-            guard let contract = EthereumAddress(string: tokenAddress) else {
-                return seal.reject(NetworkProviderError.invalidAddress)
-            }
-            
-            let balanceEncoder = ERC20Encoder.encodeDecimals()
-            provider.request(.getTokenDecimals(server: self.server, contract: contract.description, data: balanceEncoder.hexEncoded), completion: { (result) in
-                switch result {
-                case .success(let response):
-                    do {
-                        let balanceDecodable = try response.map(RPCResultsDecodable.self)
-                        guard let value = BigInt(balanceDecodable.result.drop0x, radix: 16) else{
+                        let nameDecodable = try response.map(RPCResultsDecodable.self)
+                        let data = Data(hexString: nameDecodable.result)
+                        guard let name = String.init(data: data!, encoding: .utf8) else{
                             return seal.reject(NetworkProviderError.notCreateResponeValue)
                         }
-                        seal.fulfill(2)
+                        seal.fulfill(name)
+                    } catch {
+                        seal.reject(error)
+                    }
+                case .failure(let error):
+                    seal.reject(error)
+                }
+            })
+        }
+    
+    }
+    
+    func tokenSymbol(contract: String) -> Promise<String> {
+        return Promise{ seal in
+            guard let contract = EthereumAddress(string: contract) else {
+                return seal.reject(NetworkProviderError.invalidAddress)
+            }
+            let symbolEncoder = ERC20Encoder.encodeSymbol()
+            provider.request(.getTokenInfo(server: self.server, contract: contract.description, data: symbolEncoder.hexEncoded), completion:{ (result) in
+                switch result {
+                case .success(let response):
+                    do {
+                        let symbolDecodable = try response.map(RPCResultsDecodable.self)
+                        let data = Data(hexString: symbolDecodable.result)
+                        guard let symbol = String.init(data: data!, encoding: .utf8) else{
+                            return seal.reject(NetworkProviderError.notCreateResponeValue)
+                        }
+                        
+                        seal.fulfill(symbol)
                     } catch {
                         seal.reject(error)
                     }
@@ -237,8 +236,8 @@ extension NetworkProvider: NetworkProviderProtocol{
         return self.balance()
     }
     
-    func tokenBalance(tokenAddress: String) -> Promise<BigInt> {
-        return self.TRCBalance(tokenAddress: tokenAddress)
+    func tokenBalance(contract: String) -> Promise<BigInt> {
+        return self.TRCBalance(tokenAddress: contract)
     }
     
 }

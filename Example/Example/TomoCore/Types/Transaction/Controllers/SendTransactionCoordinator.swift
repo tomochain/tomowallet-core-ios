@@ -31,10 +31,12 @@ final class SendTransactionCoordinator{
     }
     
     
-    private func send(confirmType: ConfirmType, transaction: SignTransaction,completion: @escaping (Result<ConfirmResult, AnyError>) -> Void) {
+     func send(confirmType: ConfirmType, transaction: SignTransaction,completion: @escaping (Result<ConfirmResult, AnyError>) -> Void) {
         if transaction.nonce >= 0 {
             signAndSend(confirmType: confirmType, transaction: transaction, completion: completion)
         } else {
+      
+            
             provider.request(.getTransactionCount(server: server, address: transaction.account.address.description)) { (result) in
                 switch result{
                 case .success(let response):
@@ -51,6 +53,7 @@ final class SendTransactionCoordinator{
     }
     
     private func appendNonce(to: SignTransaction, currentNonce: BigInt) -> SignTransaction {
+  
         return SignTransaction(
             value: to.value,
             account: to.account,
@@ -90,7 +93,6 @@ final class SendTransactionCoordinator{
                 case .success(let result):
                     do{
                         let jsonrpcRespone = try JSONDecoder().decode(JsonrpcRespone.self, from: result.data)
-                        
                         if jsonrpcRespone.error == nil{
                             completion(.success(.sentTransaction(sentTransaction)))
                         }else{
