@@ -8,6 +8,7 @@
 
 import Foundation
 import BigInt
+import PromiseKit
 
 public struct PreviewTransaction {
     let value: BigInt
@@ -26,6 +27,8 @@ final class TransactionConfigurator {
     let tomoBalance: BigInt
     let transaction: UnconfirmedTransaction
     let server: RPCServer
+    let chainState: ChainSate
+    let networkProvider : NetworkProviderProtocol
     var configuration: TransactionConfiguration {
         didSet {
             configurationUpdate.value = configuration
@@ -37,24 +40,67 @@ final class TransactionConfigurator {
         account: Account,
         tomoBalance: BigInt,
         transaction: UnconfirmedTransaction,
+        chainState: ChainSate,
+        networkProvider: NetworkProviderProtocol,
         server: RPCServer) {
     
         self.account = account
         self.transaction = transaction
         self.server = server
+        self.chainState = chainState
+        self.networkProvider = networkProvider
         self.tomoBalance = tomoBalance
         let data: Data = TransactionConfigurator.data(for: transaction, from: account.address)
         let calculatedGasLimit = transaction.gasLimit ?? TransactionConfigurator.gasLimit(for: transaction.transfer.type)
-        let calculatedGasPrice = GasPriceConfiguration.max
-//        let calculatedGasPrice = min(max(transaction.gasPrice ?? chainState.gasPrice ?? GasPriceConfiguration.default, GasPriceConfiguration.min), GasPriceConfiguration.max)
-        
+        let calculatedGasPrice = transaction.gasPrice ?? max(chainState.gasPrice ?? BigInt(0), GasPriceConfiguration.default)
         self.configuration = TransactionConfiguration(
             gasPrice: calculatedGasPrice,
             gasLimit: calculatedGasLimit,
+            tokenFee: .none,
             data: data,
             nonce: transaction.nonce
         )
     }
+    
+    func load(completion: @escaping (_ balanceStatus: BalanceStatus) -> Void) {
+        switch transaction.transfer.type {
+        case .tomo:
+            self.checkBalanceStatusGasFeeByTomo(completion: completion)
+        case .token(let token, _ ):
+            switch token.type{
+            case .TRC21(let isApplyIssuer):
+                if isApplyIssuer{
+                    
+                }else{
+                    self.checkBalanceStatusGasFeeByTomo(completion: completion)
+                }
+            default:
+                self.checkBalanceStatusGasFeeByTomo(completion: completion)
+            }
+        }
+    }
+    
+    private func checkBalanceStatusGasFeeByTomo(completion: @escaping (_ balanceStatus: BalanceStatus) -> Void) {
+        firstly {
+            self.estimateGasLimit()
+            }.done { gasLimit in
+                self.refreshGasLimit(gasLimit)
+                completion(self.balanceValidStatus())
+            }.catch { (_) in
+                completion(self.balanceValidStatus())
+        }
+    }
+    private func checkBalanceStatusGasFeeByToken(token: TRCToken ,completion: @escaping (_ balanceStatus: BalanceStatus) -> Void) {
+        firstly {
+            networkProvider.getMinFeeTRC21(contract: token.contract.description, amount: transaction.value)
+            }.done { gasFee in
+                self.refreshTokenfee(gasFee)
+                completion(self.balanceValidStatus())
+            }.catch { (_) in
+                completion(self.balanceValidStatus())
+        }
+    }
+    
     
     private static func data(for transaction: UnconfirmedTransaction, from: Address) -> Data {
         guard let to = transaction.to else { return Data() }
@@ -74,14 +120,13 @@ final class TransactionConfigurator {
             return GasLimitConfiguration.tokenTransfer
         }
     }
-    
-    private static func gasPrice(for type: Transfer) -> BigInt {
-        return GasPriceConfiguration.default
-    }
-    
 
-    func estimateGasLimit(completion: @escaping (Result<BigInt, Error>) -> Void) {
-   
+
+    func estimateGasLimit() -> Promise<BigInt> {
+        return networkProvider.getEstimateGasLimit(tx: self.signTransaction)
+    }
+    func estimateGasPrice() -> BigInt {
+        return chainState.gasPrice ?? GasPriceConfiguration.default
     }
     
     // combine into one function
@@ -90,18 +135,25 @@ final class TransactionConfigurator {
         configuration = TransactionConfiguration(
             gasPrice: configuration.gasPrice,
             gasLimit: gasLimit,
+            tokenFee: configuration.tokenFee,
+            data: configuration.data,
+            nonce: configuration.nonce
+        )
+    }
+    // combine into one function
+    
+    func refreshTokenfee(_ fee: BigInt) {
+        configuration = TransactionConfiguration(
+            gasPrice: configuration.gasPrice,
+            gasLimit: configuration.gasLimit,
+            tokenFee: fee,
             data: configuration.data,
             nonce: configuration.nonce
         )
     }
     
     func valueToSend() -> BigInt {
-        switch transaction.transfer.type {
-        case .tomo:
-            return transaction.value
-        case .token:
-            return BigInt(0)
-        }
+        return transaction.value
     }
     
     func previewTransaction() -> PreviewTransaction {
@@ -133,13 +185,15 @@ final class TransactionConfigurator {
         }()
       
         let signTransaction = SignTransaction(
+            tranfer: transaction.transfer,
             value: value,
-            account: account,
+            from: EthereumAddress(string: account.address.description)!,
             to: address,
             nonce: configuration.nonce,
             data: configuration.data,
             gasPrice: configuration.gasPrice,
             gasLimit: configuration.gasLimit,
+            gasFeeByTRC21: configuration.tokenFee,
             chainID: server.chainID
         )
         
@@ -158,7 +212,7 @@ final class TransactionConfigurator {
         let transaction = previewTransaction()
         let totalGasValue = transaction.gasPrice * transaction.gasLimit
 
-        //We check if it is ETH or token operation.
+        //We check if it is Tomo or token operation.
         switch transaction.transfer.type {
         case .tomo:
             if transaction.value > tomoBalance {
@@ -170,15 +224,43 @@ final class TransactionConfigurator {
                 }
             }
             return .tomo(tomoSufficient: tomoSufficient, gasSufficient: gasSufficient)
-        case .token(let token):
-            if totalGasValue > tomoBalance {
-                tomoSufficient = false
-                gasSufficient = false
+        case .token(let token, let tokenBalance):
+            switch token.type{
+            case .TRC21(let isApplyIssuer):
+                if isApplyIssuer{
+                 
+                    if transaction.value > tokenBalance {
+                        tokenSufficient = false
+                    }
+                    if self.configuration.tokenFee ?? BigInt(0) > tokenBalance {
+                        tomoSufficient = false
+                        gasSufficient = false
+                    }
+                    return .token(tokenSufficient: tokenSufficient, gasSufficient: gasSufficient)
+                    
+                    
+                }else{
+                    if totalGasValue > tomoBalance {
+                        tomoSufficient = false
+                        gasSufficient = false
+                    }
+                    if transaction.value > tokenBalance {
+                        tokenSufficient = false
+                    }
+                    return .token(tokenSufficient: tokenSufficient, gasSufficient: gasSufficient)
+                }
+            default:
+                if totalGasValue > tomoBalance {
+                    tomoSufficient = false
+                    gasSufficient = false
+                }
+                if transaction.value > tokenBalance {
+                    tokenSufficient = false
+                }
+                return .token(tokenSufficient: tokenSufficient, gasSufficient: gasSufficient)
+                
             }
-            if transaction.value > token.tokenBalance {
-                tokenSufficient = false
-            }
-            return .token(tokenSufficient: tokenSufficient, gasSufficient: gasSufficient)
+            
         }
     }
 }

@@ -13,11 +13,11 @@ struct ApiProviderFactory {
     static let policies: [String: ServerTrustPolicy] = [
         :
     ]
-    static func makeRPCNetworkProvider() -> MoyaProvider<RPCApi> {
+    static func makeRPCNetworkProvider() -> MoyaProvider<Api> {
         let manager = Manager(
             configuration: URLSessionConfiguration.default,
             serverTrustPolicyManager: ServerTrustPolicyManager(policies: policies)
         )
-        return MoyaProvider<RPCApi>(manager: manager)
+        return MoyaProvider<Api>(manager: manager)
     }
 }

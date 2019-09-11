@@ -19,4 +19,5 @@ public class TRC21Encoder: ERC20Encoder{
         return encoder.data
     }
     
+
 }

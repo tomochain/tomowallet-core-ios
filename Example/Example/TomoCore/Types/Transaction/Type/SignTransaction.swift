@@ -10,12 +10,14 @@ import Foundation
 import BigInt
 
 public struct SignTransaction {
+    let tranfer: Transfer
     let value: BigInt
-    let account: Account
+    let from: EthereumAddress
     let to: EthereumAddress?
     let nonce: BigInt
     let data: Data
     let gasPrice: BigInt
     let gasLimit: BigInt
+    let gasFeeByTRC21: BigInt?
     let chainID: Int
 }

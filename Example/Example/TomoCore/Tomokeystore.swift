@@ -166,8 +166,7 @@ class TomoKeystore {
         }
     }
     
-    func signTransaction(_ transaction: SignTransaction) -> Result<Data, TomoKeystoreError> {
-        let account = transaction.account
+    func signTransaction(_ transaction: SignTransaction, for account: Account) -> Result<Data, TomoKeystoreError> {
         guard let wallet  = account.wallet, let password = getPassword(for: wallet) else {
             return .failure(.failedToSignTransaction)
         }

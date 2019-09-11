@@ -18,17 +18,6 @@ struct Transfer {
 enum TransferType {
     case tomo
     case token(TRCToken, tokenBalance: BigInt)
-    
 }
-//
-//extension TransferType {
-//    func symbol(server: RPCServer) -> String {
-//        switch self {
-//        case .tomo:
-//            return "TOMO"
-//        case .token(let token):
-//            return token.symbol
-//        }
-//    }
-//}
+
 

@@ -8,6 +8,11 @@
 
 import Foundation
 import Result
+enum TRCType{
+    case TRC20
+    case TRC21(isApplyIssuer: Bool)
+    case Unkwown
+}
 
 public struct TRCToken {
     let contract: EthereumAddress
@@ -15,6 +20,7 @@ public struct TRCToken {
     let symbol: String
     let decimals: Int
     let totalSupply: String
+    let type: TRCType
 }
 
 public enum TomoChainNetwork{

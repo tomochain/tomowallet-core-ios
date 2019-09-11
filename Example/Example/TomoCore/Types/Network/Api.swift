@@ -9,7 +9,7 @@
 
 import Foundation
 import Moya
-enum RPCApi{
+enum Api{
     case getBalanceCoin(server: RPCServer, address: String)
     case lastBlock(server: RPCServer)
     case getGasPrice(server: RPCServer)
@@ -21,17 +21,16 @@ enum RPCApi{
     case checkIsContract(server: RPCServer, contract: String)
     
     // TRC 21
-    case getEstimateFeeTRC21(server: RPCServer, contract: String, data: String)
+    case getMinFeeTRC21(server: RPCServer, contract: String, data: String)
+    case getTokenCapacityTRC21(server: RPCServer, data: String)
     
     // transactions
     case getTransactionByHash(server: RPCServer, txHash: String)
     case getTransactionReceipt(server: RPCServer, txHash: String)
-    
-    //
-    case getEstimateGasPrice(baseURL: URL)
+
     
 }
-extension RPCApi: TargetType{
+extension Api: TargetType{
     var baseURL: URL{
         switch self {
         case .getBalanceCoin(let server, _):
@@ -52,13 +51,10 @@ extension RPCApi: TargetType{
             return server.rpcURL
         case .getTransactionReceipt(let server,_):
             return server.rpcURL
-        case .getEstimateFeeTRC21(let server, _, _):
+        case .getMinFeeTRC21(let server, _, _):
             return server.rpcURL
-            
-        case .getEstimateGasPrice(let baseURL):
-            return baseURL
-            
-            
+        case .getTokenCapacityTRC21(let server, _):
+            return server.rpcURL
         case .checkIsContract(let server, _):
             return server.rpcURL
         }
@@ -66,13 +62,7 @@ extension RPCApi: TargetType{
     }
     
     var path: String {
-        switch self {
-        case .getEstimateGasPrice:
-            return "/settings/estimate-gasprice"
-        default:
-            return ""
-        }
-        
+        return ""
     }
     
     var method: Moya.Method {
@@ -86,9 +76,9 @@ extension RPCApi: TargetType{
         case .getTransactionCount: return .post
         case .getTransactionByHash: return .post
         case .getTransactionReceipt: return .post
-        case .getEstimateGasPrice: return .get
         case .checkIsContract: return .post
-        case .getEstimateFeeTRC21: return .post
+        case .getMinFeeTRC21: return .post
+        case .getTokenCapacityTRC21: return .post
         }
         
     }
@@ -123,7 +113,7 @@ extension RPCApi: TargetType{
                 "method": "eth_estimateGas",
                 "params": [
                     [
-                        "from": "\(transaction.account.address.description.lowercased())",
+                        "from": "\(transaction.from.description.lowercased())",
                         "to": "\(transaction.to?.description.lowercased() ?? "")",
                         "gasPrice": transaction.gasPrice.hexEncoded,
                         "value": transaction.value.hexEncoded,
@@ -179,8 +169,6 @@ extension RPCApi: TargetType{
                 "id": 1
                 ] as [String : Any]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .getEstimateGasPrice:
-            return .requestPlain
         case .checkIsContract(_, let contract):
             let parameters = [
                 "jsonrpc": "2.0",
@@ -189,8 +177,7 @@ extension RPCApi: TargetType{
                 "id": 1
                 ] as [String : Any]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-            
-        case .getEstimateFeeTRC21(_, let contract,let data):
+        case .getMinFeeTRC21(let server, let contract, let data):
             let parameters = [
                 "jsonrpc": "2.0",
                 "method": "eth_call",
@@ -204,7 +191,20 @@ extension RPCApi: TargetType{
                 "id": 1
                 ] as [String : Any]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-            
+        case .getTokenCapacityTRC21(let server, let data):
+            let parameters = [
+                "jsonrpc": "2.0",
+                "method": "eth_call",
+                "params": [
+                    [
+                        "to": "\(server.issuerContract)",
+                        "data": "\(data)"
+                    ],
+                    "latest"
+                ],
+                "id": 1
+                ] as [String : Any]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
     

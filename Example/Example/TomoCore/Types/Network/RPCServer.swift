@@ -50,6 +50,15 @@ enum RPCServer {
     var coin: Coin {
         return Coin.tomo
     }
+    
+    var issuerContract: String{
+        switch self {
+        case .TomoChainMainnet:
+            return "0x8c0faeb5c6bed2129b8674f262fd45c4e9468bee"
+        case .TomoChainTestnet:
+            return "0x7081C72c9DC44686C7B7EAB1d338EA137Fa9f0D3"
+        }
+    }
 }
 
 extension RPCServer: Equatable {

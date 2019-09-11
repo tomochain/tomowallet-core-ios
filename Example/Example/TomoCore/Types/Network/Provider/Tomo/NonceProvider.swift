@@ -22,8 +22,6 @@ protocol NonceProvider {
 final class GetNonceProvider: NonceProvider {
     func getNextNonce() -> Promise<BigInt> {
         return Promise{ seal in
-            print(self.server.rpcURL)
-            print(address.description)
             provider.request(.getTransactionCount(server: self.server, address: address.description)) { (result) in
                 switch result{
                 case.success(let response):
@@ -41,18 +39,15 @@ final class GetNonceProvider: NonceProvider {
     
     let server: RPCServer
     let address: Address
-    let provider:MoyaProvider<RPCApi>
+    let provider:MoyaProvider<Api>
     init(
         server: RPCServer,
         address: Address,
-        provider:MoyaProvider<RPCApi>
+        provider:MoyaProvider<Api>
         ) {
         self.server = server
         self.address = address
         self.provider = provider
     }
-    
-
-
 }
 
