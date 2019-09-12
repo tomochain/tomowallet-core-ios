@@ -12,6 +12,7 @@ import PromiseKit
 public enum TomoWalletError: Swift.Error{
     case InvalidAmount
     case InvalidAddress
+    case InvalidToken
     case Insufficient(mgs: String)
    
 }
@@ -24,6 +25,8 @@ extension TomoWalletError: LocalizedError{
             return NSLocalizedString("Invalid Address", comment: "")
         case .Insufficient(let mgs):
             return mgs
+        case .InvalidToken:
+            return NSLocalizedString("Invalid Token", comment: "")
         }
         
     }
@@ -31,26 +34,16 @@ extension TomoWalletError: LocalizedError{
 
 
 
-protocol TomoWallet: class {
-//    // base
-//    func getAddress() -> String
-//    func getTomoBabance(completion: @escaping(_ balance: String?, _ error: Error?) -> Void)
-//    func getTokenBalance(tokenAddress: String, completion: @escaping(_ balance: String?, _ error: Error?) -> Void)
-//    func getTokenInfo(token: String, completion: @escaping(_ token: TRCToken?, _ error: Error?) -> Void)
-//
-//    func sendTomo(amount: String, toAddress: String, completion: @escaping(_ txHash: String?, _ error: Error?) -> Void)
-//    func sendToken(tokenAddress: String, amount: String, toAddress: String, completion: @escaping(_ txHash: String?, _ error: Error?) -> Void)
-//    func signPersonalMessage(message: Data, completion: @escaping(_ data: Data?, _ error: Error?) -> Void)
-//    func signMessage(message: Data, completion: @escaping(_ data: Data?, _ error: Error?) -> Void)
-//    func signHash(hash: Data, completion: @escaping(_ data: Data?, _ error: Error?) -> Void)
-//
+protocol TomoWallet: class{
+    func getAddress() -> String
+    
+    func sendTomo(toAddress: String, amount:String) -> Promise<SentTransaction>
+    func sendToken(contract: String, toAddress: String, amount: String) -> Promise<SentTransaction>
     
     func getTomoBabance() ->Promise<String>
     func getTokenBalance(token: TRCToken) -> Promise<String>
     func getTokenBalance(contract: String) -> Promise<String>
     func getTokenInfo(contract: String) -> Promise<TRCToken>
-    
-    
     
     func makeTomoTransaction(toAddress: String, amount: String) -> Promise<SignTransaction>
     func makeTokenTransaction(token: TRCToken, toAddress: String, amount: String) -> Promise<SignTransaction>
@@ -60,8 +53,5 @@ protocol TomoWallet: class {
     func signMessage(message: Data) -> Promise<Data>
     func signPersonalMessage(message: Data) -> Promise<Data>
     func signHash(hash: Data) -> Promise<Data>
-    
-    
 }
-
 

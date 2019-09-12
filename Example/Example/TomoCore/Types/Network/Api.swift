@@ -24,6 +24,8 @@ enum Api{
     case getMinFeeTRC21(server: RPCServer, contract: String, data: String)
     case getTokenCapacityTRC21(server: RPCServer, data: String)
     
+    case getTokenInfoFromScan(server: RPCServer, token: String)
+    
     // transactions
     case getTransactionByHash(server: RPCServer, txHash: String)
     case getTransactionReceipt(server: RPCServer, txHash: String)
@@ -57,12 +59,20 @@ extension Api: TargetType{
             return server.rpcURL
         case .checkIsContract(let server, _):
             return server.rpcURL
+        case .getTokenInfoFromScan(let server, _):
+            return server.URLScan
         }
         
     }
     
     var path: String {
-        return ""
+        switch self {
+        case .getTokenInfoFromScan(_ ,let token):
+            return "tokens/\(token)"
+        default:
+            return ""
+        }
+        
     }
     
     var method: Moya.Method {
@@ -79,6 +89,7 @@ extension Api: TargetType{
         case .checkIsContract: return .post
         case .getMinFeeTRC21: return .post
         case .getTokenCapacityTRC21: return .post
+        case .getTokenInfoFromScan: return .get
         }
         
     }
@@ -205,6 +216,8 @@ extension Api: TargetType{
                 "id": 1
                 ] as [String : Any]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .getTokenInfoFromScan:
+            return .requestPlain
         }
     }
     

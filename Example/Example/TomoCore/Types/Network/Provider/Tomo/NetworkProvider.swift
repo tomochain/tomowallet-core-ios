@@ -34,7 +34,8 @@ protocol NetworkProviderProtocol {
     func getMinFeeTRC21(contract: String, amount: BigInt) -> Promise<BigInt>
     func isContract(contract: String) -> Promise<Bool>
     
-//    func tokenDetail(contract: String) -> Promise<TRCToken>
+    func getTokenInfoFromScan(contract: String) -> Promise<TRCToken>
+    
     
 }
 final class NetworkProvider {
@@ -108,6 +109,29 @@ final class NetworkProvider {
     
 }
 extension NetworkProvider: NetworkProviderProtocol{
+   
+    
+    func getTokenInfoFromScan(contract: String) -> Promise<TRCToken> {
+        return Promise{ seal in
+            provider.request(.getTokenInfoFromScan(server: self.server, token: contract), completion: { (result) in
+                switch result{
+                case .success(let response):
+                    do {
+                        let trcToken = try JSONDecoder().decode(TRCToken.self, from: response.data)
+                        seal.fulfill(trcToken)
+                    }catch {
+                        seal.reject(error)
+                    }
+                case.failure(let error):
+                    seal.reject(error)
+                }
+            })
+            
+        }
+    }
+    
+  
+    
     func getEstimateGasLimit(tx: SignTransaction) -> Promise<BigInt> {
         return Promise{ seal in
             provider.request(.estimateGasLimit(server: self.server, transaction: tx), completion: { (result) in

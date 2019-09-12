@@ -59,6 +59,17 @@ enum RPCServer {
             return "0x7081C72c9DC44686C7B7EAB1d338EA137Fa9f0D3"
         }
     }
+    
+    var URLScan: URL{
+        
+        let urlString: String = {
+            switch self {
+            case .TomoChainMainnet: return "https://scan.tomochain.com/api/"
+            case .TomoChainTestnet: return "https://scan.testnet.tomochain.com/api/"
+            }
+        }()
+        return URL(string: urlString)!
+    }
 }
 
 extension RPCServer: Equatable {
