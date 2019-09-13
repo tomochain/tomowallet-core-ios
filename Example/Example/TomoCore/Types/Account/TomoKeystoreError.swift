@@ -9,7 +9,7 @@
 
 
 import Foundation
-enum TomoKeystoreError: LocalizedError {
+enum TomoKeystoreError: Swift.Error{
     case failedToDeleteAccount
     case failedToDecryptKey
     case failedToImport(Error)
@@ -30,7 +30,10 @@ enum TomoKeystoreError: LocalizedError {
     case invalidMnemonicPhraseorPrivatekey
     case invalidAddress
     
-    var errorDescription: String{
+}
+
+extension TomoKeystoreError: LocalizedError{
+    public var errorDescription: String?{
         switch self {
         case .failedToDeleteAccount:
             return NSLocalizedString("Failed to delete account", comment: "")
@@ -70,5 +73,5 @@ enum TomoKeystoreError: LocalizedError {
             return NSLocalizedString("Invalid Address", comment: "")
         }
     }
-    
+   
 }

@@ -169,7 +169,7 @@ extension TomoWalletService: TomoWallet{
                         })
                     
                 }.catch { (error) in
-                    seal.reject(TomoWalletError.InvalidToken)
+                    seal.reject(error)
             }
            
 
@@ -222,8 +222,17 @@ extension TomoWalletService: TomoWallet{
     
     
     func getTokenInfo(contract: String) -> Promise<TRCToken> {
-        return Promise {seal in
-            
+        return Promise { seal in
+            guard let contract = EthereumAddress(string: contract) else {
+                return seal.reject(TomoWalletError.InvalidAddress)
+            }
+            firstly{
+                self.getTokenInfo(contract: contract)
+                }.done({ (token) in
+                    seal.fulfill(token)
+                }).catch({ (error) in
+                    seal.reject(error)
+                })
         }
     }
     

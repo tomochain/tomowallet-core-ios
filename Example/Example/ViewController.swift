@@ -27,19 +27,32 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+        tomoSDK.createWallet { (result) in
+            switch result{
+            case .success(let wallet):
+                print(wallet)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        tomoSDK.importAddressOnly(address: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684") { (result) in
+            switch result{
+            case .success(let wallet):
+                print(wallet)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        tomoSDK.importWallet(hexPrivateKey: "0x4745044ccdb778fb6d2d999c561f4329deb57ee3628672d7a2954a53e20b167e") { (result) in
+            switch result{
+            case .success(let wallet):
+                print(wallet)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
-//       let wallets = tomoSDK.getAllWallets()
-//
-//        tomoSDK.getWallet(address: wallets[0].getAddress()) { (result) in
-//            MBProgressHUD.hide(for: self.view, animated: true)
-//            switch result{
-//            case .success(let wallet):
-//                self.wallet = wallet
-//                print(self.wallet?.getAddress())
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+
     }
 
     @IBAction func sendAction(_ sender: Any) {
@@ -53,55 +66,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func getBalance(_ sender: Any) {
-        
-        firstly {
-            wallet!.getTomoBabance()
-            }.done{(balance) in
-                print(balance)
-            }.catch{ (error) in
-                print(error.localizedDescription)
-        }
-//        firstly{
-//            wallet!.getTokenBalance(contract: "0xedabb249894d8bd3ca4a2ec2b76ce29e9619e43d")
-//            }.done { (balance) in
-//                print(balance)
-//            }.catch { (error) in
-//                print(error.localizedDescription)
-//        }
-//
-//
         firstly{
-            wallet!.sendToken(contract: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", amount: "10")
-            }.done { (sentTX) in
-                print(sentTX)
+            self.wallet!.getTokenInfo(contract: "0x357dde188fe7b6abb0b8b6a4afe917cdf4b7080b")
+            }.then { (token) -> Promise<SignTransaction> in
+                return self.wallet!.makeTokenTransaction(token: token, toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", amount: "0.1")
+            }.done { (signTX) in
+                print(signTX)
             }.catch { (error) in
                 print(error.localizedDescription)
         }
-//
-//        wallet?.sendToken(tokenAddress: "0x417a8c01a4ecc2b3dfd85cebe5fe34d9e0efb6ff", amount: "3", toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", completion: { (tx, error) in
-//            print(tx)
-//
-//        })
-        
-//        wallet?.getTokenInfo(token: "0xedabb249894d8bd3ca4a2ec2b76ce29e9619e43d", completion: { (token, error) in
-//            print(token)
-//        })
-//        wallet?.getTokenBalance(tokenAddress: "0x8a2b61a7a1f7ddfa040267b67d2e347d8f08e66b", decimals: nil, completion: { (value, error) in
-//            print( value)
-//
-//        })
-        
-//        wallet?.sendTomo(amount: "1", toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", completion: { (tx, error) in
-//            print(tx)
-//        })
-//        wallet?.getTomoBabance { (resutl) in
-//            switch resutl{
-//            case .success(let balance):
-//                print(balance)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
     }
 }
+
+//firstly {
+//    wallet!.sendToken(contract: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", amount: "1")
+//    }.done { (signTX) in
+//        print(signTX)
+//    }.catch { (error) in
+//        print(error.localizedDescription)
+//}
+//firstly{
+//    wallet!.makeTomoTransaction(toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684", amount: "20")
+//    }.done { (signTX) in
+//        print(signTX)
+//    }.catch { (error) in
+//        print(error.localizedDescription)
+//}
 

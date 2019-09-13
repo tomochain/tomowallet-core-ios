@@ -96,6 +96,7 @@ class TomoKeystore {
         } catch {
             return .none
         }
+
     }
     
     func getPassword(for account:Wallet) -> String? {
@@ -348,7 +349,7 @@ extension TomoKeystore: TomoKeystoreProtocol{
     }
     
     func importWallet(hexPrivateKey: String, completion: @escaping (Result<TomoWallet, TomoKeystoreError>) -> Void) {
-        
+   
         if PrivateKey.isValid(data: Data(hexString: hexPrivateKey) ?? Data()){
             self.importWallet(type: ImportType.privatekey(privateKey: hexPrivateKey), coin: .tomo, completion: completion)
         }else{

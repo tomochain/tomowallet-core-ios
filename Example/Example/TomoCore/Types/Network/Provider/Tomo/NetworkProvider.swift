@@ -117,8 +117,13 @@ extension NetworkProvider: NetworkProviderProtocol{
                 switch result{
                 case .success(let response):
                     do {
-                        let trcToken = try JSONDecoder().decode(TRCToken.self, from: response.data)
-                        seal.fulfill(trcToken)
+                        if response.statusCode == 200{
+                            let trcToken = try JSONDecoder().decode(TRCToken.self, from: response.data)
+                            seal.fulfill(trcToken)
+                        }else{
+                            let scanError = try JSONDecoder().decode(ScanError.self, from: response.data)
+                            seal.reject(TomoWalletError.ErrorFromServer(msg: scanError.message))
+                        }
                     }catch {
                         seal.reject(error)
                     }
@@ -342,4 +347,22 @@ extension NetworkProvider: NetworkProviderProtocol{
         return self.TRCBalance(tokenAddress: contract)
     }
     
+}
+
+
+struct ScanError: Decodable {
+    let message: String
+    
+    private enum ScanErrorObjectKeys: String, CodingKey {
+        case errors
+    }
+    
+    init(from decoder: Decoder) throws {
+        let containers = try decoder.container(keyedBy: ScanErrorObjectKeys.self)
+        let res = try containers.decodeIfPresent(Message.self, forKey: .errors)
+        self.message = res?.message ?? ""
+    }
+}
+struct Message: Decodable {
+    let message: String
 }

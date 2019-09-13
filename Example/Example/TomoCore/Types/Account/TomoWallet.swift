@@ -14,6 +14,7 @@ public enum TomoWalletError: Swift.Error{
     case InvalidAddress
     case InvalidToken
     case Insufficient(mgs: String)
+    case ErrorFromServer(msg: String)
    
 }
 extension TomoWalletError: LocalizedError{
@@ -27,6 +28,8 @@ extension TomoWalletError: LocalizedError{
             return mgs
         case .InvalidToken:
             return NSLocalizedString("Invalid Token", comment: "")
+        case .ErrorFromServer(let msg):
+            return msg
         }
     }
 }
