@@ -18,6 +18,7 @@ enum TomoKeystoreError: LocalizedError {
     case failedToUpdatePassword
     case failedToCreateWallet
     case failedToImportPrivateKey
+    case failedToImportMnemonic
     case failedToParseJSON
     case accountNotFound
     case failedToSignMessage
@@ -47,6 +48,8 @@ enum TomoKeystoreError: LocalizedError {
             return NSLocalizedString("Failed to create wallet", comment: "")
         case .failedToImportPrivateKey:
             return NSLocalizedString("Failed to import private key", comment: "")
+        case .failedToImportMnemonic:
+            return NSLocalizedString("Failed to import Mnemonic", comment: "")
         case .failedToParseJSON:
             return NSLocalizedString("Failed to parse key JSON", comment: "")
         case .accountNotFound:

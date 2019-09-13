@@ -21,8 +21,9 @@ enum WalletInfoField {
 }
 
 enum ImportType{
-    case PrivateKey(privateKey: String)
-    case memnonic(memnonic: String)
+    case privatekey(privateKey: String)
+    case mnemonic (words: [String], derivationPath: DerivationPath)
+    case address (address: EthereumAddress)
 }
 class TomoKeystore {
  
@@ -95,13 +96,7 @@ class TomoKeystore {
         } catch {
             return .none
         }
-        
-        
     }
-    func importWalletPrivatekey(privatekey: String, completion: @escaping()->()) {
-        
-    }
-    
     
     func getPassword(for account:Wallet) -> String? {
         let key = keychainKey(for: account)
@@ -196,6 +191,125 @@ class TomoKeystore {
         }
     }
     
+    func exportPrivateKey(account: Account, completion: @escaping (Result<Data, TomoKeystoreError>) -> Void) {
+        guard let password = getPassword(for: account.wallet!) else{
+            return completion(.failure(TomoKeystoreError.accountNotFound))
+        }
+        DispatchQueue.global(qos: .userInitiated).async {
+            do{
+                let privatekey = try account.privateKey(password: password).data
+                DispatchQueue.main.async {
+                    completion(.success(privatekey))
+                }
+            }catch{
+                DispatchQueue.main.async {
+                    completion(.failure(TomoKeystoreError.accountNotFound))
+                }
+            }
+        }
+        
+    }
+    
+    func exportMnemonic(wallet: Wallet, completion: @escaping (Result<[String], TomoKeystoreError>) -> Void) {
+        guard let password = getPassword(for: wallet) else {
+            return completion(.failure(TomoKeystoreError.accountNotFound))
+        }
+        DispatchQueue.global(qos: .unspecified).async {
+            do{
+                let mnemonic = try self.keyStore.exportMnemonic(wallet: wallet, password: password)
+                let words = mnemonic.components(separatedBy: " ")
+                DispatchQueue.main.async {
+                    completion(.success(words))
+                }
+                
+            }catch{
+                DispatchQueue.main.async {
+                    completion(.failure(TomoKeystoreError.accountNotFound))
+                }
+            }
+        }
+    }
+    
+    func delete(wallet: Wallet) -> Result<Void, TomoKeystoreError> {
+        guard let password = getPassword(for: wallet) else {
+            return .failure(TomoKeystoreError.failedToDeleteAccount)
+        }
+        do{
+            try keyStore.delete(wallet: wallet, password: password)
+            return .success(())
+            
+        }catch{
+            return .failure(TomoKeystoreError.failedToDeleteAccount)
+        }
+    }
+    
+    //MARK: - Import Wallet
+    
+    func importWallet(type: ImportType, coin: Coin, completion: @escaping (Result <TomoWallet, TomoKeystoreError>) -> Void) {
+        let newPassword = PasswordGenerator.generateRandom()
+        switch type {
+        case .privatekey(let privatekey):
+            let privateKeyData = PrivateKey(data: Data(hexString: privatekey)!)!
+            DispatchQueue.global(qos: .userInitiated).async {
+                do{
+                    let wallet = try self.keyStore.import(privateKey: privateKeyData, password: newPassword, coin: coin)
+                    // check not save password to keychain
+                    if self.setPassword(newPassword, for: wallet){
+                        DispatchQueue.main.async {
+                            completion(.success(TomoWalletService(type: TomoWalletType.privateKey(wallet), keyStore: self)))
+                        }
+                    }else{
+                        try! FileManager().removeItem(at: wallet.keyURL)
+                        DispatchQueue.main.async {
+                            completion(.failure(TomoKeystoreError.failedToImportPrivateKey))
+                        }
+                    }
+                }catch{
+                    DispatchQueue.main.async {
+                        completion(.failure(TomoKeystoreError.failedToImportPrivateKey))
+                    }
+                    
+                }
+            }
+        case .mnemonic(let words, let derivationPath):
+            let mnemonicString = words.map{ String($0)}.joined(separator: " ")
+                if !Crypto.isValid(mnemonic: mnemonicString){
+                    return completion(.failure(TomoKeystoreError.invalidMnemonicPhrase))
+                }
+            do {
+                let wallet = try keyStore.import(mnemonic: mnemonicString, encryptPassword: newPassword, derivationPath: derivationPath)
+                // check not save password to keychain
+                if self.setPassword(newPassword, for: wallet){
+                    DispatchQueue.main.async {
+                        print(wallet.keyURL.absoluteString)
+                        completion(.success(TomoWalletService(type: TomoWalletType.hd(wallet), keyStore: self)))
+                    }
+                }else{
+                    try! FileManager().removeItem(at: wallet.keyURL)
+                    DispatchQueue.main.async {
+                        return completion(.failure(TomoKeystoreError.failedToImportMnemonic))
+                    }
+                }
+            }catch(let error){
+                
+                DispatchQueue.main.async {
+                    return completion(.failure(TomoKeystoreError.failedToImport(error)))
+                }
+            }
+            
+        case .address(let address):
+            break
+            let watchWallet = WalletAddress(coin: coin, address: address)
+//            guard !storage.addresses.contains(watchWallet) else {
+//                return completion(.failure(.duplicateAccount))
+//            }
+            storage.store(address: [watchWallet])
+            completion(.success(TomoWalletService(type: TomoWalletType.address(Coin.tomo, address), keyStore: self)))
+            
+        }
+    }
+
+    
 }
 extension TomoKeystore: TomoKeystoreProtocol{
     func getwallets() -> [TomoWallet] {
@@ -232,6 +346,35 @@ extension TomoKeystore: TomoKeystoreProtocol{
             completion(.failure(TomoKeystoreError.accountNotFound))
         }
     }
+    
+    func importWallet(hexPrivateKey: String, completion: @escaping (Result<TomoWallet, TomoKeystoreError>) -> Void) {
+        
+        if PrivateKey.isValid(data: Data(hexString: hexPrivateKey) ?? Data()){
+            self.importWallet(type: ImportType.privatekey(privateKey: hexPrivateKey), coin: .tomo, completion: completion)
+        }else{
+            completion(.failure(TomoKeystoreError.invalidMnemonicPhraseorPrivatekey))
+        }
+     
+    }
+    
+    func importWallet(words: String, completion: @escaping (Result<TomoWallet, TomoKeystoreError>) -> Void) {
+        let newwords = words.components(separatedBy: " ")
+        let coin = Coin.tomo
+        if newwords.count == 12{
+            self.importWallet(type: ImportType.mnemonic(words: newwords, derivationPath: coin.derivationPath(at: 0)), coin: coin, completion: completion)
+        }else{
+            completion(.failure(TomoKeystoreError.invalidMnemonicPhraseorPrivatekey))
+        }
+    }
+    
+    func importAddressOnly(address: String, completion: @escaping (Result<TomoWallet, TomoKeystoreError>) -> Void) {
+        if let validAddress = EthereumAddress(string: address){
+            self.importWallet(type: ImportType.address(address: validAddress), coin: .tomo, completion: completion)
+        }else{
+            completion(.failure(TomoKeystoreError.invalidAddress))
+        }
+    }
+
 }
 
 extension Coin {

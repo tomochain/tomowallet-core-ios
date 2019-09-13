@@ -17,19 +17,29 @@ class ViewController: UIViewController {
         
         let tomoSDK = WalletCore(network: .Mainnet)
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        
-       let wallets = tomoSDK.getAllWallets()
-  
-        tomoSDK.getWallet(address: wallets[0].getAddress()) { (result) in
+        tomoSDK.importWallet(recoveryPhase: "ordinary chest giant insane van denial twin music curve offer umbrella spot") { (result) in
             MBProgressHUD.hide(for: self.view, animated: true)
             switch result{
             case .success(let wallet):
+                print(wallet.getAddress())
                 self.wallet = wallet
-                print(self.wallet?.getAddress())
             case .failure(let error):
-                print(error)
+                print(error.localizedDescription)
             }
         }
+        
+//       let wallets = tomoSDK.getAllWallets()
+//
+//        tomoSDK.getWallet(address: wallets[0].getAddress()) { (result) in
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//            switch result{
+//            case .success(let wallet):
+//                self.wallet = wallet
+//                print(self.wallet?.getAddress())
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
 
     @IBAction func sendAction(_ sender: Any) {
@@ -44,13 +54,13 @@ class ViewController: UIViewController {
     
     @IBAction func getBalance(_ sender: Any) {
         
-//        firstly {
-//            wallet!.getTomoBabance()
-//            }.done{(balance) in
-//                print(balance)
-//            }.catch{ (error) in
-//                print(error.localizedDescription)
-//        }
+        firstly {
+            wallet!.getTomoBabance()
+            }.done{(balance) in
+                print(balance)
+            }.catch{ (error) in
+                print(error.localizedDescription)
+        }
 //        firstly{
 //            wallet!.getTokenBalance(contract: "0xedabb249894d8bd3ca4a2ec2b76ce29e9619e43d")
 //            }.done { (balance) in

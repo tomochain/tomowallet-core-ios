@@ -25,12 +25,18 @@ class TomoWalletService{
     }()
     let walletInfo: TomoWalletInfo
     let type: TomoWalletType
-    var server: RPCServer = RPCServer.TomoChainTestnet
+    var server: RPCServer
     var address: String{
         return account.address.description
     }
     
     init(type: TomoWalletType, keyStore: TomoKeystore ) {
+        switch keyStore.network {
+        case .Mainnet:
+            self.server = RPCServer.TomoChainMainnet
+        case.Testnet:
+            self.server = RPCServer.TomoChainTestnet
+        }
         self.type = type
         self.keyStore = keyStore
         self.walletInfo = TomoWalletInfo(type: self.type)

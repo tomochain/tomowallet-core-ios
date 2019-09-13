@@ -52,10 +52,6 @@ public struct TRCToken : Decodable {
         }
      
     }
-    
-
-    
-    
 }
 
 public enum TomoChainNetwork{
@@ -64,8 +60,8 @@ public enum TomoChainNetwork{
 }
 
 public class WalletCore {
-    private let tomoKeystoreProtocol: TomoKeystoreProtocol
-
+    fileprivate let tomoKeystoreProtocol: TomoKeystoreProtocol
+    
     init(network: TomoChainNetwork) {
         self.tomoKeystoreProtocol = TomoKeystore(network: network)
     }
@@ -73,12 +69,24 @@ public class WalletCore {
     func createWallet(completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void){
         tomoKeystoreProtocol.createWallet(completion: completion)
     }
+    
     func getWallet(address: String, completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void) {
         tomoKeystoreProtocol.getWallet(address: address, completion: completion)
     }
+    
     func getAllWallets() -> [TomoWallet] {
         return tomoKeystoreProtocol.getwallets()
     }
     
-    
+    func importWallet(hexPrivateKey: String, completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void)  {
+        tomoKeystoreProtocol.importWallet(hexPrivateKey: hexPrivateKey, completion: completion)
+        
+    }
+    func importWallet(recoveryPhase: String, completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void)  {
+        tomoKeystoreProtocol.importWallet(words: recoveryPhase, completion: completion)
+        
+    }
+    func importAddressOnly(address: String, completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void)  {
+        tomoKeystoreProtocol.importAddressOnly(address: address, completion: completion)
+    }
 }

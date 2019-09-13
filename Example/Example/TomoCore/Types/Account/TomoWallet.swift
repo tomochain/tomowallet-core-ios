@@ -28,7 +28,6 @@ extension TomoWalletError: LocalizedError{
         case .InvalidToken:
             return NSLocalizedString("Invalid Token", comment: "")
         }
-        
     }
 }
 

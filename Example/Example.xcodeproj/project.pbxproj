@@ -27,6 +27,8 @@
 		8461B2FF23169677009B8954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8461B2FE23169677009B8954 /* Assets.xcassets */; };
 		8461B30223169677009B8954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8461B30023169677009B8954 /* LaunchScreen.storyboard */; };
 		8461B30D23169677009B8954 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B30C23169677009B8954 /* ExampleTests.swift */; };
+		847D1CBC232B355E008AC2AC /* WalletCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6BE231E1346005BC25C /* WalletCore.swift */; };
+		847D1CBD232B355E008AC2AC /* TomoKeystoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6BC231E1211005BC25C /* TomoKeystoreProtocol.swift */; };
 		8488D3E3231F7474004BBB8E /* TomoNumberFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488D3E2231F7474004BBB8E /* TomoNumberFormater.swift */; };
 		8488D3E5231F74CD004BBB8E /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488D3E4231F74CD004BBB8E /* Unit.swift */; };
 		8488D3E9231FC57E004BBB8E /* TRC21Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488D3E8231FC57E004BBB8E /* TRC21Encoder.swift */; };
@@ -308,6 +310,10 @@
 		843974372320CC5D0067AD89 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				84E3C6BE231E1346005BC25C /* WalletCore.swift */,
+				84E3C6BC231E1211005BC25C /* TomoKeystoreProtocol.swift */,
+				84E3C61C231D0A06005BC25C /* Tomokeystore.swift */,
+				84E3C611231D0A06005BC25C /* TomoKeystoreError.swift */,
 				84E3C614231D0A06005BC25C /* Store */,
 				84E3C620231D0A06005BC25C /* TomoWalletService.swift */,
 				84E3C621231D0A06005BC25C /* TomoWallet.swift */,
@@ -342,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				84E3C668231D0A19005BC25C /* Example-Bridging-Header.h */,
-				84E3C65E231D0A19005BC25C /* Core */,
+				84E3C65E231D0A19005BC25C /* TrustCore */,
 				84E3C645231D0A0F005BC25C /* Keystore */,
 				84E3C610231D0A06005BC25C /* TomoCore */,
 				8461B2F723169674009B8954 /* AppDelegate.swift */,
@@ -368,11 +374,6 @@
 			isa = PBXGroup;
 			children = (
 				84E3C6C9231E216B005BC25C /* Extentions */,
-				84E3C6C3231E1BE2005BC25C /* UI */,
-				84E3C6BE231E1346005BC25C /* WalletCore.swift */,
-				84E3C6BC231E1211005BC25C /* TomoKeystoreProtocol.swift */,
-				84E3C61C231D0A06005BC25C /* Tomokeystore.swift */,
-				84E3C611231D0A06005BC25C /* TomoKeystoreError.swift */,
 				84E3C612231D0A06005BC25C /* Types */,
 				84E3C61D231D0A06005BC25C /* Config */,
 			);
@@ -438,7 +439,7 @@
 			path = Keystore;
 			sourceTree = "<group>";
 		};
-		84E3C65E231D0A19005BC25C /* Core */ = {
+		84E3C65E231D0A19005BC25C /* TrustCore */ = {
 			isa = PBXGroup;
 			children = (
 				84E3C65F231D0A19005BC25C /* RLP.swift */,
@@ -463,7 +464,7 @@
 				84E3C67B231D0A19005BC25C /* Crypto.m */,
 				84E3C67C231D0A19005BC25C /* ReverseResolverEncoder.swift */,
 			);
-			path = Core;
+			path = TrustCore;
 			sourceTree = "<group>";
 		};
 		84E3C664231D0A19005BC25C /* HDWallet */ = {
@@ -503,13 +504,6 @@
 				84E3C6E4231E6A15005BC25C /* ApiProviderFactory.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		84E3C6C3231E1BE2005BC25C /* UI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		84E3C6C6231E1E2D005BC25C /* Transaction */ = {
@@ -840,6 +834,7 @@
 				84E3C6A3231D0A19005BC25C /* PrivateKey.swift in Sources */,
 				84E3C691231D0A19005BC25C /* EthereumAddress.swift in Sources */,
 				84E3C632231D0A06005BC25C /* TomoWalletObject.swift in Sources */,
+				847D1CBD232B355E008AC2AC /* TomoKeystoreProtocol.swift in Sources */,
 				84E3C69F231D0A19005BC25C /* Function.swift in Sources */,
 				84E3C681231D0A19005BC25C /* PublicKey.swift in Sources */,
 				84E3C62A231D0A06005BC25C /* RealmConfiguration.swift in Sources */,
@@ -870,6 +865,7 @@
 				84E3C69B231D0A19005BC25C /* ABIType.swift in Sources */,
 				84E3C67F231D0A19005BC25C /* RLP.swift in Sources */,
 				84E3C6AB231D0A19005BC25C /* Data+Clear.swift in Sources */,
+				847D1CBC232B355E008AC2AC /* WalletCore.swift in Sources */,
 				84E3C651231D0A0F005BC25C /* Scrypt.swift in Sources */,
 				84E3C655231D0A0F005BC25C /* KeyStore.Error.swift in Sources */,
 				84E3C699231D0A19005BC25C /* ABIValue.swift in Sources */,
