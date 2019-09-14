@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import RealmSwift
-final class WalletAddress: Object {
+final class WalletAddress: Decodable {
     @objc dynamic var id: String = UUID().uuidString;
     @objc dynamic var addressString: String = "";
     @objc private dynamic var rawCoin = -1
@@ -29,20 +28,6 @@ final class WalletAddress: Object {
     var address: EthereumAddress? {
         return EthereumAddress(string: addressString)
     }
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    override static func ignoredProperties() -> [String] {
-        return ["coin"]
-    }
-    
-    override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? WalletAddress else { return false }
-        return object.address == address //&& object.coin == address?.coin
-    }
-    
     
 }
 

@@ -7,20 +7,17 @@
 //
 
 import Foundation
-import RealmSwift
 
 
 
-final class TomoWalletObject: Object{
-    @objc dynamic var id: String = ""
-    @objc dynamic var name: String = ""
-    @objc dynamic var createdAt: Date = Date()
-    @objc dynamic var completedBackup: Bool = false
-    @objc dynamic var mainWallet: Bool = false
-    @objc dynamic var balance: String = ""
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+final class TomoWalletObject: Decodable{
+    var id: String = ""
+    var name: String = ""
+    var createdAt: Date = Date()
+    var completedBackup: Bool = false
+    var mainWallet: Bool = false
+    var balance: String = ""
+    
     static func from(_ type: TomoWalletType) -> TomoWalletObject{
         let info = TomoWalletObject()
         info.id = type.description

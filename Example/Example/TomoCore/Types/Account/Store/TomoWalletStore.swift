@@ -7,34 +7,29 @@
 //
 
 import Foundation
-import RealmSwift
 class TomoWalletStorage {
-    let realm: Realm
+    let encoder = PropertyListEncoder()
+    let fileManager = FileManager.default
+    let walletObjectPath = Bundle.main.path(forResource: "WalletObjects", ofType: "json")
+    let walletAddressPath = Bundle.main.path(forResource: "WalletAddress", ofType: "json")
+
+    init() {
     
- 
-    init(realm: Realm) {
-        self.realm = realm
     }
-    
-    
-    
+    func storeWalletObject(wallet: TomoWalletObject) {
+     
+    }
+
     func get(for type: TomoWalletType) -> TomoWalletObject {
-        let firstWallet = realm.objects(TomoWalletObject.self).filter { $0.id == type.description }.first
-        guard let foundWallet = firstWallet else {
-            return TomoWalletObject.from(type)
-        }
-        return foundWallet
+        return TomoWalletObject()
+
     }
     
     func store(address: [WalletAddress]) {
-        try? realm.write {
-            realm.add(address, update: true)
-        }
+
     }
     func delete(address: WalletAddress) {
-        try? realm.write {
-            realm.delete(address)
-        }
+
     }
     
 }

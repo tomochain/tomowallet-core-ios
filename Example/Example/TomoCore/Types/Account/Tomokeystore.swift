@@ -72,13 +72,7 @@ class TomoKeystore {
         
         // keychain init
         keychain = KeychainSwift(keyPrefix: Constants.keychainKeyPrefix)
-        
-        // store wallet info init
-        let sharedMigration = SharedMigrationInitializer()
-        sharedMigration.perform()
-        let realm = try! Realm(configuration: sharedMigration.config)
-        storage = TomoWalletStorage(realm: realm)
-        
+        storage = TomoWalletStorage()
         self.network = network
     }
 
@@ -114,21 +108,21 @@ class TomoKeystore {
     }
     
     func store(object: TomoWalletObject, fields: [WalletInfoField]) {
-        try? storage.realm.write {
-            for field in fields {
-                switch field {
-                case .name(let name):
-                    object.name = name
-                case .backup(let completedBackup):
-                    object.completedBackup = completedBackup
-                case .mainWallet(let mainWallet):
-                    object.mainWallet = mainWallet
-                case .balance(let balance):
-                    object.balance = balance
-                }
-            }
-            storage.realm.add(object, update: true)
-        }
+//        try? storage.realm.write {
+//            for field in fields {
+//                switch field {
+//                case .name(let name):
+//                    object.name = name
+//                case .backup(let completedBackup):
+//                    object.completedBackup = completedBackup
+//                case .mainWallet(let mainWallet):
+//                    object.mainWallet = mainWallet
+//                case .balance(let balance):
+//                    object.balance = balance
+//                }
+//            }
+//            storage.realm.add(object, update: true)
+//        }
     }
     
     func signPersonalMessage(_ message: Data, for account: Account) -> Result<Data, TomoKeystoreError> {
