@@ -9,138 +9,12 @@
 /* Begin PBXBuildFile section */
 		3D6FAE03B9C89264FB3F04DB /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE428F1686239D876836C44 /* Pods_Example.framework */; };
 		52078C54E72D020FF8858C8A /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC0809CC62A14ADD63556E4 /* Pods_ExampleTests.framework */; };
-		84162AB7232764CC00EC0141 /* ChainStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84162AB6232764CC00EC0141 /* ChainStateProvider.swift */; };
-		841A75AC2320EB84001C7CBD /* GasPriceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A75AA2320EB84001C7CBD /* GasPriceConfiguration.swift */; };
-		841A75AD2320EB84001C7CBD /* GasLimitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A75AB2320EB84001C7CBD /* GasLimitConfiguration.swift */; };
-		841A75AF2320EB96001C7CBD /* ConfigureTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A75AE2320EB96001C7CBD /* ConfigureTransaction.swift */; };
-		841A75B12320EBC1001C7CBD /* TransactionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A75B02320EBC1001C7CBD /* TransactionConfiguration.swift */; };
-		841A75B32320F0E1001C7CBD /* Subscribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A75B22320F0E1001C7CBD /* Subscribable.swift */; };
-		841A75B52320F1DC001C7CBD /* NonceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A75B42320F1DC001C7CBD /* NonceProvider.swift */; };
-		84285F4423263CF8004525EB /* TRCIssuerEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84285F4323263CF8004525EB /* TRCIssuerEncoder.swift */; };
-		843974312320C2000067AD89 /* UnconfirmedTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843974302320C2000067AD89 /* UnconfirmedTransaction.swift */; };
-		843974332320C22E0067AD89 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843974322320C22E0067AD89 /* Transfer.swift */; };
-		843974352320CAB90067AD89 /* BalanceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843974342320CAB90067AD89 /* BalanceStatus.swift */; };
-		843974392320CCA90067AD89 /* TransactionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843974382320CCA90067AD89 /* TransactionConfigurator.swift */; };
 		8461B2F823169674009B8954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B2F723169674009B8954 /* AppDelegate.swift */; };
 		8461B2FA23169674009B8954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B2F923169674009B8954 /* ViewController.swift */; };
 		8461B2FD23169674009B8954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8461B2FB23169674009B8954 /* Main.storyboard */; };
 		8461B2FF23169677009B8954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8461B2FE23169677009B8954 /* Assets.xcassets */; };
 		8461B30223169677009B8954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8461B30023169677009B8954 /* LaunchScreen.storyboard */; };
 		8461B30D23169677009B8954 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B30C23169677009B8954 /* ExampleTests.swift */; };
-		847D1CBC232B355E008AC2AC /* WalletCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6BE231E1346005BC25C /* WalletCore.swift */; };
-		847D1CBD232B355E008AC2AC /* TomoKeystoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6BC231E1211005BC25C /* TomoKeystoreProtocol.swift */; };
-		8488D3E3231F7474004BBB8E /* TomoNumberFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488D3E2231F7474004BBB8E /* TomoNumberFormater.swift */; };
-		8488D3E5231F74CD004BBB8E /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488D3E4231F74CD004BBB8E /* Unit.swift */; };
-		8488D3E9231FC57E004BBB8E /* TRC21Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488D3E8231FC57E004BBB8E /* TRC21Encoder.swift */; };
-		84E3C625231D0A06005BC25C /* TomoKeystoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C611231D0A06005BC25C /* TomoKeystoreError.swift */; };
-		84E3C626231D0A06005BC25C /* TomoKeystoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C611231D0A06005BC25C /* TomoKeystoreError.swift */; };
-		84E3C627231D0A06005BC25C /* TomoWalletType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C613231D0A06005BC25C /* TomoWalletType.swift */; };
-		84E3C628231D0A06005BC25C /* TomoWalletType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C613231D0A06005BC25C /* TomoWalletType.swift */; };
-		84E3C62F231D0A06005BC25C /* WalletAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C619231D0A06005BC25C /* WalletAddress.swift */; };
-		84E3C630231D0A06005BC25C /* WalletAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C619231D0A06005BC25C /* WalletAddress.swift */; };
-		84E3C631231D0A06005BC25C /* TomoWalletObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61A231D0A06005BC25C /* TomoWalletObject.swift */; };
-		84E3C632231D0A06005BC25C /* TomoWalletObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61A231D0A06005BC25C /* TomoWalletObject.swift */; };
-		84E3C633231D0A06005BC25C /* TomoWalletStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61B231D0A06005BC25C /* TomoWalletStore.swift */; };
-		84E3C634231D0A06005BC25C /* TomoWalletStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61B231D0A06005BC25C /* TomoWalletStore.swift */; };
-		84E3C635231D0A06005BC25C /* Tomokeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61C231D0A06005BC25C /* Tomokeystore.swift */; };
-		84E3C636231D0A06005BC25C /* Tomokeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61C231D0A06005BC25C /* Tomokeystore.swift */; };
-		84E3C637231D0A06005BC25C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61E231D0A06005BC25C /* Constants.swift */; };
-		84E3C638231D0A06005BC25C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61E231D0A06005BC25C /* Constants.swift */; };
-		84E3C639231D0A06005BC25C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61F231D0A06005BC25C /* Config.swift */; };
-		84E3C63A231D0A06005BC25C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C61F231D0A06005BC25C /* Config.swift */; };
-		84E3C63B231D0A06005BC25C /* TomoWalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C620231D0A06005BC25C /* TomoWalletService.swift */; };
-		84E3C63C231D0A06005BC25C /* TomoWalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C620231D0A06005BC25C /* TomoWalletService.swift */; };
-		84E3C63D231D0A06005BC25C /* TomoWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C621231D0A06005BC25C /* TomoWallet.swift */; };
-		84E3C63E231D0A06005BC25C /* TomoWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C621231D0A06005BC25C /* TomoWallet.swift */; };
-		84E3C63F231D0A06005BC25C /* WalletInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C622231D0A06005BC25C /* WalletInfo.swift */; };
-		84E3C640231D0A06005BC25C /* WalletInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C622231D0A06005BC25C /* WalletInfo.swift */; };
-		84E3C641231D0A06005BC25C /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C623231D0A06005BC25C /* PasswordGenerator.swift */; };
-		84E3C642231D0A06005BC25C /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C623231D0A06005BC25C /* PasswordGenerator.swift */; };
-		84E3C64E231D0A0F005BC25C /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C646231D0A0F005BC25C /* KeyStore.swift */; };
-		84E3C64F231D0A0F005BC25C /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C646231D0A0F005BC25C /* KeyStore.swift */; };
-		84E3C650231D0A0F005BC25C /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C647231D0A0F005BC25C /* Scrypt.swift */; };
-		84E3C651231D0A0F005BC25C /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C647231D0A0F005BC25C /* Scrypt.swift */; };
-		84E3C652231D0A0F005BC25C /* ScryptParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C648231D0A0F005BC25C /* ScryptParams.swift */; };
-		84E3C653231D0A0F005BC25C /* ScryptParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C648231D0A0F005BC25C /* ScryptParams.swift */; };
-		84E3C654231D0A0F005BC25C /* KeyStore.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C649231D0A0F005BC25C /* KeyStore.Error.swift */; };
-		84E3C655231D0A0F005BC25C /* KeyStore.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C649231D0A0F005BC25C /* KeyStore.Error.swift */; };
-		84E3C656231D0A0F005BC25C /* KeystoreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C64A231D0A0F005BC25C /* KeystoreKey.swift */; };
-		84E3C657231D0A0F005BC25C /* KeystoreKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C64A231D0A0F005BC25C /* KeystoreKey.swift */; };
-		84E3C658231D0A0F005BC25C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C64B231D0A0F005BC25C /* Account.swift */; };
-		84E3C659231D0A0F005BC25C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C64B231D0A0F005BC25C /* Account.swift */; };
-		84E3C65A231D0A0F005BC25C /* KeystoreKeyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C64C231D0A0F005BC25C /* KeystoreKeyHeader.swift */; };
-		84E3C65B231D0A0F005BC25C /* KeystoreKeyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C64C231D0A0F005BC25C /* KeystoreKeyHeader.swift */; };
-		84E3C65C231D0A0F005BC25C /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C64D231D0A0F005BC25C /* Wallet.swift */; };
-		84E3C65D231D0A0F005BC25C /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C64D231D0A0F005BC25C /* Wallet.swift */; };
-		84E3C67E231D0A19005BC25C /* RLP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C65F231D0A19005BC25C /* RLP.swift */; };
-		84E3C67F231D0A19005BC25C /* RLP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C65F231D0A19005BC25C /* RLP.swift */; };
-		84E3C680231D0A19005BC25C /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C660231D0A19005BC25C /* PublicKey.swift */; };
-		84E3C681231D0A19005BC25C /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C660231D0A19005BC25C /* PublicKey.swift */; };
-		84E3C682231D0A19005BC25C /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C661231D0A19005BC25C /* Data+Hex.swift */; };
-		84E3C683231D0A19005BC25C /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C661231D0A19005BC25C /* Data+Hex.swift */; };
-		84E3C684231D0A19005BC25C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C662231D0A19005BC25C /* Address.swift */; };
-		84E3C685231D0A19005BC25C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C662231D0A19005BC25C /* Address.swift */; };
-		84E3C686231D0A19005BC25C /* String+Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C663231D0A19005BC25C /* String+Clear.swift */; };
-		84E3C687231D0A19005BC25C /* String+Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C663231D0A19005BC25C /* String+Clear.swift */; };
-		84E3C688231D0A19005BC25C /* DerivationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C665231D0A19005BC25C /* DerivationPath.swift */; };
-		84E3C689231D0A19005BC25C /* DerivationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C665231D0A19005BC25C /* DerivationPath.swift */; };
-		84E3C68A231D0A19005BC25C /* DerivationPath.Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C666231D0A19005BC25C /* DerivationPath.Index.swift */; };
-		84E3C68B231D0A19005BC25C /* DerivationPath.Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C666231D0A19005BC25C /* DerivationPath.Index.swift */; };
-		84E3C68C231D0A19005BC25C /* HDWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C667231D0A19005BC25C /* HDWallet.swift */; };
-		84E3C68D231D0A19005BC25C /* HDWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C667231D0A19005BC25C /* HDWallet.swift */; };
-		84E3C68E231D0A19005BC25C /* EthereumPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66A231D0A19005BC25C /* EthereumPublicKey.swift */; };
-		84E3C68F231D0A19005BC25C /* EthereumPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66A231D0A19005BC25C /* EthereumPublicKey.swift */; };
-		84E3C690231D0A19005BC25C /* EthereumAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66B231D0A19005BC25C /* EthereumAddress.swift */; };
-		84E3C691231D0A19005BC25C /* EthereumAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66B231D0A19005BC25C /* EthereumAddress.swift */; };
-		84E3C692231D0A19005BC25C /* ABIEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66D231D0A19005BC25C /* ABIEncoder.swift */; };
-		84E3C693231D0A19005BC25C /* ABIEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66D231D0A19005BC25C /* ABIEncoder.swift */; };
-		84E3C694231D0A19005BC25C /* ENSEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66E231D0A19005BC25C /* ENSEncoder.swift */; };
-		84E3C695231D0A19005BC25C /* ENSEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66E231D0A19005BC25C /* ENSEncoder.swift */; };
-		84E3C696231D0A19005BC25C /* ABIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66F231D0A19005BC25C /* ABIDecoder.swift */; };
-		84E3C697231D0A19005BC25C /* ABIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C66F231D0A19005BC25C /* ABIDecoder.swift */; };
-		84E3C698231D0A19005BC25C /* ABIValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C670231D0A19005BC25C /* ABIValue.swift */; };
-		84E3C699231D0A19005BC25C /* ABIValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C670231D0A19005BC25C /* ABIValue.swift */; };
-		84E3C69A231D0A19005BC25C /* ABIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C671231D0A19005BC25C /* ABIType.swift */; };
-		84E3C69B231D0A19005BC25C /* ABIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C671231D0A19005BC25C /* ABIType.swift */; };
-		84E3C69C231D0A19005BC25C /* ABIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C672231D0A19005BC25C /* ABIError.swift */; };
-		84E3C69D231D0A19005BC25C /* ABIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C672231D0A19005BC25C /* ABIError.swift */; };
-		84E3C69E231D0A19005BC25C /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C673231D0A19005BC25C /* Function.swift */; };
-		84E3C69F231D0A19005BC25C /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C673231D0A19005BC25C /* Function.swift */; };
-		84E3C6A0231D0A19005BC25C /* ERC20Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C674231D0A19005BC25C /* ERC20Encoder.swift */; };
-		84E3C6A1231D0A19005BC25C /* ERC20Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C674231D0A19005BC25C /* ERC20Encoder.swift */; };
-		84E3C6A2231D0A19005BC25C /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C675231D0A19005BC25C /* PrivateKey.swift */; };
-		84E3C6A3231D0A19005BC25C /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C675231D0A19005BC25C /* PrivateKey.swift */; };
-		84E3C6A4231D0A19005BC25C /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C676231D0A19005BC25C /* Coin.swift */; };
-		84E3C6A5231D0A19005BC25C /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C676231D0A19005BC25C /* Coin.swift */; };
-		84E3C6A6231D0A19005BC25C /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C677231D0A19005BC25C /* Ethereum.swift */; };
-		84E3C6A7231D0A19005BC25C /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C677231D0A19005BC25C /* Ethereum.swift */; };
-		84E3C6A8231D0A19005BC25C /* Namehash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C678231D0A19005BC25C /* Namehash.swift */; };
-		84E3C6A9231D0A19005BC25C /* Namehash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C678231D0A19005BC25C /* Namehash.swift */; };
-		84E3C6AA231D0A19005BC25C /* Data+Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C679231D0A19005BC25C /* Data+Clear.swift */; };
-		84E3C6AB231D0A19005BC25C /* Data+Clear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C679231D0A19005BC25C /* Data+Clear.swift */; };
-		84E3C6AE231D0A19005BC25C /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C67B231D0A19005BC25C /* Crypto.m */; };
-		84E3C6AF231D0A19005BC25C /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C67B231D0A19005BC25C /* Crypto.m */; };
-		84E3C6B0231D0A19005BC25C /* ReverseResolverEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C67C231D0A19005BC25C /* ReverseResolverEncoder.swift */; };
-		84E3C6B1231D0A19005BC25C /* ReverseResolverEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C67C231D0A19005BC25C /* ReverseResolverEncoder.swift */; };
-		84E3C6B8231D0CE0005BC25C /* BitcoinPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6B4231D0CE0005BC25C /* BitcoinPublicKey.swift */; };
-		84E3C6B9231D0CE0005BC25C /* BitcoinAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6B5231D0CE0005BC25C /* BitcoinAddress.swift */; };
-		84E3C6BA231D0CE0005BC25C /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6B6231D0CE0005BC25C /* Bitcoin.swift */; };
-		84E3C6BB231D0CE0005BC25C /* BitcoinTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6B7231D0CE0005BC25C /* BitcoinTransaction.swift */; };
-		84E3C6BD231E1211005BC25C /* TomoKeystoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6BC231E1211005BC25C /* TomoKeystoreProtocol.swift */; };
-		84E3C6BF231E1346005BC25C /* WalletCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6BE231E1346005BC25C /* WalletCore.swift */; };
-		84E3C6C2231E1BB8005BC25C /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6C1231E1BB8005BC25C /* Api.swift */; };
-		84E3C6C5231E1C4F005BC25C /* RPCServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6C4231E1C4F005BC25C /* RPCServer.swift */; };
-		84E3C6C8231E1E3D005BC25C /* SignTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6C7231E1E3D005BC25C /* SignTransaction.swift */; };
-		84E3C6CB231E2189005BC25C /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6CA231E2189005BC25C /* BigInt.swift */; };
-		84E3C6CD231E21C3005BC25C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6CC231E21C3005BC25C /* Data.swift */; };
-		84E3C6D3231E22DA005BC25C /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6D2231E22DA005BC25C /* NetworkProvider.swift */; };
-		84E3C6D5231E24F2005BC25C /* RPCResultsDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6D4231E24F2005BC25C /* RPCResultsDecodable.swift */; };
-		84E3C6D7231E2574005BC25C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6D6231E2574005BC25C /* String.swift */; };
-		84E3C6D9231E5D72005BC25C /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6D8231E5D72005BC25C /* Signer.swift */; };
-		84E3C6DF231E6149005BC25C /* EthTypedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6DE231E6149005BC25C /* EthTypedData.swift */; };
-		84E3C6E5231E6A15005BC25C /* ApiProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6E4231E6A15005BC25C /* ApiProviderFactory.swift */; };
-		84E3C6E7231E6AA8005BC25C /* SendTransactionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6E6231E6AA8005BC25C /* SendTransactionCoordinator.swift */; };
-		84E3C6E9231E6C69005BC25C /* SentTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3C6E8231E6C69005BC25C /* SentTransaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,18 +31,6 @@
 		4677125DE3EECFE5BBC4B305 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		5F17C353DEA5FDE696701EC5 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE428F1686239D876836C44 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84162AB6232764CC00EC0141 /* ChainStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainStateProvider.swift; sourceTree = "<group>"; };
-		841A75AA2320EB84001C7CBD /* GasPriceConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasPriceConfiguration.swift; sourceTree = "<group>"; };
-		841A75AB2320EB84001C7CBD /* GasLimitConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasLimitConfiguration.swift; sourceTree = "<group>"; };
-		841A75AE2320EB96001C7CBD /* ConfigureTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureTransaction.swift; sourceTree = "<group>"; };
-		841A75B02320EBC1001C7CBD /* TransactionConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionConfiguration.swift; sourceTree = "<group>"; };
-		841A75B22320F0E1001C7CBD /* Subscribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribable.swift; sourceTree = "<group>"; };
-		841A75B42320F1DC001C7CBD /* NonceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonceProvider.swift; sourceTree = "<group>"; };
-		84285F4323263CF8004525EB /* TRCIssuerEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRCIssuerEncoder.swift; sourceTree = "<group>"; };
-		843974302320C2000067AD89 /* UnconfirmedTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnconfirmedTransaction.swift; sourceTree = "<group>"; };
-		843974322320C22E0067AD89 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
-		843974342320CAB90067AD89 /* BalanceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceStatus.swift; sourceTree = "<group>"; };
-		843974382320CCA90067AD89 /* TransactionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfigurator.swift; sourceTree = "<group>"; };
 		8461B2F423169674009B8954 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461B2F723169674009B8954 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8461B2F923169674009B8954 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -179,75 +41,6 @@
 		8461B30823169677009B8954 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461B30C23169677009B8954 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		8461B30E23169677009B8954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8488D3E2231F7474004BBB8E /* TomoNumberFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomoNumberFormater.swift; sourceTree = "<group>"; };
-		8488D3E4231F74CD004BBB8E /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
-		8488D3E8231FC57E004BBB8E /* TRC21Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRC21Encoder.swift; sourceTree = "<group>"; };
-		84E3C611231D0A06005BC25C /* TomoKeystoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomoKeystoreError.swift; sourceTree = "<group>"; };
-		84E3C613231D0A06005BC25C /* TomoWalletType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomoWalletType.swift; sourceTree = "<group>"; };
-		84E3C619231D0A06005BC25C /* WalletAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalletAddress.swift; path = RealmObject/WalletAddress.swift; sourceTree = "<group>"; };
-		84E3C61A231D0A06005BC25C /* TomoWalletObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TomoWalletObject.swift; path = RealmObject/TomoWalletObject.swift; sourceTree = "<group>"; };
-		84E3C61B231D0A06005BC25C /* TomoWalletStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomoWalletStore.swift; sourceTree = "<group>"; };
-		84E3C61C231D0A06005BC25C /* Tomokeystore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tomokeystore.swift; sourceTree = "<group>"; };
-		84E3C61E231D0A06005BC25C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		84E3C61F231D0A06005BC25C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		84E3C620231D0A06005BC25C /* TomoWalletService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomoWalletService.swift; sourceTree = "<group>"; };
-		84E3C621231D0A06005BC25C /* TomoWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomoWallet.swift; sourceTree = "<group>"; };
-		84E3C622231D0A06005BC25C /* WalletInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletInfo.swift; sourceTree = "<group>"; };
-		84E3C623231D0A06005BC25C /* PasswordGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
-		84E3C646231D0A0F005BC25C /* KeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStore.swift; sourceTree = "<group>"; };
-		84E3C647231D0A0F005BC25C /* Scrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scrypt.swift; sourceTree = "<group>"; };
-		84E3C648231D0A0F005BC25C /* ScryptParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScryptParams.swift; sourceTree = "<group>"; };
-		84E3C649231D0A0F005BC25C /* KeyStore.Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyStore.Error.swift; sourceTree = "<group>"; };
-		84E3C64A231D0A0F005BC25C /* KeystoreKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeystoreKey.swift; sourceTree = "<group>"; };
-		84E3C64B231D0A0F005BC25C /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		84E3C64C231D0A0F005BC25C /* KeystoreKeyHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeystoreKeyHeader.swift; sourceTree = "<group>"; };
-		84E3C64D231D0A0F005BC25C /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
-		84E3C65F231D0A19005BC25C /* RLP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLP.swift; sourceTree = "<group>"; };
-		84E3C660231D0A19005BC25C /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
-		84E3C661231D0A19005BC25C /* Data+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
-		84E3C662231D0A19005BC25C /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		84E3C663231D0A19005BC25C /* String+Clear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Clear.swift"; sourceTree = "<group>"; };
-		84E3C665231D0A19005BC25C /* DerivationPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DerivationPath.swift; sourceTree = "<group>"; };
-		84E3C666231D0A19005BC25C /* DerivationPath.Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DerivationPath.Index.swift; sourceTree = "<group>"; };
-		84E3C667231D0A19005BC25C /* HDWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDWallet.swift; sourceTree = "<group>"; };
-		84E3C668231D0A19005BC25C /* Example-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		84E3C669231D0A19005BC25C /* Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crypto.h; sourceTree = "<group>"; };
-		84E3C66A231D0A19005BC25C /* EthereumPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumPublicKey.swift; sourceTree = "<group>"; };
-		84E3C66B231D0A19005BC25C /* EthereumAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumAddress.swift; sourceTree = "<group>"; };
-		84E3C66D231D0A19005BC25C /* ABIEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABIEncoder.swift; sourceTree = "<group>"; };
-		84E3C66E231D0A19005BC25C /* ENSEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSEncoder.swift; sourceTree = "<group>"; };
-		84E3C66F231D0A19005BC25C /* ABIDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABIDecoder.swift; sourceTree = "<group>"; };
-		84E3C670231D0A19005BC25C /* ABIValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABIValue.swift; sourceTree = "<group>"; };
-		84E3C671231D0A19005BC25C /* ABIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABIType.swift; sourceTree = "<group>"; };
-		84E3C672231D0A19005BC25C /* ABIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABIError.swift; sourceTree = "<group>"; };
-		84E3C673231D0A19005BC25C /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
-		84E3C674231D0A19005BC25C /* ERC20Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ERC20Encoder.swift; sourceTree = "<group>"; };
-		84E3C675231D0A19005BC25C /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
-		84E3C676231D0A19005BC25C /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
-		84E3C677231D0A19005BC25C /* Ethereum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
-		84E3C678231D0A19005BC25C /* Namehash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namehash.swift; sourceTree = "<group>"; };
-		84E3C679231D0A19005BC25C /* Data+Clear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Clear.swift"; sourceTree = "<group>"; };
-		84E3C67B231D0A19005BC25C /* Crypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crypto.m; sourceTree = "<group>"; };
-		84E3C67C231D0A19005BC25C /* ReverseResolverEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseResolverEncoder.swift; sourceTree = "<group>"; };
-		84E3C6B4231D0CE0005BC25C /* BitcoinPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitcoinPublicKey.swift; path = "../../../../tomowallet-iOS/Pods/TrustCore/Sources/Bitcoin/BitcoinPublicKey.swift"; sourceTree = "<group>"; };
-		84E3C6B5231D0CE0005BC25C /* BitcoinAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitcoinAddress.swift; path = "../../../../tomowallet-iOS/Pods/TrustCore/Sources/Bitcoin/BitcoinAddress.swift"; sourceTree = "<group>"; };
-		84E3C6B6231D0CE0005BC25C /* Bitcoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bitcoin.swift; path = "../../../../tomowallet-iOS/Pods/TrustCore/Sources/Bitcoin/Bitcoin.swift"; sourceTree = "<group>"; };
-		84E3C6B7231D0CE0005BC25C /* BitcoinTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitcoinTransaction.swift; path = "../../../../tomowallet-iOS/Pods/TrustCore/Sources/Bitcoin/BitcoinTransaction.swift"; sourceTree = "<group>"; };
-		84E3C6BC231E1211005BC25C /* TomoKeystoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomoKeystoreProtocol.swift; sourceTree = "<group>"; };
-		84E3C6BE231E1346005BC25C /* WalletCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCore.swift; sourceTree = "<group>"; };
-		84E3C6C1231E1BB8005BC25C /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		84E3C6C4231E1C4F005BC25C /* RPCServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCServer.swift; sourceTree = "<group>"; };
-		84E3C6C7231E1E3D005BC25C /* SignTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignTransaction.swift; sourceTree = "<group>"; };
-		84E3C6CA231E2189005BC25C /* BigInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
-		84E3C6CC231E21C3005BC25C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		84E3C6D2231E22DA005BC25C /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
-		84E3C6D4231E24F2005BC25C /* RPCResultsDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCResultsDecodable.swift; sourceTree = "<group>"; };
-		84E3C6D6231E2574005BC25C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		84E3C6D8231E5D72005BC25C /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
-		84E3C6DE231E6149005BC25C /* EthTypedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthTypedData.swift; sourceTree = "<group>"; };
-		84E3C6E4231E6A15005BC25C /* ApiProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderFactory.swift; sourceTree = "<group>"; };
-		84E3C6E6231E6AA8005BC25C /* SendTransactionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransactionCoordinator.swift; sourceTree = "<group>"; };
-		84E3C6E8231E6C69005BC25C /* SentTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentTransaction.swift; sourceTree = "<group>"; };
 		91BFD3028CA91B3F4386FD74 /* Pods-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-ExampleTests/Pods-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		961A05647755CA56A51EBA15 /* Pods-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-ExampleTests/Pods-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		DDC0809CC62A14ADD63556E4 /* Pods_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,48 +66,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8439742F2320C1DD0067AD89 /* Type */ = {
-			isa = PBXGroup;
-			children = (
-				841A75B02320EBC1001C7CBD /* TransactionConfiguration.swift */,
-				841A75AE2320EB96001C7CBD /* ConfigureTransaction.swift */,
-				841A75AB2320EB84001C7CBD /* GasLimitConfiguration.swift */,
-				841A75AA2320EB84001C7CBD /* GasPriceConfiguration.swift */,
-				843974342320CAB90067AD89 /* BalanceStatus.swift */,
-				84E3C6E8231E6C69005BC25C /* SentTransaction.swift */,
-				84E3C6C7231E1E3D005BC25C /* SignTransaction.swift */,
-				843974302320C2000067AD89 /* UnconfirmedTransaction.swift */,
-				843974322320C22E0067AD89 /* Transfer.swift */,
-			);
-			path = Type;
-			sourceTree = "<group>";
-		};
-		843974362320CB9E0067AD89 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C6E6231E6AA8005BC25C /* SendTransactionCoordinator.swift */,
-				843974382320CCA90067AD89 /* TransactionConfigurator.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		843974372320CC5D0067AD89 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C6BE231E1346005BC25C /* WalletCore.swift */,
-				84E3C6BC231E1211005BC25C /* TomoKeystoreProtocol.swift */,
-				84E3C61C231D0A06005BC25C /* Tomokeystore.swift */,
-				84E3C611231D0A06005BC25C /* TomoKeystoreError.swift */,
-				84E3C614231D0A06005BC25C /* Store */,
-				84E3C620231D0A06005BC25C /* TomoWalletService.swift */,
-				84E3C621231D0A06005BC25C /* TomoWallet.swift */,
-				84E3C623231D0A06005BC25C /* PasswordGenerator.swift */,
-				84E3C622231D0A06005BC25C /* WalletInfo.swift */,
-				84E3C613231D0A06005BC25C /* TomoWalletType.swift */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
 		8461B2EB23169674009B8954 = {
 			isa = PBXGroup;
 			children = (
@@ -338,10 +89,6 @@
 		8461B2F623169674009B8954 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				84E3C668231D0A19005BC25C /* Example-Bridging-Header.h */,
-				84E3C65E231D0A19005BC25C /* TrustCore */,
-				84E3C645231D0A0F005BC25C /* Keystore */,
-				84E3C610231D0A06005BC25C /* TomoCore */,
 				8461B2F723169674009B8954 /* AppDelegate.swift */,
 				8461B2F923169674009B8954 /* ViewController.swift */,
 				8461B2FB23169674009B8954 /* Main.storyboard */,
@@ -359,169 +106,6 @@
 				8461B30E23169677009B8954 /* Info.plist */,
 			);
 			path = ExampleTests;
-			sourceTree = "<group>";
-		};
-		84E3C610231D0A06005BC25C /* TomoCore */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C6C9231E216B005BC25C /* Extentions */,
-				84E3C612231D0A06005BC25C /* Types */,
-				84E3C61D231D0A06005BC25C /* Config */,
-			);
-			path = TomoCore;
-			sourceTree = "<group>";
-		};
-		84E3C612231D0A06005BC25C /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				843974372320CC5D0067AD89 /* Account */,
-				84E3C6C6231E1E2D005BC25C /* Transaction */,
-				84E3C6C0231E1B16005BC25C /* Network */,
-				84E3C6DE231E6149005BC25C /* EthTypedData.swift */,
-				8488D3E2231F7474004BBB8E /* TomoNumberFormater.swift */,
-				8488D3E4231F74CD004BBB8E /* Unit.swift */,
-				841A75B22320F0E1001C7CBD /* Subscribable.swift */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		84E3C614231D0A06005BC25C /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C619231D0A06005BC25C /* WalletAddress.swift */,
-				84E3C61A231D0A06005BC25C /* TomoWalletObject.swift */,
-				84E3C61B231D0A06005BC25C /* TomoWalletStore.swift */,
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		84E3C61D231D0A06005BC25C /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C61E231D0A06005BC25C /* Constants.swift */,
-				84E3C61F231D0A06005BC25C /* Config.swift */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		84E3C645231D0A0F005BC25C /* Keystore */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C646231D0A0F005BC25C /* KeyStore.swift */,
-				84E3C647231D0A0F005BC25C /* Scrypt.swift */,
-				84E3C648231D0A0F005BC25C /* ScryptParams.swift */,
-				84E3C649231D0A0F005BC25C /* KeyStore.Error.swift */,
-				84E3C64A231D0A0F005BC25C /* KeystoreKey.swift */,
-				84E3C64B231D0A0F005BC25C /* Account.swift */,
-				84E3C64C231D0A0F005BC25C /* KeystoreKeyHeader.swift */,
-				84E3C64D231D0A0F005BC25C /* Wallet.swift */,
-			);
-			path = Keystore;
-			sourceTree = "<group>";
-		};
-		84E3C65E231D0A19005BC25C /* TrustCore */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C65F231D0A19005BC25C /* RLP.swift */,
-				84E3C660231D0A19005BC25C /* PublicKey.swift */,
-				84E3C661231D0A19005BC25C /* Data+Hex.swift */,
-				84E3C662231D0A19005BC25C /* Address.swift */,
-				84E3C663231D0A19005BC25C /* String+Clear.swift */,
-				84E3C664231D0A19005BC25C /* HDWallet */,
-				84E3C6B6231D0CE0005BC25C /* Bitcoin.swift */,
-				84E3C6B5231D0CE0005BC25C /* BitcoinAddress.swift */,
-				84E3C6B4231D0CE0005BC25C /* BitcoinPublicKey.swift */,
-				84E3C6B7231D0CE0005BC25C /* BitcoinTransaction.swift */,
-				84E3C669231D0A19005BC25C /* Crypto.h */,
-				84E3C66A231D0A19005BC25C /* EthereumPublicKey.swift */,
-				84E3C66B231D0A19005BC25C /* EthereumAddress.swift */,
-				84E3C66C231D0A19005BC25C /* Solidity */,
-				84E3C675231D0A19005BC25C /* PrivateKey.swift */,
-				84E3C676231D0A19005BC25C /* Coin.swift */,
-				84E3C677231D0A19005BC25C /* Ethereum.swift */,
-				84E3C678231D0A19005BC25C /* Namehash.swift */,
-				84E3C679231D0A19005BC25C /* Data+Clear.swift */,
-				84E3C67B231D0A19005BC25C /* Crypto.m */,
-				84E3C67C231D0A19005BC25C /* ReverseResolverEncoder.swift */,
-			);
-			path = TrustCore;
-			sourceTree = "<group>";
-		};
-		84E3C664231D0A19005BC25C /* HDWallet */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C665231D0A19005BC25C /* DerivationPath.swift */,
-				84E3C666231D0A19005BC25C /* DerivationPath.Index.swift */,
-				84E3C667231D0A19005BC25C /* HDWallet.swift */,
-			);
-			path = HDWallet;
-			sourceTree = "<group>";
-		};
-		84E3C66C231D0A19005BC25C /* Solidity */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C66D231D0A19005BC25C /* ABIEncoder.swift */,
-				84E3C66E231D0A19005BC25C /* ENSEncoder.swift */,
-				84E3C66F231D0A19005BC25C /* ABIDecoder.swift */,
-				84E3C670231D0A19005BC25C /* ABIValue.swift */,
-				84E3C671231D0A19005BC25C /* ABIType.swift */,
-				84E3C672231D0A19005BC25C /* ABIError.swift */,
-				84E3C673231D0A19005BC25C /* Function.swift */,
-				84E3C674231D0A19005BC25C /* ERC20Encoder.swift */,
-				8488D3E8231FC57E004BBB8E /* TRC21Encoder.swift */,
-				84285F4323263CF8004525EB /* TRCIssuerEncoder.swift */,
-			);
-			path = Solidity;
-			sourceTree = "<group>";
-		};
-		84E3C6C0231E1B16005BC25C /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C6CE231E2289005BC25C /* Provider */,
-				84E3C6C1231E1BB8005BC25C /* Api.swift */,
-				84E3C6C4231E1C4F005BC25C /* RPCServer.swift */,
-				84E3C6D4231E24F2005BC25C /* RPCResultsDecodable.swift */,
-				84E3C6E4231E6A15005BC25C /* ApiProviderFactory.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		84E3C6C6231E1E2D005BC25C /* Transaction */ = {
-			isa = PBXGroup;
-			children = (
-				843974362320CB9E0067AD89 /* Controllers */,
-				8439742F2320C1DD0067AD89 /* Type */,
-				84E3C6D8231E5D72005BC25C /* Signer.swift */,
-			);
-			path = Transaction;
-			sourceTree = "<group>";
-		};
-		84E3C6C9231E216B005BC25C /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C6CA231E2189005BC25C /* BigInt.swift */,
-				84E3C6CC231E21C3005BC25C /* Data.swift */,
-				84E3C6D6231E2574005BC25C /* String.swift */,
-			);
-			path = Extentions;
-			sourceTree = "<group>";
-		};
-		84E3C6CE231E2289005BC25C /* Provider */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C6D0231E22B6005BC25C /* Tomo */,
-			);
-			path = Provider;
-			sourceTree = "<group>";
-		};
-		84E3C6D0231E22B6005BC25C /* Tomo */ = {
-			isa = PBXGroup;
-			children = (
-				84E3C6D2231E22DA005BC25C /* NetworkProvider.swift */,
-				841A75B42320F1DC001C7CBD /* NonceProvider.swift */,
-				84162AB6232764CC00EC0141 /* ChainStateProvider.swift */,
-			);
-			path = Tomo;
 			sourceTree = "<group>";
 		};
 		9B5016937ECEED600965D42C /* Pods */ = {
@@ -712,87 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E3C65C231D0A0F005BC25C /* Wallet.swift in Sources */,
-				84E3C6AE231D0A19005BC25C /* Crypto.m in Sources */,
-				84E3C63F231D0A06005BC25C /* WalletInfo.swift in Sources */,
-				84E3C696231D0A19005BC25C /* ABIDecoder.swift in Sources */,
-				84E3C641231D0A06005BC25C /* PasswordGenerator.swift in Sources */,
-				84E3C652231D0A0F005BC25C /* ScryptParams.swift in Sources */,
-				84E3C635231D0A06005BC25C /* Tomokeystore.swift in Sources */,
-				843974312320C2000067AD89 /* UnconfirmedTransaction.swift in Sources */,
-				84E3C6CD231E21C3005BC25C /* Data.swift in Sources */,
 				8461B2FA23169674009B8954 /* ViewController.swift in Sources */,
-				84E3C68E231D0A19005BC25C /* EthereumPublicKey.swift in Sources */,
-				84E3C658231D0A0F005BC25C /* Account.swift in Sources */,
-				84E3C6AA231D0A19005BC25C /* Data+Clear.swift in Sources */,
-				84E3C6E5231E6A15005BC25C /* ApiProviderFactory.swift in Sources */,
-				84E3C6D7231E2574005BC25C /* String.swift in Sources */,
-				84E3C6B8231D0CE0005BC25C /* BitcoinPublicKey.swift in Sources */,
-				84E3C6A0231D0A19005BC25C /* ERC20Encoder.swift in Sources */,
-				84E3C6CB231E2189005BC25C /* BigInt.swift in Sources */,
-				84E3C631231D0A06005BC25C /* TomoWalletObject.swift in Sources */,
-				84E3C690231D0A19005BC25C /* EthereumAddress.swift in Sources */,
-				84E3C682231D0A19005BC25C /* Data+Hex.swift in Sources */,
-				84E3C6BA231D0CE0005BC25C /* Bitcoin.swift in Sources */,
-				84E3C6C8231E1E3D005BC25C /* SignTransaction.swift in Sources */,
-				84E3C68A231D0A19005BC25C /* DerivationPath.Index.swift in Sources */,
-				84E3C6A2231D0A19005BC25C /* PrivateKey.swift in Sources */,
-				84E3C65A231D0A0F005BC25C /* KeystoreKeyHeader.swift in Sources */,
-				84E3C6BF231E1346005BC25C /* WalletCore.swift in Sources */,
-				84E3C627231D0A06005BC25C /* TomoWalletType.swift in Sources */,
-				841A75AF2320EB96001C7CBD /* ConfigureTransaction.swift in Sources */,
-				84E3C6BD231E1211005BC25C /* TomoKeystoreProtocol.swift in Sources */,
-				843974332320C22E0067AD89 /* Transfer.swift in Sources */,
-				843974352320CAB90067AD89 /* BalanceStatus.swift in Sources */,
-				84E3C6B0231D0A19005BC25C /* ReverseResolverEncoder.swift in Sources */,
-				84E3C654231D0A0F005BC25C /* KeyStore.Error.swift in Sources */,
-				84E3C64E231D0A0F005BC25C /* KeyStore.swift in Sources */,
-				84E3C680231D0A19005BC25C /* PublicKey.swift in Sources */,
-				84E3C639231D0A06005BC25C /* Config.swift in Sources */,
-				84E3C69A231D0A19005BC25C /* ABIType.swift in Sources */,
-				841A75B52320F1DC001C7CBD /* NonceProvider.swift in Sources */,
-				84E3C688231D0A19005BC25C /* DerivationPath.swift in Sources */,
-				841A75AD2320EB84001C7CBD /* GasLimitConfiguration.swift in Sources */,
-				84E3C694231D0A19005BC25C /* ENSEncoder.swift in Sources */,
-				84E3C6A6231D0A19005BC25C /* Ethereum.swift in Sources */,
-				84E3C6E9231E6C69005BC25C /* SentTransaction.swift in Sources */,
-				843974392320CCA90067AD89 /* TransactionConfigurator.swift in Sources */,
-				84E3C6DF231E6149005BC25C /* EthTypedData.swift in Sources */,
 				8461B2F823169674009B8954 /* AppDelegate.swift in Sources */,
-				84E3C686231D0A19005BC25C /* String+Clear.swift in Sources */,
-				84E3C6D9231E5D72005BC25C /* Signer.swift in Sources */,
-				84E3C6A8231D0A19005BC25C /* Namehash.swift in Sources */,
-				84E3C6D5231E24F2005BC25C /* RPCResultsDecodable.swift in Sources */,
-				84E3C67E231D0A19005BC25C /* RLP.swift in Sources */,
-				84E3C650231D0A0F005BC25C /* Scrypt.swift in Sources */,
-				84E3C6BB231D0CE0005BC25C /* BitcoinTransaction.swift in Sources */,
-				841A75AC2320EB84001C7CBD /* GasPriceConfiguration.swift in Sources */,
-				84E3C6C2231E1BB8005BC25C /* Api.swift in Sources */,
-				84162AB7232764CC00EC0141 /* ChainStateProvider.swift in Sources */,
-				84E3C68C231D0A19005BC25C /* HDWallet.swift in Sources */,
-				8488D3E9231FC57E004BBB8E /* TRC21Encoder.swift in Sources */,
-				84E3C6E7231E6AA8005BC25C /* SendTransactionCoordinator.swift in Sources */,
-				84E3C62F231D0A06005BC25C /* WalletAddress.swift in Sources */,
-				84285F4423263CF8004525EB /* TRCIssuerEncoder.swift in Sources */,
-				84E3C633231D0A06005BC25C /* TomoWalletStore.swift in Sources */,
-				8488D3E3231F7474004BBB8E /* TomoNumberFormater.swift in Sources */,
-				84E3C6D3231E22DA005BC25C /* NetworkProvider.swift in Sources */,
-				841A75B32320F0E1001C7CBD /* Subscribable.swift in Sources */,
-				841A75B12320EBC1001C7CBD /* TransactionConfiguration.swift in Sources */,
-				84E3C684231D0A19005BC25C /* Address.swift in Sources */,
-				84E3C6A4231D0A19005BC25C /* Coin.swift in Sources */,
-				84E3C63B231D0A06005BC25C /* TomoWalletService.swift in Sources */,
-				84E3C6C5231E1C4F005BC25C /* RPCServer.swift in Sources */,
-				84E3C698231D0A19005BC25C /* ABIValue.swift in Sources */,
-				84E3C625231D0A06005BC25C /* TomoKeystoreError.swift in Sources */,
-				8488D3E5231F74CD004BBB8E /* Unit.swift in Sources */,
-				84E3C656231D0A0F005BC25C /* KeystoreKey.swift in Sources */,
-				84E3C63D231D0A06005BC25C /* TomoWallet.swift in Sources */,
-				84E3C69C231D0A19005BC25C /* ABIError.swift in Sources */,
-				84E3C6B9231D0CE0005BC25C /* BitcoinAddress.swift in Sources */,
-				84E3C69E231D0A19005BC25C /* Function.swift in Sources */,
-				84E3C637231D0A06005BC25C /* Constants.swift in Sources */,
-				84E3C692231D0A19005BC25C /* ABIEncoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,54 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E3C6AF231D0A19005BC25C /* Crypto.m in Sources */,
-				84E3C69D231D0A19005BC25C /* ABIError.swift in Sources */,
-				84E3C636231D0A06005BC25C /* Tomokeystore.swift in Sources */,
-				84E3C64F231D0A0F005BC25C /* KeyStore.swift in Sources */,
-				84E3C65B231D0A0F005BC25C /* KeystoreKeyHeader.swift in Sources */,
-				84E3C638231D0A06005BC25C /* Constants.swift in Sources */,
-				84E3C65D231D0A0F005BC25C /* Wallet.swift in Sources */,
-				84E3C6A9231D0A19005BC25C /* Namehash.swift in Sources */,
-				84E3C6A3231D0A19005BC25C /* PrivateKey.swift in Sources */,
-				84E3C691231D0A19005BC25C /* EthereumAddress.swift in Sources */,
-				84E3C632231D0A06005BC25C /* TomoWalletObject.swift in Sources */,
-				847D1CBD232B355E008AC2AC /* TomoKeystoreProtocol.swift in Sources */,
-				84E3C69F231D0A19005BC25C /* Function.swift in Sources */,
-				84E3C681231D0A19005BC25C /* PublicKey.swift in Sources */,
-				84E3C685231D0A19005BC25C /* Address.swift in Sources */,
-				84E3C63E231D0A06005BC25C /* TomoWallet.swift in Sources */,
-				84E3C659231D0A0F005BC25C /* Account.swift in Sources */,
-				84E3C63C231D0A06005BC25C /* TomoWalletService.swift in Sources */,
-				84E3C6A5231D0A19005BC25C /* Coin.swift in Sources */,
-				84E3C657231D0A0F005BC25C /* KeystoreKey.swift in Sources */,
-				84E3C63A231D0A06005BC25C /* Config.swift in Sources */,
-				84E3C6B1231D0A19005BC25C /* ReverseResolverEncoder.swift in Sources */,
-				84E3C6A1231D0A19005BC25C /* ERC20Encoder.swift in Sources */,
-				84E3C695231D0A19005BC25C /* ENSEncoder.swift in Sources */,
-				84E3C697231D0A19005BC25C /* ABIDecoder.swift in Sources */,
 				8461B30D23169677009B8954 /* ExampleTests.swift in Sources */,
-				84E3C687231D0A19005BC25C /* String+Clear.swift in Sources */,
-				84E3C630231D0A06005BC25C /* WalletAddress.swift in Sources */,
-				84E3C634231D0A06005BC25C /* TomoWalletStore.swift in Sources */,
-				84E3C683231D0A19005BC25C /* Data+Hex.swift in Sources */,
-				84E3C693231D0A19005BC25C /* ABIEncoder.swift in Sources */,
-				84E3C642231D0A06005BC25C /* PasswordGenerator.swift in Sources */,
-				84E3C6A7231D0A19005BC25C /* Ethereum.swift in Sources */,
-				84E3C68D231D0A19005BC25C /* HDWallet.swift in Sources */,
-				84E3C689231D0A19005BC25C /* DerivationPath.swift in Sources */,
-				84E3C628231D0A06005BC25C /* TomoWalletType.swift in Sources */,
-				84E3C69B231D0A19005BC25C /* ABIType.swift in Sources */,
-				84E3C67F231D0A19005BC25C /* RLP.swift in Sources */,
-				84E3C6AB231D0A19005BC25C /* Data+Clear.swift in Sources */,
-				847D1CBC232B355E008AC2AC /* WalletCore.swift in Sources */,
-				84E3C651231D0A0F005BC25C /* Scrypt.swift in Sources */,
-				84E3C655231D0A0F005BC25C /* KeyStore.Error.swift in Sources */,
-				84E3C699231D0A19005BC25C /* ABIValue.swift in Sources */,
-				84E3C68F231D0A19005BC25C /* EthereumPublicKey.swift in Sources */,
-				84E3C640231D0A06005BC25C /* WalletInfo.swift in Sources */,
-				84E3C68B231D0A19005BC25C /* DerivationPath.Index.swift in Sources */,
-				84E3C653231D0A0F005BC25C /* ScryptParams.swift in Sources */,
-				84E3C626231D0A06005BC25C /* TomoKeystoreError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

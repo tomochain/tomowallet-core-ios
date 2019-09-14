@@ -1,0 +1,6 @@
+framework module Pods_TomoWalletCoreTests {
+  umbrella header "Pods-TomoWalletCoreTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
