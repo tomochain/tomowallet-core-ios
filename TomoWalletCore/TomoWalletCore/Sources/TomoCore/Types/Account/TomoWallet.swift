@@ -36,7 +36,7 @@ extension TomoWalletError: LocalizedError{
 
 
 
-protocol TomoWallet: class{
+public protocol TomoWallet: class{
     func getAddress() -> String
     
     func sendTomo(toAddress: String, amount:String) -> Promise<SentTransaction>

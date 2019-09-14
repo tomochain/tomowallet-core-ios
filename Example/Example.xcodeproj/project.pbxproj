@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D6FAE03B9C89264FB3F04DB /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE428F1686239D876836C44 /* Pods_Example.framework */; };
 		52078C54E72D020FF8858C8A /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC0809CC62A14ADD63556E4 /* Pods_ExampleTests.framework */; };
+		8433B1B0232CEF3300A91C8C /* TomoWalletCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8433B1AC232CED9600A91C8C /* TomoWalletCore.framework */; };
+		8433B1B1232CEF3300A91C8C /* TomoWalletCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8433B1AC232CED9600A91C8C /* TomoWalletCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8461B2F823169674009B8954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B2F723169674009B8954 /* AppDelegate.swift */; };
 		8461B2FA23169674009B8954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B2F923169674009B8954 /* ViewController.swift */; };
 		8461B2FD23169674009B8954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8461B2FB23169674009B8954 /* Main.storyboard */; };
@@ -18,6 +20,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8433B1AB232CED9600A91C8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8433B1A6232CED9600A91C8C /* TomoWalletCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8461B2D123169622009B8954;
+			remoteInfo = TomoWalletCore;
+		};
+		8433B1AD232CED9600A91C8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8433B1A6232CED9600A91C8C /* TomoWalletCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8461B2DA23169622009B8954;
+			remoteInfo = TomoWalletCoreTests;
+		};
+		8433B1B2232CEF3300A91C8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8433B1A6232CED9600A91C8C /* TomoWalletCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8461B2D023169622009B8954;
+			remoteInfo = TomoWalletCore;
+		};
 		8461B30923169677009B8954 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8461B2EC23169674009B8954 /* Project object */;
@@ -27,10 +50,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8433B1B4232CEF3300A91C8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8433B1B1232CEF3300A91C8C /* TomoWalletCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4677125DE3EECFE5BBC4B305 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		5F17C353DEA5FDE696701EC5 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7AE428F1686239D876836C44 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8433B1A6232CED9600A91C8C /* TomoWalletCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TomoWalletCore.xcodeproj; path = ../TomoWalletCore/TomoWalletCore.xcodeproj; sourceTree = "<group>"; };
 		8461B2F423169674009B8954 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461B2F723169674009B8954 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8461B2F923169674009B8954 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6FAE03B9C89264FB3F04DB /* Pods_Example.framework in Frameworks */,
+				8433B1B0232CEF3300A91C8C /* TomoWalletCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,9 +105,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8433B1A7232CED9600A91C8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8433B1AC232CED9600A91C8C /* TomoWalletCore.framework */,
+				8433B1AE232CED9600A91C8C /* TomoWalletCoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8461B2EB23169674009B8954 = {
 			isa = PBXGroup;
 			children = (
+				8433B1A6232CED9600A91C8C /* TomoWalletCore.xcodeproj */,
 				8461B2F623169674009B8954 /* Example */,
 				8461B30B23169677009B8954 /* ExampleTests */,
 				8461B2F523169674009B8954 /* Products */,
@@ -140,10 +189,12 @@
 				8461B2F123169674009B8954 /* Frameworks */,
 				8461B2F223169674009B8954 /* Resources */,
 				461C37B7727EF8F059C814D6 /* [CP] Embed Pods Frameworks */,
+				8433B1B4232CEF3300A91C8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8433B1B3232CEF3300A91C8C /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -199,6 +250,12 @@
 			mainGroup = 8461B2EB23169674009B8954;
 			productRefGroup = 8461B2F523169674009B8954 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8433B1A7232CED9600A91C8C /* Products */;
+					ProjectRef = 8433B1A6232CED9600A91C8C /* TomoWalletCore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8461B2F323169674009B8954 /* Example */,
@@ -206,6 +263,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8433B1AC232CED9600A91C8C /* TomoWalletCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TomoWalletCore.framework;
+			remoteRef = 8433B1AB232CED9600A91C8C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8433B1AE232CED9600A91C8C /* TomoWalletCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TomoWalletCoreTests.xctest;
+			remoteRef = 8433B1AD232CED9600A91C8C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8461B2F223169674009B8954 /* Resources */ = {
@@ -312,6 +386,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8433B1B3232CEF3300A91C8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TomoWalletCore;
+			targetProxy = 8433B1B2232CEF3300A91C8C /* PBXContainerItemProxy */;
+		};
 		8461B30A23169677009B8954 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8461B2F323169674009B8954 /* Example */;
@@ -459,16 +538,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F17C353DEA5FDE696701EC5 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2YK2PND54;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tomochain.MasterWallet.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/tomowallet-ios-core/Example/Example/Example-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,16 +561,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4677125DE3EECFE5BBC4B305 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2YK2PND54;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tomochain.MasterWallet.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/admin/tomowallet-ios-core/Example/Example/Example-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

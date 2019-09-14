@@ -12,7 +12,7 @@ enum SentTransactionType{
     case signed
 }
 
-struct SentTransaction {
+public struct SentTransaction {
     let id: String
     let original: SignTransaction
     let data: Data

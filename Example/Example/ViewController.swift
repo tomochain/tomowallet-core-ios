@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import MBProgressHUD
 import PromiseKit
+import Result
+import TomoWalletCore
 
 class ViewController: UIViewController {
     var wallet: TomoWallet?
@@ -16,9 +17,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let tomoSDK = WalletCore(network: .Mainnet)
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         tomoSDK.importWallet(recoveryPhase: "ordinary chest giant insane van denial twin music curve offer umbrella spot") { (result) in
-            MBProgressHUD.hide(for: self.view, animated: true)
+         
             switch result{
             case .success(let wallet):
                 print(wallet.getAddress())

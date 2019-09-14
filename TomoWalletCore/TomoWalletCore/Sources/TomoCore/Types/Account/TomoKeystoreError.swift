@@ -9,7 +9,7 @@
 
 
 import Foundation
-enum TomoKeystoreError: Swift.Error{
+public enum TomoKeystoreError: Swift.Error{
     case failedToDeleteAccount
     case failedToDecryptKey
     case failedToImport(Error)

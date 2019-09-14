@@ -170,7 +170,6 @@
 		8461B2DB23169622009B8954 /* TomoWalletCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8461B2D123169622009B8954 /* TomoWalletCore.framework */; };
 		8461B2E023169622009B8954 /* TomoWalletCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B2DF23169622009B8954 /* TomoWalletCoreTests.swift */; };
 		8461B2E223169622009B8954 /* TomoWalletCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 8461B2D423169622009B8954 /* TomoWalletCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8E03F876E67BDA1CE34F66F /* Pods_TomoWalletCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8000E739563B1D0E65C54658 /* Pods_TomoWalletCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,7 +282,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8E03F876E67BDA1CE34F66F /* Pods_TomoWalletCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
