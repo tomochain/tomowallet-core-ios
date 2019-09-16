@@ -13,6 +13,7 @@ import TomoWalletCore
 
 class ViewController: UIViewController {
     var wallet: TomoWallet?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +22,6 @@ class ViewController: UIViewController {
          
             switch result{
             case .success(let wallet):
-                print(wallet.getAddress())
                 self.wallet = wallet
             case .failure(let error):
                 print(error.localizedDescription)
@@ -63,6 +63,7 @@ class ViewController: UIViewController {
             }.catch{ (error) in
                 print(error.localizedDescription)
         }
+        
     }
     
     @IBAction func getBalance(_ sender: Any) {

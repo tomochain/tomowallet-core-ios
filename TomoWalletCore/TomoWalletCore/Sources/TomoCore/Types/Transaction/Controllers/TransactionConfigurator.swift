@@ -68,8 +68,9 @@ final class TransactionConfigurator {
             self.checkBalanceStatusGasFeeByTomo(completion: completion)
         case .token(let token, _ ):
             switch token.type{
-            case .TRC21(let isApplyIssuer):
-                if isApplyIssuer{
+            case .TRC21(let isApplyTomoZ):
+                if isApplyTomoZ{
+                    checkBalanceStatusGasFeeByToken(token: token, completion: completion)
                     
                 }else{
                     self.checkBalanceStatusGasFeeByTomo(completion: completion)
@@ -92,7 +93,7 @@ final class TransactionConfigurator {
     }
     private func checkBalanceStatusGasFeeByToken(token: TRCToken ,completion: @escaping (_ balanceStatus: BalanceStatus) -> Void) {
         firstly {
-            networkProvider.getMinFeeTRC21(contract: token.contract.description, amount: transaction.value)
+            networkProvider.estimateFeeTRC21(contract: token.contract.description, amount: transaction.value)
             }.done { gasFee in
                 self.refreshTokenfee(gasFee)
                 completion(self.balanceValidStatus())

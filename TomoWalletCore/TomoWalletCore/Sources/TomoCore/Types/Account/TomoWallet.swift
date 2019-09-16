@@ -37,8 +37,8 @@ extension TomoWalletError: LocalizedError{
 
 
 public protocol TomoWallet: class{
-    func getAddress() -> String
     
+    func getAddress() -> String
     func sendTomo(toAddress: String, amount:String) -> Promise<SentTransaction>
     func sendToken(contract: String, toAddress: String, amount: String) -> Promise<SentTransaction>
     
@@ -56,4 +56,3 @@ public protocol TomoWallet: class{
     func signPersonalMessage(message: Data) -> Promise<Data>
     func signHash(hash: Data) -> Promise<Data>
 }
-

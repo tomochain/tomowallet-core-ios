@@ -30,8 +30,9 @@ protocol NetworkProviderProtocol {
     func tokenName(contract: String) -> Promise<String>
     func tokenSymbol(contract: String) -> Promise<String>
     func tokenTotalSupply(contract: String) -> Promise<BigInt>
-    func getTokenTRC21Capacity(contract: String) -> Promise<BigInt>
-    func getMinFeeTRC21(contract: String, amount: BigInt) -> Promise<BigInt>
+    func checkIsApplyTomoZ(contract: String) -> Promise<Bool>
+    func estimateFeeTRC21(contract: String, amount: BigInt) -> Promise<BigInt>
+  
     func isContract(contract: String) -> Promise<Bool>
     
     func getTokenInfoFromScan(contract: String) -> Promise<TRCToken>
@@ -159,7 +160,7 @@ extension NetworkProvider: NetworkProviderProtocol{
         }
     }
     
-    func getTokenTRC21Capacity(contract: String) -> Promise<BigInt> {
+    func checkIsApplyTomoZ(contract: String) -> Promise<Bool> {
         return Promise { seal in
             guard let token = EthereumAddress(string: contract) else {
                 return seal.reject(NetworkProviderError.invalidAddress)
@@ -173,7 +174,11 @@ extension NetworkProvider: NetworkProviderProtocol{
                         guard let value = BigInt(valueDecodable.result.drop0x, radix: 16) else{
                             return seal.reject(NetworkProviderError.notCreateResponeValue)
                         }
-                        seal.fulfill(value)
+                        if value > BigInt(0){
+                            seal.fulfill(true)
+                        }else{
+                            seal.fulfill(false)
+                        }
                     }catch {
                         seal.reject(error)
                     }
@@ -185,10 +190,10 @@ extension NetworkProvider: NetworkProviderProtocol{
         }
     }
     
-    func getMinFeeTRC21(contract: String, amount: BigInt) -> Promise<BigInt> {
+    func estimateFeeTRC21(contract: String, amount: BigInt) -> Promise<BigInt> {
         return Promise { seal in
             let estimateFeeEncode = TRC21Encoder.estimateFee(amount: amount.magnitude)
-            provider.request(.getMinFeeTRC21(server: server, contract: contract, data: estimateFeeEncode.hexEncoded), completion: { (result) in
+            provider.request(.getEstimateFeeTRC21(server: server, contract: contract, data: estimateFeeEncode.hexEncoded), completion: { (result) in
                 switch result{
                 case .success(let response):
                     do {

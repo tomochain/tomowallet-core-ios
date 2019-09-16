@@ -11,7 +11,7 @@ import Result
 enum TRCType{
     case TRC20
     case TRC721
-    case TRC21(isApplyIssuer: Bool)
+    case TRC21(isApplyTomoZ: Bool)
     case Unkwown
 }
 
@@ -22,6 +22,16 @@ public struct TRCToken : Decodable {
     let decimals: Int
     let totalSupply: Double?
     let type: TRCType
+    
+    init(contract: EthereumAddress, name: String?, symbol: String, decimals: Int, totalSupply: Double?, type: TRCType) {
+        self.contract = contract
+        self.name = name
+        self.symbol = symbol
+        self.decimals = decimals
+        self.totalSupply = totalSupply
+        self.type = type
+    }
+    
     
     private enum TRCTokenCodingKeys: String, CodingKey {
         case hash
@@ -44,7 +54,7 @@ public struct TRCToken : Decodable {
         case "trc20":
             self.type = TRCType.TRC20
         case "trc21":
-            self.type = TRCType.TRC21(isApplyIssuer: false)
+            self.type = TRCType.TRC21(isApplyTomoZ: false)
         case "trc721":
             self.type = TRCType.TRC721
         default:

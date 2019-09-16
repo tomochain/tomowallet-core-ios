@@ -370,7 +370,7 @@ extension TomoKeystore: TomoKeystoreProtocol{
 }
 
 extension Coin {
-    public func derivationPath(at index: Int) -> DerivationPath {
+    func derivationPath(at index: Int) -> DerivationPath {
         return DerivationPath(purpose: 44, coinType: self.rawValue, account: 0, change: 0, address: index)
     }
 }

@@ -6,7 +6,7 @@
 
 import Foundation
 
-public enum Bitcoin {
+enum Bitcoin {
     public static let privateKeySize = 32
     public static let addressSize = 20
 

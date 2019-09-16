@@ -6,7 +6,7 @@
 
 import Foundation
 
-public struct BitcoinTransaction {
+struct BitcoinTransaction {
     /// Transaction data format version (note, this is signed)
     var version: Int32
 

@@ -6,7 +6,7 @@
 
 import Foundation
 
-public struct BitcoinAddress: Address, Hashable {
+struct BitcoinAddress: Address, Hashable {
     static let validAddressPrefixes = [
         Bitcoin.MainNet.publicKeyHashAddressPrefix,
         Bitcoin.MainNet.payToScriptHashAddressPrefix,

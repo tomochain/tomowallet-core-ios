@@ -21,7 +21,7 @@ enum Api{
     case checkIsContract(server: RPCServer, contract: String)
     
     // TRC 21
-    case getMinFeeTRC21(server: RPCServer, contract: String, data: String)
+    case getEstimateFeeTRC21(server: RPCServer, contract: String, data: String)
     case getTokenCapacityTRC21(server: RPCServer, data: String)
     
     case getTokenInfoFromScan(server: RPCServer, token: String)
@@ -53,7 +53,7 @@ extension Api: TargetType{
             return server.rpcURL
         case .getTransactionReceipt(let server,_):
             return server.rpcURL
-        case .getMinFeeTRC21(let server, _, _):
+        case .getEstimateFeeTRC21(let server, _, _):
             return server.rpcURL
         case .getTokenCapacityTRC21(let server, _):
             return server.rpcURL
@@ -87,7 +87,7 @@ extension Api: TargetType{
         case .getTransactionByHash: return .post
         case .getTransactionReceipt: return .post
         case .checkIsContract: return .post
-        case .getMinFeeTRC21: return .post
+        case .getEstimateFeeTRC21: return .post
         case .getTokenCapacityTRC21: return .post
         case .getTokenInfoFromScan: return .get
         }
@@ -188,7 +188,7 @@ extension Api: TargetType{
                 "id": 1
                 ] as [String : Any]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-        case .getMinFeeTRC21(let server, let contract, let data):
+        case .getEstimateFeeTRC21(_, let contract, let data):
             let parameters = [
                 "jsonrpc": "2.0",
                 "method": "eth_call",

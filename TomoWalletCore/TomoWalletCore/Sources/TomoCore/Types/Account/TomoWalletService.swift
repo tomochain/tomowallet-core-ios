@@ -78,7 +78,28 @@ class TomoWalletService{
     }
     
     func getTokenInfo(contract: EthereumAddress) -> Promise<TRCToken> {
-        return networkProvider.getTokenInfoFromScan(contract: contract.description)
+        return Promise {seal in
+            firstly{
+                networkProvider.getTokenInfoFromScan(contract: contract.description)
+                }.done({ (token) in
+                    switch token.type{
+                    case .TRC21:
+                        firstly{
+                            self.IsApplyTomoZ(contract: token.contract)
+                            }.done{ (isApply) in
+                                let tokenTRC21 = TRCToken(contract: token.contract, name: token.name, symbol: token.symbol, decimals: token.decimals, totalSupply: token.totalSupply, type: .TRC21(isApplyTomoZ: isApply))
+                                seal.fulfill(tokenTRC21)
+                                
+                            }.catch({ (error) in
+                                seal.reject(error)
+                            })
+                    default:
+                        seal.fulfill(token)
+                    }
+                }).catch({ (error) in
+                    seal.reject(error)
+                })
+        }
     }
     
 
@@ -114,6 +135,13 @@ class TomoWalletService{
                     seal.fulfill(transactionConfigurator.signTransaction)
                 }
             })
+        }
+    }
+    
+    private func IsApplyTomoZ(contract: EthereumAddress) -> Promise<Bool>{
+        return Promise{seal in
+            
+            
         }
     }
 }
