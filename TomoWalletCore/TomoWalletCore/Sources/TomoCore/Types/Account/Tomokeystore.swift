@@ -295,7 +295,7 @@ class TomoKeystore {
 //            guard !storage.addresses.contains(watchWallet) else {
 //                return completion(.failure(.duplicateAccount))
 //            }
-            storage.store(address: [watchWallet])
+            storage.store(address: watchWallet)
             completion(.success(TomoWalletService(type: TomoWalletType.address(Coin.tomo, address), keyStore: self)))
             
         }
