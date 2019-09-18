@@ -34,9 +34,6 @@ struct TomoWalletInfo {
     var multiWallet: Bool {
         return self.accounts.count > 1
     }
-    var mainWallet: Bool{
-        return info.mainWallet
-    }
     
     var accounts: [Account]{
         switch type {

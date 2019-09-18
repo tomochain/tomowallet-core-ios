@@ -10,13 +10,11 @@ import Foundation
 
 
 
-final class TomoWalletObject: Decodable{
+final class TomoWalletObject: Codable{
     var id: String = ""
     var name: String = ""
     var createdAt: Date = Date()
     var completedBackup: Bool = false
-    var mainWallet: Bool = false
-    var balance: String = ""
     
     static func from(_ type: TomoWalletType) -> TomoWalletObject{
         let info = TomoWalletObject()

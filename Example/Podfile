@@ -10,7 +10,6 @@ target 'Example' do
   pod 'SwiftProtobuf'
   pod 'CryptoSwift','0.15.0'
   pod 'KeychainSwift'
-  pod 'RealmSwift'
   pod 'Moya', '~> 12.0.1'
   pod 'PromiseKit'
   

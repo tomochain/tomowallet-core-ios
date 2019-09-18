@@ -46,6 +46,7 @@ class TomoWalletService{
         self.noneProvider = GetNonceProvider(server: self.server, address: account.address, provider: apiProviderFactory)
         self.chainState = ChainSate(server: self.server, provider: apiProviderFactory)
         self.chainState.fetch()
+        
     }
 
     private func makeUnconfirmedTransaction(transfer: Transfer, amount: BigInt, nonce: BigInt, toAddress: EthereumAddress) ->  UnconfirmedTransaction{
@@ -139,10 +140,7 @@ class TomoWalletService{
     }
     
     private func IsApplyTomoZ(contract: EthereumAddress) -> Promise<Bool>{
-        return Promise{seal in
-            
-            
-        }
+        return networkProvider.checkIsApplyTomoZ(contract: contract.description)
     }
 }
 

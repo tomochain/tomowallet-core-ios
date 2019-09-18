@@ -27,7 +27,6 @@ final class GetNonceProvider: NonceProvider {
                 case.success(let response):
                     guard let responseValue:[String: Any] = (try! response.mapJSON() as? [String: Any]),let countHash = responseValue["result"] as? String, let count = BigInt(countHash.drop0x, radix: 16) else{
                         return seal.reject(NetworkProviderError.notCreateResponeValue)
-                        
                     }
                     seal.fulfill(count)
                 case .failure(let error):

@@ -15,6 +15,7 @@ public enum TomoWalletError: Swift.Error{
     case InvalidToken
     case Insufficient(mgs: String)
     case ErrorFromServer(msg: String)
+    case AddressOnly
    
 }
 extension TomoWalletError: LocalizedError{
@@ -30,14 +31,18 @@ extension TomoWalletError: LocalizedError{
             return NSLocalizedString("Invalid Token", comment: "")
         case .ErrorFromServer(let msg):
             return msg
+        case .AddressOnly:
+            return NSLocalizedString("This wallet is read-only wallet. You can only view the balance and transaction history. To perform any transaction, please remove current wallet and import again using Private Key or Recovery Phrase.", comment: "")
+            
         }
     }
 }
 
 
 
+
+
 public protocol TomoWallet: class{
-    
     func getAddress() -> String
     func sendTomo(toAddress: String, amount:String) -> Promise<SentTransaction>
     func sendToken(contract: String, toAddress: String, amount: String) -> Promise<SentTransaction>
