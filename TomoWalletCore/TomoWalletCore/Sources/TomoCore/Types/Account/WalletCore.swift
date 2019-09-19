@@ -74,7 +74,23 @@ public class WalletCore {
     
     public init(network: TomoChainNetwork) {
         self.tomoKeystoreProtocol = TomoKeystore(network: network)
+        inializers()
     }
+    
+    func inializers() {
+        // disable backup data by itune
+        var paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true).compactMap { URL(fileURLWithPath: $0) }
+        print(paths)
+        paths.append(tomoKeystoreProtocol.keysDirectory)
+        
+        let initializers: [Initializer] = [
+            SkipBackupFilesInitializer(paths: paths),
+        ]
+        initializers.forEach { $0.perform() }
+    }
+
+    
+   
     
     public func createWallet(completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void){
         tomoKeystoreProtocol.createWallet(completion: completion)
