@@ -6,26 +6,26 @@
 
 import Foundation
 /// Coin wallet.
-public final class Wallet: Hashable {
+final class Wallet: Hashable {
     /// Unique wallet identifier.
-    public let identifier: String
+    let identifier: String
 
     /// URL for the key file on disk.
-    public var keyURL: URL
+    var keyURL: URL
 
     /// Encrypted wallet key
-    public var key: KeystoreKey
+    var key: KeystoreKey
 
     /// Wallet type.
-    public var type: WalletType {
+    var type: WalletType {
         return key.type
     }
 
     /// Wallet accounts.
-    public internal(set) var accounts = [Account]()
+    var accounts = [Account]()
 
     /// Creates a `Wallet` from an encrypted key.
-    public init(keyURL: URL, key: KeystoreKey) {
+    init(keyURL: URL, key: KeystoreKey) {
         identifier = keyURL.lastPathComponent
         self.keyURL = keyURL
         self.key = key
@@ -37,7 +37,7 @@ public final class Wallet: Hashable {
     /// - Returns: the account
     /// - Throws: `WalletError.invalidKeyType` if this is an HD wallet `DecryptError.invalidPassword` if the
     ///           password is incorrect.
-    public func getAccount(password: String) throws -> Account {
+    func getAccount(password: String) throws -> Account {
         guard key.type == .encryptedKey else {
             throw WalletError.invalidKeyType
         }
@@ -67,7 +67,7 @@ public final class Wallet: Hashable {
     /// - Returns: the accounts
     /// - Throws: `WalletError.invalidKeyType` if this is not an HD wallet `DecryptError.invalidPassword` if the
     ///           password is incorrect.
-    public func getAccounts(derivationPaths: [DerivationPath], password: String) throws -> [Account] {
+    func getAccounts(derivationPaths: [DerivationPath], password: String) throws -> [Account] {
         guard key.type == .hierarchicalDeterministicWallet else {
             throw WalletError.invalidKeyType
         }

@@ -142,10 +142,29 @@ class TomoWalletService{
     private func IsApplyTomoZ(contract: EthereumAddress) -> Promise<Bool>{
         return networkProvider.checkIsApplyTomoZ(contract: contract.description)
     }
+    
+    func isSignerWallet() -> Bool {
+        switch self.type {
+        case .hd, .privateKey:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 extension TomoWalletService: TomoWallet{
-    
+    func walletType() -> Type {
+        switch type {
+        case .address:
+            return Type.AddressOnly
+        case .hd:
+            return Type.HDWallet
+        case .privateKey:
+            return Type.Privatekey
+        }
+    }
+
     func getAddress() -> String {
         return account.address.description
     }
@@ -154,6 +173,7 @@ extension TomoWalletService: TomoWallet{
             guard let receive = EthereumAddress(string: toAddress) else {
                 return seal.reject(TomoWalletError.InvalidAddress)
             }
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             firstly{
                 networkProvider.tomoBalance()
                 }.then({ (balance) -> Promise<SignTransaction> in
@@ -175,7 +195,7 @@ extension TomoWalletService: TomoWallet{
             guard let contract = EthereumAddress(string: contract), let receive = EthereumAddress(string: toAddress) else {
                 return seal.reject(TomoWalletError.InvalidAddress)
             }
-            
+             if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             firstly {
                 self.getTokenInfo(contract: contract)
                 }.done { (token) in
@@ -267,7 +287,7 @@ extension TomoWalletService: TomoWallet{
             guard let receive = EthereumAddress(string: toAddress) else {
                 return seal.reject(TomoWalletError.InvalidAddress)
             }
-            
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             firstly{
                 networkProvider.tomoBalance()
                 }.then({ (balance) -> Promise<SignTransaction> in
@@ -286,6 +306,7 @@ extension TomoWalletService: TomoWallet{
             guard let receive = EthereumAddress(string: toAddress) else {
                 return seal.reject(TomoWalletError.InvalidAddress)
             }
+             if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             let p1 = networkProvider.tomoBalance()
             let p2 = networkProvider.tokenBalance(contract: token.contract.description)
             firstly{
@@ -303,6 +324,7 @@ extension TomoWalletService: TomoWallet{
     
     func sendTransaction(signTransaction: SignTransaction) -> Promise<SentTransaction> {
         return Promise {seal in
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             self.sendTransactionsCoordinator.send(confirmType: .signThenSend, transaction: signTransaction, for: self.account) { (result) in
                 switch result{
                 case .success(let confirmResult):
@@ -321,6 +343,7 @@ extension TomoWalletService: TomoWallet{
     
     func signTransaction(signTransaction: SignTransaction) -> Promise<SentTransaction> {
         return Promise {seal in
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             self.sendTransactionsCoordinator.send(confirmType: .sign, transaction: signTransaction, for: self.account) { (result) in
                 switch result{
                 case .success(let confirmResult):
@@ -339,6 +362,7 @@ extension TomoWalletService: TomoWallet{
     
     func signMessage(message: Data) -> Promise<Data> {
         return Promise { seal in
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             let result = keyStore.signMessage(message, for: self.account)
             switch result {
             case .success(let data):
@@ -351,6 +375,7 @@ extension TomoWalletService: TomoWallet{
     
     func signPersonalMessage(message: Data) -> Promise<Data> {
         return Promise {seal in
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             let result = keyStore.signPersonalMessage(message, for: self.account)
             switch result{
             case .success(let data):
@@ -363,6 +388,7 @@ extension TomoWalletService: TomoWallet{
     
     func signHash(hash: Data) -> Promise<Data> {
         return Promise {seal in
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
             let result = keyStore.signHash(hash, for: self.account)
             switch result{
             case .success(let data):
@@ -370,6 +396,34 @@ extension TomoWalletService: TomoWallet{
             case.failure(let error):
                 seal.reject(error)
             }
+        }
+    }
+    
+    func exportPrivateKey() -> Promise<String> {
+        return Promise { seal in
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
+            self.keyStore.exportPrivateKey(account: self.account, completion: { (result) in
+                switch result{
+                case .success(let data):
+                    seal.fulfill(data.toHexString())
+                case .failure(let error):
+                    seal.reject(error)
+                }
+            })
+        }
+    }
+    
+    func exportMnemonic() -> Promise<String> {
+        return Promise {seal in
+            if !self.isSignerWallet() {return seal.reject(TomoWalletError.AddressOnly)}
+            self.keyStore.exportMnemonic(wallet: self.account.wallet!, completion: { (result) in
+                switch result{
+                case .success(let strings):
+                    seal.fulfill(strings.joined(separator: " "))
+                case .failure(let error):
+                    seal.reject(error)
+                }
+            })
         }
     }
 }

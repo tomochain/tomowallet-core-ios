@@ -33,14 +33,14 @@ extension TomoWalletError: LocalizedError{
             return msg
         case .AddressOnly:
             return NSLocalizedString("This wallet is read-only wallet. You can only view the balance and transaction history. To perform any transaction, please remove current wallet and import again using Private Key or Recovery Phrase.", comment: "")
-            
         }
     }
 }
-
-
-
-
+public enum Type {
+    case AddressOnly
+    case Privatekey
+    case HDWallet
+}
 
 public protocol TomoWallet: class{
     func getAddress() -> String
@@ -60,4 +60,11 @@ public protocol TomoWallet: class{
     func signMessage(message: Data) -> Promise<Data>
     func signPersonalMessage(message: Data) -> Promise<Data>
     func signHash(hash: Data) -> Promise<Data>
+    
+    func exportPrivateKey() -> Promise<String>
+    func exportMnemonic() -> Promise<String>
+    func walletType() -> Type
 }
+
+
+

@@ -2,4 +2,150 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+            timestampString = "590645198.133883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "exportMnemonic(wallet:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+            timestampString = "590645198.134456"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "exportMnemonic(wallet:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+            timestampString = "590645198.1349961"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "exportMnemonic(wallet:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+            timestampString = "590645198.1355931"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "exportMnemonic(wallet:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+            timestampString = "590645218.985268"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "exportMnemonic(wallet:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in TomoWalletCore.TomoKeystore.exportMnemonic(wallet: TomoWalletCore.Wallet, completion: (Result.Result&lt;Swift.Array&lt;Swift.String&gt;, TomoWalletCore.TomoKeystoreError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TomoWalletCore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/tomowallet-ios-core/TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+                  timestampString = "590645218.991673"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "588">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in TomoWalletCore.TomoKeystore.exportMnemonic(wallet: TomoWalletCore.Wallet, completion: (Result.Result&lt;Swift.Array&lt;Swift.String&gt;, TomoWalletCore.TomoKeystoreError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TomoWalletCore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/tomowallet-ios-core/TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+                  timestampString = "590645218.995042"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "216"
+                  endingLineNumber = "216"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+            timestampString = "590645219.593093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "exportMnemonic(wallet:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../TomoWalletCore/TomoWalletCore/Sources/TomoCore/Types/Account/Tomokeystore.swift"
+            timestampString = "590645220.080382"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "exportMnemonic(wallet:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

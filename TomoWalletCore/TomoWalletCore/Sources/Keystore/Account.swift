@@ -7,7 +7,7 @@
 import Foundation
 
 /// Account represents a specific address in a wallet.
-public final class Account: Codable, Hashable {
+final class Account: Codable, Hashable {
     /// Wallet this account belongs to.
     public weak var wallet: Wallet?
 

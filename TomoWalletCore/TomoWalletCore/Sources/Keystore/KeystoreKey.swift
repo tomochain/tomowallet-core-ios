@@ -9,50 +9,50 @@ import Foundation
 import Security
 
 /// Key definition.
-public struct KeystoreKey {
+struct KeystoreKey {
     /// Wallet type.
-    public var type: WalletType
+    var type: WalletType
 
     /// Wallet UUID, optional.
-    public var id: String?
+    var id: String?
 
-    public var address: String?
+    var address: String?
 
     /// Key header with encrypted private key and crypto parameters.
-    public var crypto: KeystoreKeyHeader
+    var crypto: KeystoreKeyHeader
 
     /// Mnemonic passphrase
-    public var passphrase = ""
+    var passphrase = ""
 
     /// Key version, must be 3.
-    public var version = 3
+    var version = 3
 
     /// Coin
-    public var coin: Coin?
+    var coin: Coin?
 
     /// List of active accounts.
-    public var activeAccounts = [Account]()
+    var activeAccounts = [Account]()
 
     /// Creates a new `Key` with a password.
-    public init(password: String, for coin: Coin) throws {
+    init(password: String, for coin: Coin) throws {
         let key = PrivateKey()
         try self.init(password: password, key: key, coin: coin)
     }
 
     /// Creates a new `Key` with a password.
-    public init(password: String) throws {
+    init(password: String) throws {
         let mnemonic = Crypto.generateMnemonic(strength: 128)
         try self.init(password: password, mnemonic: mnemonic, passphrase: "")
     }
 
     /// Initializes a `Key` from a JSON wallet.
-    public init(contentsOf url: URL) throws {
+    init(contentsOf url: URL) throws {
         let data = try Data(contentsOf: url)
         self = try JSONDecoder().decode(KeystoreKey.self, from: data)
     }
 
     /// Initializes a `Key` by encrypting a private key with a password.
-    public init(password: String, key: PrivateKey, coin: Coin) throws {
+    init(password: String, key: PrivateKey, coin: Coin) throws {
         id = UUID().uuidString.lowercased()
         crypto = try KeystoreKeyHeader(password: password, data: key.data)
         type = .encryptedKey
@@ -60,7 +60,7 @@ public struct KeystoreKey {
     }
 
     /// Initializes a `Key` by encrypting a mnemonic phrase with a password.
-    public init(password: String, mnemonic: String, passphrase: String = "") throws {
+    init(password: String, mnemonic: String, passphrase: String = "") throws {
         id = UUID().uuidString.lowercased()
 
         guard let cstring = mnemonic.cString(using: .ascii) else {
@@ -75,7 +75,7 @@ public struct KeystoreKey {
     }
 
     /// Decrypts the key and returns the private key.
-    public func decrypt(password: String) throws -> Data {
+    func decrypt(password: String) throws -> Data {
         let derivedKey: Data
         switch crypto.kdf {
         case "scrypt":
@@ -114,14 +114,14 @@ public struct KeystoreKey {
     }
 }
 
-public enum DecryptError: Error {
+enum DecryptError: Error {
     case unsupportedKDF
     case unsupportedCipher
     case invalidCipher
     case invalidPassword
 }
 
-public enum EncryptError: Error {
+enum EncryptError: Error {
     case invalidMnemonic
 }
 
@@ -145,7 +145,7 @@ extension KeystoreKey: Codable {
         static let mnemonic = "mnemonic"
     }
 
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let altValues = try decoder.container(keyedBy: UppercaseCodingKeys.self)
 
@@ -180,7 +180,7 @@ extension KeystoreKey: Codable {
         }
     }
 
-    public func encode(to encoder: Encoder) throws {
+   func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         switch type {
         case .encryptedKey:

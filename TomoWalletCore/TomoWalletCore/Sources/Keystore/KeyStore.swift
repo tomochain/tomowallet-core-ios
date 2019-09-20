@@ -9,13 +9,13 @@ import Foundation
 /// Manages directories of key and wallet files and presents them as accounts.
 public final class KeyStore {
     /// The key file directory.
-    public let keyDirectory: URL
+    let keyDirectory: URL
 
     /// List of wallets.
-    public private(set) var wallets = [Wallet]()
+    private(set) var wallets = [Wallet]()
 
     /// Creates a `KeyStore` for the given directory.
-    public init(keyDirectory: URL) throws {
+    init(keyDirectory: URL) throws {
         self.keyDirectory = keyDirectory
         try load()
     }
@@ -41,13 +41,13 @@ public final class KeyStore {
     }
 
     /// Creates a new wallet. HD default by default
-    public func createWallet(password: String, derivationPaths: [DerivationPath]) throws -> Wallet {
+    func createWallet(password: String, derivationPaths: [DerivationPath]) throws -> Wallet {
         let key = try KeystoreKey(password: password)
         return try saveCreatedWallet(for: key, password: password, derivationPaths: derivationPaths)
     }
 
     /// Creates a new wallet. Private Key default by default
-    public func createWallet(password: String, for coin: Coin) throws -> Wallet {
+    func createWallet(password: String, for coin: Coin) throws -> Wallet {
         let key = try KeystoreKey(password: password, for: coin)
         return try saveCreatedWallet(for: key, password: password, derivationPaths: [])
     }
@@ -69,7 +69,7 @@ public final class KeyStore {
     }
 
     /// Adds accounts to a wallet.
-    public func addAccounts(wallet: Wallet, derivationPaths: [DerivationPath], password: String) throws -> [Account] {
+    func addAccounts(wallet: Wallet, derivationPaths: [DerivationPath], password: String) throws -> [Account] {
         let accounts = try wallet.getAccounts(derivationPaths: derivationPaths, password: password)
         try save(wallet: wallet, in: wallet.keyURL)
         return accounts
@@ -82,7 +82,7 @@ public final class KeyStore {
     ///   - password: key password
     ///   - newPassword: password to use for the imported key
     /// - Returns: new account
-    public func `import`(json: Data, password: String, newPassword: String, coin: Coin) throws -> Wallet {
+   func `import`(json: Data, password: String, newPassword: String, coin: Coin) throws -> Wallet {
         let key = try JSONDecoder().decode(KeystoreKey.self, from: json)
 
         var privateKeyData = try key.decrypt(password: password)
@@ -101,7 +101,7 @@ public final class KeyStore {
     ///   - privateKey: private key to import
     ///   - password: password to use for the imported private key
     /// - Returns: new wallet
-    public func `import`(privateKey: PrivateKey, password: String, coin: Coin) throws -> Wallet {
+    func `import`(privateKey: PrivateKey, password: String, coin: Coin) throws -> Wallet {
         let newKey = try KeystoreKey(password: password, key: privateKey, coin: coin)
         let url = makeAccountURL()
         let wallet = Wallet(keyURL: url, key: newKey)
@@ -120,7 +120,7 @@ public final class KeyStore {
     ///   - passphrase: wallet's password
     ///   - encryptPassword: password to use for encrypting
     /// - Returns: new account
-    public func `import`(mnemonic: String, passphrase: String = "", encryptPassword: String, derivationPath: DerivationPath) throws -> Wallet {
+    func `import`(mnemonic: String, passphrase: String = "", encryptPassword: String, derivationPath: DerivationPath) throws -> Wallet {
 //        if !Crypto.isValid(mnemonic: mnemonic) {
 //            throw Error.invalidMnemonic
 //        }
@@ -144,7 +144,7 @@ public final class KeyStore {
     ///   - password: account password
     ///   - newPassword: password to use for exported key
     /// - Returns: encrypted JSON key
-    public func export(wallet: Wallet, password: String, newPassword: String) throws -> Data {
+    func export(wallet: Wallet, password: String, newPassword: String) throws -> Data {
         var privateKeyData = try wallet.key.decrypt(password: password)
         defer {
             privateKeyData.resetBytes(in: 0 ..< privateKeyData.count)
@@ -174,7 +174,7 @@ public final class KeyStore {
     ///   - wallet: wallet to export
     ///   - password: account password
     /// - Returns: private key data for encrypted keys or menmonic phrase for HD wallets
-    public func exportPrivateKey(wallet: Wallet, password: String) throws -> Data {
+    func exportPrivateKey(wallet: Wallet, password: String) throws -> Data {
         return try wallet.key.decrypt(password: password)
     }
 
@@ -185,7 +185,7 @@ public final class KeyStore {
     ///   - password: account password
     /// - Returns: mnemonic phrase
     /// - Throws: `EncryptError.invalidMnemonic` if the account is not an HD wallet.
-    public func exportMnemonic(wallet: Wallet, password: String) throws -> String {
+    func exportMnemonic(wallet: Wallet, password: String) throws -> String {
         var data = try wallet.key.decrypt(password: password)
         defer {
             data.resetBytes(in: 0 ..< data.count)
@@ -212,7 +212,7 @@ public final class KeyStore {
     ///   - wallet: wallet to update
     ///   - password: current password
     ///   - newPassword: new password
-    public func update(wallet: Wallet, password: String, newPassword: String) throws {
+    func update(wallet: Wallet, password: String, newPassword: String) throws {
         guard let index = wallets.index(of: wallet) else {
             fatalError("Missing wallet")
         }
@@ -238,7 +238,7 @@ public final class KeyStore {
     }
 
     /// Deletes an account including its key if the password is correct.
-    public func delete(wallet: Wallet, password: String) throws {
+    func delete(wallet: Wallet, password: String) throws {
         guard let index = wallets.index(of: wallet) else {
             fatalError("Missing wallet")
         }
