@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         let tomoSDK = WalletCore(network: .Mainnet)
         
-         self.wallet = tomoSDK.getAllWallets().first{$0.walletType() == Type.Privatekey}
+         self.wallet = tomoSDK.getAllWallets().first{$0.walletType() == Type.HDWallet}
         
         
         firstly {

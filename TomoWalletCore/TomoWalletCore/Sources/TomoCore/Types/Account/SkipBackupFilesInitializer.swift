@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Initializer {
+public protocol Initializer {
     func perform()
 }
 
