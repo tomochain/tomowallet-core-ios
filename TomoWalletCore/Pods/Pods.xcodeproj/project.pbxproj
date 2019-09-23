@@ -60,6 +60,7 @@
 		15F705D12A657D437DF9AD4004F623CF /* Message+JSONAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75C976D345215887218689D1451143B /* Message+JSONAdditions.swift */; };
 		1945CD5D63A1C164AEAAA9A33E85571E /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F161BA698FDBBDCC87541D16C7B45ED /* Alamofire-dummy.m */; };
 		1986B50C74F1697EA43F68335C93CEB3 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BEE5003B694FDCDA2658133986CD7D /* MultipartFormData.swift */; };
+		1BF270219544AC54E0246141BF21F934 /* Pods-TomoWalletCoreTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AFBF2274ED066FD875BAEF9DCE90D1 /* Pods-TomoWalletCoreTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C482705924CA6C3DF716EC60624900B /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A3845889D66711A0054C6F791619BB /* Generics.swift */; };
 		1CE118BE576309EBD5319197F906E6C5 /* BinaryDelimited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3578ADAA6BC9F0F96849470159941 /* BinaryDelimited.swift */; };
 		1DA65252FD1D400634DFFB90C2F021BB /* MoyaProvider+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086BD7A1A78E2ACB5C9DE4D0CA259E5E /* MoyaProvider+Defaults.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -72,7 +73,6 @@
 		246E30D61B6AE6C6C5200FF988F7001F /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA1B1DA4F19C57F549ADB40718A67A /* Version.swift */; };
 		25CEAA970917552AB1C69CD8732CA4A2 /* Google_Protobuf_Timestamp+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D08875AC96DF41761159523968E273 /* Google_Protobuf_Timestamp+Extensions.swift */; };
 		264D77E4FDF313C166CCC0594BC063B5 /* ed25519-sha3.h in Headers */ = {isa = PBXBuildFile; fileRef = AFA38B126205440DE5D947D95B953157 /* ed25519-sha3.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		26903AA743BFB75F91BAEAD245810559 /* Pods-TomoWalletCoreTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A5DC8BEE3561FA6FAFF811060545ECC /* Pods-TomoWalletCoreTests-dummy.m */; };
 		277E12D43CFFFD87024611D90437BECF /* Google_Protobuf_Any+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82138785EE6F3A212C161FA51285DE /* Google_Protobuf_Any+Extensions.swift */; };
 		28376D8669E5E1C0EF29D1895E23D6CD /* check_mem.h in Headers */ = {isa = PBXBuildFile; fileRef = B0CF061FE530CADA3E95875D6F24698A /* check_mem.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		288C9C8D14929931472CA6D196D885CD /* Process+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66A08E3E0DB013B5455DC284279B763 /* Process+Promise.swift */; };
@@ -114,6 +114,7 @@
 		43C38DE276ABDA78F190ABA25BF58F85 /* pbkdf2.h in Headers */ = {isa = PBXBuildFile; fileRef = 0412FE6AAB7D3EFA9538931F6E5F594E /* pbkdf2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4451700D4088680020D84E31BB7EFB96 /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A841D9E7AA0F56CE03074B131204CB4B /* NSNotificationCenter+Promise.swift */; };
 		448506F29495E3B3BAB56D093D681C1A /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DD1435956AFC9719CFEADE06F12E93 /* Authenticator.swift */; };
+		454A34366CABBB492ECFD7571AFDCAAF /* Pods-TomoWalletCoreTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0841D3FDED8541CA2B48DA068DE55426 /* Pods-TomoWalletCoreTests-dummy.m */; };
 		456986BE6E640307E83E2E3107E085DD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304B1628C3D5E3B8FAB52D665ACC191 /* Result.swift */; };
 		45746D692A8E7F09C0EED2675231EF41 /* StreamEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D5FC5E005A84497D154BF0F18B9F2A /* StreamEncryptor.swift */; };
 		46392AA9E479C1A00AAB4FD7CCA3F776 /* rc4.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D89ADB380E3B77C9B32A46D076CF0D2 /* rc4.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -156,7 +157,8 @@
 		5AA2452384D452BD163E1F9AC3F6500C /* TextFormatDecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F778FD86B1D65AA0482217FCBD463A /* TextFormatDecodingError.swift */; };
 		5AF9CEC81D4E403446C71A240FB56539 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07DA195DEE2CF933FDE91B468AB47AF /* after.swift */; };
 		5B8A5FDFCDA736C6929320348B66149D /* CMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687E3D190E588B606167AC8C3381B84B /* CMAC.swift */; };
-		5BD91A4C6FDF54447E3545FA61559FCF /* Pods-TomoWalletCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A0C13C1443A0BF784846CA8A48E972 /* Pods-TomoWalletCore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B9D47B1882481D9CEF21D6F9D1354EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669908632522C98BF9C9CD6F831A9D95 /* Foundation.framework */; };
+		5BD91A4C6FDF54447E3545FA61559FCF /* Pods-TomoWalletCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B69A37DB0569011FE388D3B99582BBDC /* Pods-TomoWalletCore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CEFD4F8821A3A1BD6C78FFCBCC98DA4 /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A2F9AC7A712BBD002C3FDD016F101 /* AES+Foundation.swift */; };
 		5D2D358E754D92564B259BBACFBA8271 /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 61B514D103796A324FD4E1BEE7BF8EBC /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D6534A272FEBBCFCAE4501FA55000FF /* blake256.c in Sources */ = {isa = PBXBuildFile; fileRef = C5F018191E34F55F51358B2271E49333 /* blake256.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -205,7 +207,6 @@
 		7D8AB1B50E41C972817A9BB5AC22025A /* blake256.h in Headers */ = {isa = PBXBuildFile; fileRef = BC97676F3433CA4ED68CCADE55D393AF /* blake256.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DDF031972B1DD3E3CDE5345EFA420C8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA61E06100C49E6E295A9CC58ACDF4F /* Alamofire.framework */; };
 		7E3E6309C4EB4C70BC8AF5EB9CA3B6FB /* Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786516058E2F6E540705F285A483EE8D /* Poly1305.swift */; };
-		7E4B59DEFD97814F68217AD5E8D3C608 /* Pods-TomoWalletCoreTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D062CDFF6472D823B60AE3D795C92A83 /* Pods-TomoWalletCoreTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E6F4EFB85936E0B3EB9AD287F074C36 /* PKCS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656656012BAB3BAD5649ED7359C535ED /* PKCS7.swift */; };
 		7EECE9FCF5E07473E6D0FE80BFCB94C9 /* BigInt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9A23BC2EAC9C2C720C4C56A76FF983A /* BigInt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		803869A3368294E715952533D4F2326E /* MoyaProvider+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FA350E4402F0D0BAB75B5EC4A6BFCA /* MoyaProvider+Internal.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -311,7 +312,6 @@
 		BEE6B677416CA71C981D1D3F60B18C96 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17BD0550855FCC5F766C315071BDB79 /* Alamofire.swift */; };
 		C055425AB95F7C692ACD79B2F54434FE /* CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8E7239A5315BEA2CE7A635A33BC64C /* CustomStringConvertible.swift */; };
 		C09E7BB40ABCDAFC5495E83B49083AAD /* race.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA3FC62C705CC77CD63F8E934E75C41 /* race.m */; };
-		C0BAE55918754E6A407791524D27F96C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669908632522C98BF9C9CD6F831A9D95 /* Foundation.framework */; };
 		C138FACCB027B81AE55814AA990543D5 /* OFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D134EE6F0301E57CF0622F9E45B1B6A /* OFB.swift */; };
 		C17E552920AF110E9DB7AB635C65A12D /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F05D29471ACDBE37F8021BE307E1C /* Scrypt.swift */; };
 		C3905037CE8620D38EF4DA0AB90C106C /* KeychainSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A29D4ACB7EF8B0C287EE009DE190148 /* KeychainSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -374,7 +374,7 @@
 		E0903E79DE83FEDB96D719E4D13E3727 /* segwit_addr.c in Sources */ = {isa = PBXBuildFile; fileRef = F6EA7DB97683E38D1BAE8162F1464591 /* segwit_addr.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E15DF474044FAC34C83A2443FB367B4E /* aes_modes.c in Sources */ = {isa = PBXBuildFile; fileRef = D9EC0353979C5EF7D92E50C347EDA993 /* aes_modes.c */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E1C2B2602FF8A0A0856A2C381783B056 /* Prime Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998C27D0C803EF0A5CAB5EE8EDA80A82 /* Prime Test.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E1DAE94AB690D48FD669505B970190E7 /* Pods-TomoWalletCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88940A24B867F81AB762E34317B77206 /* Pods-TomoWalletCore-dummy.m */; };
+		E1DAE94AB690D48FD669505B970190E7 /* Pods-TomoWalletCore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BDDC0D02B28B6A5DCF4C85A478B592 /* Pods-TomoWalletCore-dummy.m */; };
 		E253C856872AE7E25EAAFEDD0912BCDE /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8337EFF0ADF8FA9E59726F32A9D60C25 /* MultipartFormData.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E37359C510ACD262A7E820C77D260CB6 /* UIView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D062E384B156EBCA552F08E76CED09D0 /* UIView+AnyPromise.m */; };
 		E3747EC31FCCA97D75A81FC700CF7E24 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C24AADF27B174716B782F3A82601419 /* ResponseSerialization.swift */; };
@@ -428,12 +428,19 @@
 			remoteGlobalIDString = E163AC315AD24CFBD60C178D602BFC83;
 			remoteInfo = Result;
 		};
-		08935C6FFA635ED9C59E44EBDB1B4103 /* PBXContainerItemProxy */ = {
+		0831AF4A35F194281BB770CCDC41F094 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FCBDE70276F17F8B497F4249D1F57D7B;
-			remoteInfo = "Pods-TomoWalletCore";
+			remoteGlobalIDString = A5F702E0DA383BC1479572581615A916;
+			remoteInfo = SwiftProtobuf;
+		};
+		0859B9FA6040477C2CA90B02E03CA665 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EA588EF05664079E2B17F07894E92C7;
+			remoteInfo = TrezorCrypto;
 		};
 		0ADBE15A67F84C97F7CB604750B449FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -449,6 +456,13 @@
 			remoteGlobalIDString = 17F9141D333DA1A7BE5937F227221070;
 			remoteInfo = Moya;
 		};
+		4580CD634A0B971FEC6AD4269ECF289D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCBDE70276F17F8B497F4249D1F57D7B;
+			remoteInfo = "Pods-TomoWalletCore";
+		};
 		45DBBED6469E54BB467D590C452C3AB3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -463,12 +477,47 @@
 			remoteGlobalIDString = A5F702E0DA383BC1479572581615A916;
 			remoteInfo = SwiftProtobuf;
 		};
+		5D3004AB9299A16C814CD4996E974AC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09DD83B7D075842A3A5105AD410BD38A;
+			remoteInfo = BigInt;
+		};
+		73CD6588904054065E815ABFEE91F115 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		7AFB82CB82E6CF5FC0C36BF5105F12E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E163AC315AD24CFBD60C178D602BFC83;
+			remoteInfo = Result;
+		};
+		825D4D84D14A2FE91CF95277B3A31866 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99313990C1D76A6D1D017868B6975CC8;
+			remoteInfo = CryptoSwift;
+		};
 		826595B693650C0162D7B54C55FD457F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
+		};
+		9A56A17B0537EFAAF8FD150933B4B2AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17F9141D333DA1A7BE5937F227221070;
+			remoteInfo = Moya;
 		};
 		9F6B7677EEEB98B055B3AA492A706D21 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -483,6 +532,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
+		};
+		C306D19D742C832ECEF1D22D74E24054 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C579CE66A1E7A9AA33CA5F97F9C22C5;
+			remoteInfo = PromiseKit;
 		};
 		D95A24F9F9573634F6E0375B85FB700D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -505,6 +561,13 @@
 			remoteGlobalIDString = 5EA588EF05664079E2B17F07894E92C7;
 			remoteInfo = TrezorCrypto;
 		};
+		ECD35209385A387E01FAAF6E08F43F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07E54A78BCF82272E99319D7F7F5E8C1;
+			remoteInfo = KeychainSwift;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -512,6 +575,7 @@
 		002B1E88BA14EBF633CD66EBFBA107E9 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		003B14661FFB13179E4751E9B1D89CBC /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		00BD8C120BC0204D05622F7A476422D6 /* DigestType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigestType.swift; path = Sources/CryptoSwift/DigestType.swift; sourceTree = "<group>"; };
+		023F8EF4EAB19EF3856A658BEBDAA5C1 /* Pods-TomoWalletCoreTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TomoWalletCoreTests-frameworks.sh"; sourceTree = "<group>"; };
 		0304B1628C3D5E3B8FAB52D665ACC191 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Result/Result.swift; sourceTree = "<group>"; };
 		0412FE6AAB7D3EFA9538931F6E5F594E /* pbkdf2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pbkdf2.h; path = "trezor-crypto/pbkdf2.h"; sourceTree = "<group>"; };
 		045E8EEADC45E9FCD7118623CDCAD303 /* HMAC+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HMAC+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/HMAC+Foundation.swift"; sourceTree = "<group>"; };
@@ -521,6 +585,7 @@
 		05AD5116A4EEC508B7831CDB4B4E51EF /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/CryptoSwift/Operators.swift; sourceTree = "<group>"; };
 		07041C544E6F76ECA7730DEA3574BD40 /* Moya+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Moya+Alamofire.swift"; path = "Sources/Moya/Moya+Alamofire.swift"; sourceTree = "<group>"; };
 		0786557126ED05ABC35CA9229922EFE4 /* bignum.c */ = {isa = PBXFileReference; includeInIndex = 1; name = bignum.c; path = "trezor-crypto/bignum.c"; sourceTree = "<group>"; };
+		0841D3FDED8541CA2B48DA068DE55426 /* Pods-TomoWalletCoreTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TomoWalletCoreTests-dummy.m"; sourceTree = "<group>"; };
 		086BD7A1A78E2ACB5C9DE4D0CA259E5E /* MoyaProvider+Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MoyaProvider+Defaults.swift"; path = "Sources/Moya/MoyaProvider+Defaults.swift"; sourceTree = "<group>"; };
 		0A2CDF455C02BA3F8CFB567B5054C0CE /* PCBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PCBC.swift; path = Sources/CryptoSwift/BlockMode/PCBC.swift; sourceTree = "<group>"; };
 		0AA7F5669BD55D3C7DF8480DA74FBCEB /* ed25519.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ed25519.c; path = "trezor-crypto/ed25519-donna/ed25519.c"; sourceTree = "<group>"; };
@@ -545,7 +610,9 @@
 		125F449E2D3F7770D09494672B3FFD12 /* Comparable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Comparable.swift; path = Sources/Comparable.swift; sourceTree = "<group>"; };
 		13491C9FE80BBAEF9EDD6AA26A52E4C6 /* Rabbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Sources/CryptoSwift/Rabbit.swift; sourceTree = "<group>"; };
 		13B076791842F77890D8CF204F5B853B /* CBCMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBCMAC.swift; path = Sources/CryptoSwift/CBCMAC.swift; sourceTree = "<group>"; };
+		13BDDC0D02B28B6A5DCF4C85A478B592 /* Pods-TomoWalletCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TomoWalletCore-dummy.m"; sourceTree = "<group>"; };
 		149B97F512A5255BF110E491747DE1C5 /* aestab.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aestab.c; path = "trezor-crypto/aes/aestab.c"; sourceTree = "<group>"; };
+		15477C7FF2B558FB528A1C464D55F97A /* Pods-TomoWalletCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TomoWalletCore.modulemap"; sourceTree = "<group>"; };
 		159A4E53C87F833269D10A9D3F876049 /* Moya.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Moya.xcconfig; sourceTree = "<group>"; };
 		15A3845889D66711A0054C6F791619BB /* Generics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = Sources/CryptoSwift/Generics.swift; sourceTree = "<group>"; };
 		1628ACEF1294E0596075AD1880376CD7 /* NameMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NameMap.swift; path = Sources/SwiftProtobuf/NameMap.swift; sourceTree = "<group>"; };
@@ -553,6 +620,7 @@
 		166EF40225387BEBF9E38E3740F49603 /* Result-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Result-umbrella.h"; sourceTree = "<group>"; };
 		16BEE5003B694FDCDA2658133986CD7D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		16E7C68160B908324D1D5F47B4B7916B /* aeskey.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aeskey.c; path = "trezor-crypto/aes/aeskey.c"; sourceTree = "<group>"; };
+		174B456A6F17697AFDF5434D6E1F2134 /* Pods-TomoWalletCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TomoWalletCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1791EDB977A7320BB394CB2424C8D3E2 /* base32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = base32.h; path = "trezor-crypto/base32.h"; sourceTree = "<group>"; };
 		18B46C92C49A2B2F0372E090F4E26EF4 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
 		19517648E2A806CEB517DF9DE520A8DB /* ECB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ECB.swift; path = Sources/CryptoSwift/BlockMode/ECB.swift; sourceTree = "<group>"; };
@@ -588,9 +656,9 @@
 		2A6A7A08A75B41BB7B0771F38FEBCD53 /* ProtobufAPIVersionCheck.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProtobufAPIVersionCheck.swift; path = Sources/SwiftProtobuf/ProtobufAPIVersionCheck.swift; sourceTree = "<group>"; };
 		2B1D7C149343B0CFFAFF64CC5D74752E /* Catchable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Catchable.swift; path = Sources/Catchable.swift; sourceTree = "<group>"; };
 		2B3EAD95CE18753D892E6125E0A47E82 /* CTR.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CTR.swift; path = Sources/CryptoSwift/BlockMode/CTR.swift; sourceTree = "<group>"; };
-		2C22E5E080FE1BFBEAE574D347B6E190 /* Pods-TomoWalletCore-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TomoWalletCore-acknowledgements.plist"; sourceTree = "<group>"; };
 		2CECBD78E49B4186FE79D1A78EB373FD /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		2CF10444178946C1A031FAE15E1D7E8C /* aesopt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aesopt.h; path = "trezor-crypto/aes/aesopt.h"; sourceTree = "<group>"; };
+		2D873DBCA5F3C124B2E38D307DA8C1C9 /* Pods-TomoWalletCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TomoWalletCore.release.xcconfig"; sourceTree = "<group>"; };
 		2DE11512C24A803EBE94A788F360BEAF /* ExtensionMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionMap.swift; path = Sources/SwiftProtobuf/ExtensionMap.swift; sourceTree = "<group>"; };
 		2DF89CB3EDF048B9D588ECEDA194C6ED /* Guarantee.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Guarantee.swift; path = Sources/Guarantee.swift; sourceTree = "<group>"; };
 		2E0B938E7ABAF1A950881C2262FD69DB /* script.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = script.h; path = "trezor-crypto/script.h"; sourceTree = "<group>"; };
@@ -611,7 +679,6 @@
 		36798FC93E1C163095C62FFDA3DE35D9 /* CryptoSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-prefix.pch"; sourceTree = "<group>"; };
 		3740CAC048DAA896215B7B303DD76BCB /* ed25519-donna-impl-base.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ed25519-donna-impl-base.h"; path = "trezor-crypto/ed25519-donna/ed25519-donna-impl-base.h"; sourceTree = "<group>"; };
 		3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Moya.framework; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		377CB4BB9A575AD40C07A1C557D2EABE /* Pods-TomoWalletCore-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TomoWalletCore-Info.plist"; sourceTree = "<group>"; };
 		380C7C8E4FD4426FF9B91059585D592C /* duration.pb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = duration.pb.swift; path = Sources/SwiftProtobuf/duration.pb.swift; sourceTree = "<group>"; };
 		384FEB611F650798062B497F8A138F06 /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Extensions/Foundation/Sources/NSObject+Promise.swift"; sourceTree = "<group>"; };
 		396320B3A377136ECB65DA8B67831C36 /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
@@ -639,6 +706,7 @@
 		46A1612C14217BF78A35AD302AEF91FB /* blake2b.c */ = {isa = PBXFileReference; includeInIndex = 1; name = blake2b.c; path = "trezor-crypto/blake2b.c"; sourceTree = "<group>"; };
 		46C45B3F2CDBC6CBC0208F22DF8A09C4 /* JSONDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONDecoder.swift; path = Sources/SwiftProtobuf/JSONDecoder.swift; sourceTree = "<group>"; };
 		471DEE946922A4F8F68C72C427510154 /* blake2b.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = blake2b.h; path = "trezor-crypto/blake2b.h"; sourceTree = "<group>"; };
+		488F5D904AE4E4EE981DEE4ECE332A94 /* Pods-TomoWalletCoreTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TomoWalletCoreTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		48B5D6F9E4FEC699910CCBDD8DD86727 /* Words and Bits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Words and Bits.swift"; path = "Sources/Words and Bits.swift"; sourceTree = "<group>"; };
 		48C2AC8F8A9157C30F05BC3F1C7E00CB /* nem_serialize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nem_serialize.h; path = "trezor-crypto/nem_serialize.h"; sourceTree = "<group>"; };
 		48FC64F0AA164AB34FB24ECFDB09B0D9 /* ed25519-donna-32bit-tables.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ed25519-donna-32bit-tables.h"; path = "trezor-crypto/ed25519-donna/ed25519-donna-32bit-tables.h"; sourceTree = "<group>"; };
@@ -646,7 +714,6 @@
 		498C810F5C3B0E784DE2FD4E1687E85A /* UnknownStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnknownStorage.swift; path = Sources/SwiftProtobuf/UnknownStorage.swift; sourceTree = "<group>"; };
 		49ADE217102F55E96D45ADECD1B1F246 /* Visitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Visitor.swift; path = Sources/SwiftProtobuf/Visitor.swift; sourceTree = "<group>"; };
 		49B1153B57A5D950D6E6D1672A73862B /* curve25519-donna-scalarmult-base.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "curve25519-donna-scalarmult-base.c"; path = "trezor-crypto/ed25519-donna/curve25519-donna-scalarmult-base.c"; sourceTree = "<group>"; };
-		4A8D5B0D15C17261B6AC47153CBD0FFF /* Pods-TomoWalletCore-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TomoWalletCore-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4B080F3B3603222CF3A8EA3A111D23FD /* ecdsa.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ecdsa.c; path = "trezor-crypto/ecdsa.c"; sourceTree = "<group>"; };
 		4B13E6A40E7AAA3D4F922A565DD4651F /* sha3.c */ = {isa = PBXFileReference; includeInIndex = 1; name = sha3.c; path = "trezor-crypto/sha3.c"; sourceTree = "<group>"; };
 		4B1E10375A3D900F5AA2B8B77214C8DD /* JSONDecodingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONDecodingOptions.swift; path = Sources/SwiftProtobuf/JSONDecodingOptions.swift; sourceTree = "<group>"; };
@@ -656,22 +723,23 @@
 		4CD8033AF0596335740E0D3EC41D13A7 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
 		4D134EE6F0301E57CF0622F9E45B1B6A /* OFB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OFB.swift; path = Sources/CryptoSwift/BlockMode/OFB.swift; sourceTree = "<group>"; };
 		4D2F1A734019518BED785180A5280935 /* Thenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Thenable.swift; path = Sources/Thenable.swift; sourceTree = "<group>"; };
+		4D84B2318E07961E22CEAA4DFB1020A9 /* Pods-TomoWalletCoreTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TomoWalletCoreTests.modulemap"; sourceTree = "<group>"; };
 		4FD272F9449650F60C09D7FFE99F909F /* groestl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = groestl.h; path = "trezor-crypto/groestl.h"; sourceTree = "<group>"; };
 		4FE136A679B9235D4191C5300A9630B2 /* ZigZag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZigZag.swift; path = Sources/SwiftProtobuf/ZigZag.swift; sourceTree = "<group>"; };
 		4FF88FE63EA7A56F4A0EF2C09E159351 /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
 		50391815231FD4A9BDB78C967F505AEF /* PKCS7Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7Padding.swift; path = Sources/CryptoSwift/PKCS/PKCS7Padding.swift; sourceTree = "<group>"; };
 		504D949F88BFC2C6CE7F28948B76EB0F /* nist256p1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nist256p1.h; path = "trezor-crypto/nist256p1.h"; sourceTree = "<group>"; };
 		512191C3ECB84DDAEC5338F75B84ACD0 /* SelectiveVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectiveVisitor.swift; path = Sources/SwiftProtobuf/SelectiveVisitor.swift; sourceTree = "<group>"; };
+		52700D27735315ECBA698ACB367AEC5D /* Pods-TomoWalletCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TomoWalletCore.debug.xcconfig"; sourceTree = "<group>"; };
 		53026A25308ED51E809685E954FC3F5D /* SHA2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA2.swift; path = Sources/CryptoSwift/SHA2.swift; sourceTree = "<group>"; };
 		5345A7EC3C0128C623EB64A12856C1B1 /* chacha_merged.c */ = {isa = PBXFileReference; includeInIndex = 1; name = chacha_merged.c; path = "trezor-crypto/chacha20poly1305/chacha_merged.c"; sourceTree = "<group>"; };
 		539428B949F57398E4E304B01A957B22 /* ecrypt-sync.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ecrypt-sync.h"; path = "trezor-crypto/chacha20poly1305/ecrypt-sync.h"; sourceTree = "<group>"; };
-		53A0C13C1443A0BF784846CA8A48E972 /* Pods-TomoWalletCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TomoWalletCore-umbrella.h"; sourceTree = "<group>"; };
+		53A9681AA480AB38FC430658F80C181D /* Pods-TomoWalletCore-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TomoWalletCore-Info.plist"; sourceTree = "<group>"; };
 		5418650579A58CD7618A343F621C6234 /* PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-prefix.pch"; sourceTree = "<group>"; };
 		543D9A7153E6816B0F8EE0F29C057229 /* MultiTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiTarget.swift; path = Sources/Moya/MultiTarget.swift; sourceTree = "<group>"; };
 		549570E17A26A260A11458B9E7CD83FA /* ed25519-keccak.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ed25519-keccak.h"; path = "trezor-crypto/ed25519-donna/ed25519-keccak.h"; sourceTree = "<group>"; };
 		54D08875AC96DF41761159523968E273 /* Google_Protobuf_Timestamp+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Timestamp+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Timestamp+Extensions.swift"; sourceTree = "<group>"; };
 		559040E54770A9DCAC64E52747150111 /* rfc7539.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rfc7539.h; path = "trezor-crypto/chacha20poly1305/rfc7539.h"; sourceTree = "<group>"; };
-		55A19D3E68D1020FEF60684A2D0BA8EF /* Pods-TomoWalletCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TomoWalletCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		566CC85D0FC6E9344C291944CB1773DB /* ed25519-keccak.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "ed25519-keccak.c"; path = "trezor-crypto/ed25519-donna/ed25519-keccak.c"; sourceTree = "<group>"; };
 		5686539863B91AE56049634752A51C33 /* AEAD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AEAD.swift; path = Sources/CryptoSwift/AEAD/AEAD.swift; sourceTree = "<group>"; };
 		56E81719ADD5E77A4087B1033D622002 /* ChaCha20.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChaCha20.swift; path = Sources/CryptoSwift/ChaCha20.swift; sourceTree = "<group>"; };
@@ -683,7 +751,6 @@
 		59CDADAEDAB5F8CAB1C3A948F744E97D /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		5A0EBBAE3FA019676BC6784FEC75244B /* JSONEncodingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncodingOptions.swift; path = Sources/SwiftProtobuf/JSONEncodingOptions.swift; sourceTree = "<group>"; };
 		5A0F49602097B5855F4B29A0445F0820 /* BinaryEncodingVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryEncodingVisitor.swift; path = Sources/SwiftProtobuf/BinaryEncodingVisitor.swift; sourceTree = "<group>"; };
-		5A9271363001B200876E2BDC19B5381B /* Pods-TomoWalletCoreTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TomoWalletCoreTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		5B82138785EE6F3A212C161FA51285DE /* Google_Protobuf_Any+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Any+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Any+Extensions.swift"; sourceTree = "<group>"; };
 		5B9312E4BB73650C269DE8C6C0D1AA8D /* Moya.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Moya.modulemap; sourceTree = "<group>"; };
 		5C73756C71A15ACF32C35D8FE88172FC /* WireFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WireFormat.swift; path = Sources/SwiftProtobuf/WireFormat.swift; sourceTree = "<group>"; };
@@ -704,7 +771,6 @@
 		6134CC78A2AEFB4A2609E204836AFFEB /* ed25519-donna-portable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ed25519-donna-portable.h"; path = "trezor-crypto/ed25519-donna/ed25519-donna-portable.h"; sourceTree = "<group>"; };
 		61872731449DE3C4447C1FE69C49767E /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
 		61B514D103796A324FD4E1BEE7BF8EBC /* PMKFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKFoundation.h; path = Extensions/Foundation/Sources/PMKFoundation.h; sourceTree = "<group>"; };
-		64B7B17F9348715A53383E7D32ED1643 /* Pods-TomoWalletCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TomoWalletCore.debug.xcconfig"; sourceTree = "<group>"; };
 		64F55F69883E78C527E72B98265FED59 /* CompactMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompactMap.swift; path = Sources/CryptoSwift/CompactMap.swift; sourceTree = "<group>"; };
 		650D5C3CBEC82338CB9082CAC4196B92 /* MoyaError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoyaError.swift; path = Sources/Moya/MoyaError.swift; sourceTree = "<group>"; };
 		654AA424A1C444808A3D6068CB4452A1 /* KeychainSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainSwift-dummy.m"; sourceTree = "<group>"; };
@@ -718,7 +784,7 @@
 		684864C78575F9880B1D7954EC1E15FF /* TrezorCrypto-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrezorCrypto-prefix.pch"; sourceTree = "<group>"; };
 		687E3D190E588B606167AC8C3381B84B /* CMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CMAC.swift; path = Sources/CryptoSwift/CMAC.swift; sourceTree = "<group>"; };
 		68F2BB59D7E27D2A8C872B6C1DC4737E /* Message+TextFormatAdditions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Message+TextFormatAdditions.swift"; path = "Sources/SwiftProtobuf/Message+TextFormatAdditions.swift"; sourceTree = "<group>"; };
-		6988D8776689D60AB73BFAEC948D4599 /* Pods-TomoWalletCoreTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TomoWalletCoreTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6A3EE0499C082EE235FF2EEC0F01191C /* Pods-TomoWalletCore-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TomoWalletCore-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6A67EF4D723A0D38B4826137200E2FCA /* SHA3.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA3.swift; path = Sources/CryptoSwift/SHA3.swift; sourceTree = "<group>"; };
 		6BAF64912D8BC4823B6EE674A08C87D3 /* PBKDF2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF2.swift; path = Sources/CryptoSwift/PKCS/PBKDF2.swift; sourceTree = "<group>"; };
 		6BBFFD9E22FEDE017BF263D6FA4D2C26 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
@@ -740,6 +806,7 @@
 		76616F2EA6EACD555116AEC3F9B0C9FB /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		76A2C389A22785104A415BDECBE1664A /* modm-donna-32bit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "modm-donna-32bit.h"; path = "trezor-crypto/ed25519-donna/modm-donna-32bit.h"; sourceTree = "<group>"; };
 		786516058E2F6E540705F285A483EE8D /* Poly1305.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Poly1305.swift; path = Sources/CryptoSwift/Poly1305.swift; sourceTree = "<group>"; };
+		78AFBF2274ED066FD875BAEF9DCE90D1 /* Pods-TomoWalletCoreTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TomoWalletCoreTests-umbrella.h"; sourceTree = "<group>"; };
 		78B2FAD2E343AFA9FADE24A9A72D0B05 /* Varint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Varint.swift; path = Sources/SwiftProtobuf/Varint.swift; sourceTree = "<group>"; };
 		78C23C7073DE67724EE4AE0709229E1B /* TargetType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TargetType.swift; path = Sources/Moya/TargetType.swift; sourceTree = "<group>"; };
 		79A12903D5FF6AAFA5CDE6B777E907AE /* NoError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoError.swift; path = Result/NoError.swift; sourceTree = "<group>"; };
@@ -756,16 +823,14 @@
 		8337EFF0ADF8FA9E59726F32A9D60C25 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Sources/Moya/MultipartFormData.swift; sourceTree = "<group>"; };
 		83B2AC406585BCA4995CBE4B4C5CCCF1 /* address.c */ = {isa = PBXFileReference; includeInIndex = 1; name = address.c; path = "trezor-crypto/address.c"; sourceTree = "<group>"; };
 		83B9EBE278381541B8024D242ECF388B /* bip39_english.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bip39_english.h; path = "trezor-crypto/bip39_english.h"; sourceTree = "<group>"; };
-		84A405079C690BE2A35AE70DB16D49D5 /* Pods-TomoWalletCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TomoWalletCore.release.xcconfig"; sourceTree = "<group>"; };
 		87D7D2810F46A9E155064D69663C3D6D /* JSONEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncoder.swift; path = Sources/SwiftProtobuf/JSONEncoder.swift; sourceTree = "<group>"; };
 		882228896923776F8FE60AF251600119 /* BinaryDecodingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BinaryDecodingOptions.swift; path = Sources/SwiftProtobuf/BinaryDecodingOptions.swift; sourceTree = "<group>"; };
 		88294C238AF728B706DEF6C557CD72A8 /* base58.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = base58.h; path = "trezor-crypto/base58.h"; sourceTree = "<group>"; };
-		88940A24B867F81AB762E34317B77206 /* Pods-TomoWalletCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TomoWalletCore-dummy.m"; sourceTree = "<group>"; };
 		88CFA2FB85BAB1D4D1A69E5133453231 /* ed25519-donna-impl-base.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "ed25519-donna-impl-base.c"; path = "trezor-crypto/ed25519-donna/ed25519-donna-impl-base.c"; sourceTree = "<group>"; };
+		88E85A4BD1FAD17FC5BCC5FAAB881131 /* Pods-TomoWalletCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TomoWalletCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		89117E50315BB8EDEB4AC8C9A0CD1362 /* fwd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = Sources/fwd.h; sourceTree = "<group>"; };
 		89A15199291013E2D973179B90EC16BE /* Square Root.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Square Root.swift"; path = "Sources/Square Root.swift"; sourceTree = "<group>"; };
 		8A29D4ACB7EF8B0C287EE009DE190148 /* KeychainSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-umbrella.h"; sourceTree = "<group>"; };
-		8A5DC8BEE3561FA6FAFF811060545ECC /* Pods-TomoWalletCoreTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TomoWalletCoreTests-dummy.m"; sourceTree = "<group>"; };
 		8AC3934A82F82A6B5792116CA18E2F59 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Moya/Image.swift; sourceTree = "<group>"; };
 		8C0DBAFA75195D9DF3C32BD6FB25C16C /* Plugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Plugin.swift; path = Sources/Moya/Plugin.swift; sourceTree = "<group>"; };
 		8C26DEE21DC41B047BBD28B8AC9DA768 /* String+FoundationExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+FoundationExtension.swift"; path = "Sources/CryptoSwift/Foundation/String+FoundationExtension.swift"; sourceTree = "<group>"; };
@@ -776,7 +841,6 @@
 		9058C720B7FB41F5CD223A4C22477484 /* Resolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = Sources/Resolver.swift; sourceTree = "<group>"; };
 		9076674E6F6B21DB1C393CF367212890 /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
 		90AB2026F70B8D1AF720ABCFE060CA75 /* Checksum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Checksum.swift; path = Sources/CryptoSwift/Checksum.swift; sourceTree = "<group>"; };
-		919B262FB4B0A52A8AE1164A122D2B8E /* Pods-TomoWalletCoreTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TomoWalletCoreTests.modulemap"; sourceTree = "<group>"; };
 		91BB24BA472AF523E913108C9AA301F2 /* BigInt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BigInt.framework; path = BigInt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		921338E303A27A211581921EB5F18278 /* poly1305-donna-32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "poly1305-donna-32.h"; path = "trezor-crypto/chacha20poly1305/poly1305-donna-32.h"; sourceTree = "<group>"; };
 		929BA7035400A6A7C7B18895F77F04A2 /* Random.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Random.swift; path = Sources/Random.swift; sourceTree = "<group>"; };
@@ -844,11 +908,13 @@
 		B2FD8D0E4B338EDFEB44C850C35FECA2 /* BigInt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BigInt-dummy.m"; sourceTree = "<group>"; };
 		B41EA626D31B9B8AB8760E7E261EA570 /* segwit_addr.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = segwit_addr.h; path = "trezor-crypto/segwit_addr.h"; sourceTree = "<group>"; };
 		B44C23819E90852F579A7BFEA36F9206 /* HMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HMAC.swift; path = Sources/CryptoSwift/HMAC.swift; sourceTree = "<group>"; };
+		B506849A2DC607399167957223FB18C8 /* Pods-TomoWalletCoreTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TomoWalletCoreTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B58C776C38D04FAD31C948DD3E6B82C5 /* Exponentiation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Exponentiation.swift; path = Sources/Exponentiation.swift; sourceTree = "<group>"; };
 		B59914EF5A57BF6C042650BB7F5D8143 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Sources/CryptoSwift/Utils.swift; sourceTree = "<group>"; };
 		B5DE7E079EA6DDF67BEA1DFEA0E6F14B /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
 		B65B875890CD1A8D8B327A946F61F8E8 /* poly1305-donna.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "poly1305-donna.c"; path = "trezor-crypto/chacha20poly1305/poly1305-donna.c"; sourceTree = "<group>"; };
-		B74D8DB213159826C82EA988B46D4778 /* Pods-TomoWalletCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TomoWalletCore.modulemap"; sourceTree = "<group>"; };
+		B69A37DB0569011FE388D3B99582BBDC /* Pods-TomoWalletCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TomoWalletCore-umbrella.h"; sourceTree = "<group>"; };
+		B7D4F7A3A3560406D9B512FD8C705F1A /* Pods-TomoWalletCore-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TomoWalletCore-acknowledgements.plist"; sourceTree = "<group>"; };
 		B821AC75817B192D62917496923E3E92 /* AnyUnpackError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyUnpackError.swift; path = Sources/SwiftProtobuf/AnyUnpackError.swift; sourceTree = "<group>"; };
 		B8BD4EA61ED45E93274BE73D50A72328 /* curve25519-donna-scalarmult-base.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "curve25519-donna-scalarmult-base.h"; path = "trezor-crypto/ed25519-donna/curve25519-donna-scalarmult-base.h"; sourceTree = "<group>"; };
 		B954E6887D542A0D1A0D4C2198BC224A /* AnyMessageStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyMessageStorage.swift; path = Sources/SwiftProtobuf/AnyMessageStorage.swift; sourceTree = "<group>"; };
@@ -876,8 +942,8 @@
 		CE292135291DD2AD7C77A893F74552D4 /* Google_Protobuf_Any+Registry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Any+Registry.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Any+Registry.swift"; sourceTree = "<group>"; };
 		D03B93C49150FD799FA399E6AA07EE5A /* BlockEncryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockEncryptor.swift; path = Sources/CryptoSwift/BlockEncryptor.swift; sourceTree = "<group>"; };
 		D03CDA3A8566A8CD8253751372B5C2E9 /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = "trezor-crypto/aes/aes.h"; sourceTree = "<group>"; };
-		D062CDFF6472D823B60AE3D795C92A83 /* Pods-TomoWalletCoreTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TomoWalletCoreTests-umbrella.h"; sourceTree = "<group>"; };
 		D062E384B156EBCA552F08E76CED09D0 /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.m"; sourceTree = "<group>"; };
+		D086512B4CE9BC9AAA1C7CA4AC252265 /* Pods-TomoWalletCoreTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TomoWalletCoreTests-Info.plist"; sourceTree = "<group>"; };
 		D09031136E3BB05CB50229C1BC933B38 /* AEADChaCha20Poly1305.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AEADChaCha20Poly1305.swift; path = Sources/CryptoSwift/AEAD/AEADChaCha20Poly1305.swift; sourceTree = "<group>"; };
 		D29DD17D3CE1B519225C08F108323634 /* Google_Protobuf_Duration+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Google_Protobuf_Duration+Extensions.swift"; path = "Sources/SwiftProtobuf/Google_Protobuf_Duration+Extensions.swift"; sourceTree = "<group>"; };
 		D2C34466DDE828BB29B08D07CF4BFB0A /* JSONEncodingError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONEncodingError.swift; path = Sources/SwiftProtobuf/JSONEncodingError.swift; sourceTree = "<group>"; };
@@ -897,7 +963,6 @@
 		D8990A25A0282B77B10CAFB31D6380A3 /* BigUInt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BigUInt.swift; path = Sources/BigUInt.swift; sourceTree = "<group>"; };
 		D8D4EFCCC4A93CA8238595DB08148F47 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Sources/CryptoSwift/String+Extension.swift"; sourceTree = "<group>"; };
 		D8EF0AE625059E4FF74B56EA77950233 /* Moya-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Moya-dummy.m"; sourceTree = "<group>"; };
-		D9AB00C3811928218E5071E6602F2243 /* Pods-TomoWalletCoreTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TomoWalletCoreTests-Info.plist"; sourceTree = "<group>"; };
 		D9EC0353979C5EF7D92E50C347EDA993 /* aes_modes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = aes_modes.c; path = "trezor-crypto/aes/aes_modes.c"; sourceTree = "<group>"; };
 		DADB409EF6E728F011FBB48D346F4AB9 /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
 		DBF1476CF47A625A402C8ADA14CC8531 /* blake2s.c */ = {isa = PBXFileReference; includeInIndex = 1; name = blake2s.c; path = "trezor-crypto/blake2s.c"; sourceTree = "<group>"; };
@@ -932,7 +997,6 @@
 		ED4A0CC7D95066B561C07B32FF9DC575 /* ripemd160.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ripemd160.c; path = "trezor-crypto/ripemd160.c"; sourceTree = "<group>"; };
 		EE37ED17DBBDAE3F0637559813C35761 /* bip32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bip32.h; path = "trezor-crypto/bip32.h"; sourceTree = "<group>"; };
 		EE5274B4AC26D6F97226CE8258578916 /* StringUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = Sources/SwiftProtobuf/StringUtils.swift; sourceTree = "<group>"; };
-		EF1E0CA95844931E70357861344F3C24 /* Pods-TomoWalletCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TomoWalletCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFE4C72AAE8CCBF16AF5A61B277B5DD8 /* PBKDF1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF1.swift; path = Sources/CryptoSwift/PKCS/PBKDF1.swift; sourceTree = "<group>"; };
 		F0058B9AEA68652B7FCFA0137515F68F /* JSONMapEncodingVisitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONMapEncodingVisitor.swift; path = Sources/SwiftProtobuf/JSONMapEncodingVisitor.swift; sourceTree = "<group>"; };
 		F0316FB3D26B4D3C4606206E503294B3 /* curve25519-donna-helpers.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "curve25519-donna-helpers.c"; path = "trezor-crypto/ed25519-donna/curve25519-donna-helpers.c"; sourceTree = "<group>"; };
@@ -1004,6 +1068,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		144350A1051BA795C7F2F6D0892FF80F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9D47B1882481D9CEF21D6F9D1354EB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		39951F611A17D301F81E1867A83425EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1034,14 +1106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D57A3AA6E0E5C92F512D577C9581B1D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7234B52A2D354C19C92C6258234F1B99 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C0BAE55918754E6A407791524D27F96C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1214,22 +1278,6 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		5FD6300CAB582210D4763E73CB2EE83D /* Pods-TomoWalletCore */ = {
-			isa = PBXGroup;
-			children = (
-				B74D8DB213159826C82EA988B46D4778 /* Pods-TomoWalletCore.modulemap */,
-				4A8D5B0D15C17261B6AC47153CBD0FFF /* Pods-TomoWalletCore-acknowledgements.markdown */,
-				2C22E5E080FE1BFBEAE574D347B6E190 /* Pods-TomoWalletCore-acknowledgements.plist */,
-				88940A24B867F81AB762E34317B77206 /* Pods-TomoWalletCore-dummy.m */,
-				377CB4BB9A575AD40C07A1C557D2EABE /* Pods-TomoWalletCore-Info.plist */,
-				53A0C13C1443A0BF784846CA8A48E972 /* Pods-TomoWalletCore-umbrella.h */,
-				64B7B17F9348715A53383E7D32ED1643 /* Pods-TomoWalletCore.debug.xcconfig */,
-				84A405079C690BE2A35AE70DB16D49D5 /* Pods-TomoWalletCore.release.xcconfig */,
-			);
-			name = "Pods-TomoWalletCore";
-			path = "Target Support Files/Pods-TomoWalletCore";
-			sourceTree = "<group>";
-		};
 		79C89A811D3C6081317056BFF358CC41 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1311,6 +1359,22 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		852926EDB663CA3128040A056860F19D /* Pods-TomoWalletCore */ = {
+			isa = PBXGroup;
+			children = (
+				15477C7FF2B558FB528A1C464D55F97A /* Pods-TomoWalletCore.modulemap */,
+				6A3EE0499C082EE235FF2EEC0F01191C /* Pods-TomoWalletCore-acknowledgements.markdown */,
+				B7D4F7A3A3560406D9B512FD8C705F1A /* Pods-TomoWalletCore-acknowledgements.plist */,
+				13BDDC0D02B28B6A5DCF4C85A478B592 /* Pods-TomoWalletCore-dummy.m */,
+				53A9681AA480AB38FC430658F80C181D /* Pods-TomoWalletCore-Info.plist */,
+				B69A37DB0569011FE388D3B99582BBDC /* Pods-TomoWalletCore-umbrella.h */,
+				52700D27735315ECBA698ACB367AEC5D /* Pods-TomoWalletCore.debug.xcconfig */,
+				2D873DBCA5F3C124B2E38D307DA8C1C9 /* Pods-TomoWalletCore.release.xcconfig */,
+			);
+			name = "Pods-TomoWalletCore";
+			path = "Target Support Files/Pods-TomoWalletCore";
 			sourceTree = "<group>";
 		};
 		8E32CDE894E48557008126A9904CFA58 /* Moya */ = {
@@ -1475,6 +1539,23 @@
 			path = TrezorCrypto;
 			sourceTree = "<group>";
 		};
+		B1283FE18FD9D0C9B83672F009094C15 /* Pods-TomoWalletCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D84B2318E07961E22CEAA4DFB1020A9 /* Pods-TomoWalletCoreTests.modulemap */,
+				488F5D904AE4E4EE981DEE4ECE332A94 /* Pods-TomoWalletCoreTests-acknowledgements.markdown */,
+				B506849A2DC607399167957223FB18C8 /* Pods-TomoWalletCoreTests-acknowledgements.plist */,
+				0841D3FDED8541CA2B48DA068DE55426 /* Pods-TomoWalletCoreTests-dummy.m */,
+				023F8EF4EAB19EF3856A658BEBDAA5C1 /* Pods-TomoWalletCoreTests-frameworks.sh */,
+				D086512B4CE9BC9AAA1C7CA4AC252265 /* Pods-TomoWalletCoreTests-Info.plist */,
+				78AFBF2274ED066FD875BAEF9DCE90D1 /* Pods-TomoWalletCoreTests-umbrella.h */,
+				174B456A6F17697AFDF5434D6E1F2134 /* Pods-TomoWalletCoreTests.debug.xcconfig */,
+				88E85A4BD1FAD17FC5BCC5FAAB881131 /* Pods-TomoWalletCoreTests.release.xcconfig */,
+			);
+			name = "Pods-TomoWalletCoreTests";
+			path = "Target Support Files/Pods-TomoWalletCoreTests";
+			sourceTree = "<group>";
+		};
 		B1F1808AEDE7DEB8E521109CF4EB4169 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1487,6 +1568,15 @@
 				ABF057C044B57394F73CCC1D1AC6EE47 /* UIViewPropertyAnimator+Promise.swift */,
 			);
 			name = UIKit;
+			sourceTree = "<group>";
+		};
+		B54D0DAC69B489AEF771005E0E751339 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				852926EDB663CA3128040A056860F19D /* Pods-TomoWalletCore */,
+				B1283FE18FD9D0C9B83672F009094C15 /* Pods-TomoWalletCoreTests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		C3025BAECA890EBDEE2701EFD54D0753 /* Support Files */ = {
@@ -1542,17 +1632,8 @@
 				2E606311EC54DAD7D7A0C149AA23D9C7 /* Frameworks */,
 				7A24CCE6E68009A4FE95543C4AB57AD8 /* Pods */,
 				23B16F9B1FF2871977A2AB67ACFFD1C7 /* Products */,
-				D2720D71CCF21DC19C015B0E652070A0 /* Targets Support Files */,
+				B54D0DAC69B489AEF771005E0E751339 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D2720D71CCF21DC19C015B0E652070A0 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5FD6300CAB582210D4763E73CB2EE83D /* Pods-TomoWalletCore */,
-				D477CC9BCB149BBDED19757589ABFA1A /* Pods-TomoWalletCoreTests */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		D420A0F0797BD713C7311961542A92FB /* SwiftProtobuf */ = {
@@ -1641,22 +1722,6 @@
 			);
 			name = SwiftProtobuf;
 			path = SwiftProtobuf;
-			sourceTree = "<group>";
-		};
-		D477CC9BCB149BBDED19757589ABFA1A /* Pods-TomoWalletCoreTests */ = {
-			isa = PBXGroup;
-			children = (
-				919B262FB4B0A52A8AE1164A122D2B8E /* Pods-TomoWalletCoreTests.modulemap */,
-				6988D8776689D60AB73BFAEC948D4599 /* Pods-TomoWalletCoreTests-acknowledgements.markdown */,
-				5A9271363001B200876E2BDC19B5381B /* Pods-TomoWalletCoreTests-acknowledgements.plist */,
-				8A5DC8BEE3561FA6FAFF811060545ECC /* Pods-TomoWalletCoreTests-dummy.m */,
-				D9AB00C3811928218E5071E6602F2243 /* Pods-TomoWalletCoreTests-Info.plist */,
-				D062CDFF6472D823B60AE3D795C92A83 /* Pods-TomoWalletCoreTests-umbrella.h */,
-				EF1E0CA95844931E70357861344F3C24 /* Pods-TomoWalletCoreTests.debug.xcconfig */,
-				55A19D3E68D1020FEF60684A2D0BA8EF /* Pods-TomoWalletCoreTests.release.xcconfig */,
-			);
-			name = "Pods-TomoWalletCoreTests";
-			path = "Target Support Files/Pods-TomoWalletCoreTests";
 			sourceTree = "<group>";
 		};
 		D4D19D5508DEE4E70E8626BEE4561021 /* Support Files */ = {
@@ -1846,19 +1911,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95CED73558A28A7D23C7F587F2A26C09 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BF270219544AC54E0246141BF21F934 /* Pods-TomoWalletCoreTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		97BD77ADDCAB6FA6CF7529B5308B0918 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C3905037CE8620D38EF4DA0AB90C106C /* KeychainSwift-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A022A9B713607D60C8B887B28C2B1477 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E4B59DEFD97814F68217AD5E8D3C608 /* Pods-TomoWalletCoreTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,17 +2073,26 @@
 		};
 		1929F5A639D52A636C2D126271C3EEC6 /* Pods-TomoWalletCoreTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFD3AC46DD609C82170524D612E67475 /* Build configuration list for PBXNativeTarget "Pods-TomoWalletCoreTests" */;
+			buildConfigurationList = E140349C8C4A34D982008E3C1B4DB33E /* Build configuration list for PBXNativeTarget "Pods-TomoWalletCoreTests" */;
 			buildPhases = (
-				A022A9B713607D60C8B887B28C2B1477 /* Headers */,
-				AB19AD156AFA9C5B52776837B6E30379 /* Sources */,
-				7234B52A2D354C19C92C6258234F1B99 /* Frameworks */,
-				CDE1B14FD1CE82F88145C38E060FA00C /* Resources */,
+				95CED73558A28A7D23C7F587F2A26C09 /* Headers */,
+				D7B7CE1F409C177BE9D905C30434AA4C /* Sources */,
+				144350A1051BA795C7F2F6D0892FF80F /* Frameworks */,
+				BDD0CACC2FA08115133F3D31B0E0AD92 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A9B0031A520FF7590D64E57C0EDDB916 /* PBXTargetDependency */,
+				2E18A2F34E96701502FC7C7E36805400 /* PBXTargetDependency */,
+				33FD44DA5DEB5789A81CBE4EBA248AB2 /* PBXTargetDependency */,
+				12B1BAC1FCD42E23CDDADDAEA9B4D609 /* PBXTargetDependency */,
+				B7808D75047FC7BA928D98E37B3B05CE /* PBXTargetDependency */,
+				4233EA08DAB86CF2621F05C51A4482A6 /* PBXTargetDependency */,
+				7BA12F1ADEECD9457AB397001D6E2A7D /* PBXTargetDependency */,
+				16499151B48486EC95D89ED923A22EFE /* PBXTargetDependency */,
+				03D1D38E252BBAB71B903CA9417E7CFB /* PBXTargetDependency */,
+				538A1A42EDE379130DFCF12B7BC1D3D6 /* PBXTargetDependency */,
+				98EE3919D58BD05FFB51B45048737926 /* PBXTargetDependency */,
 			);
 			name = "Pods-TomoWalletCoreTests";
 			productName = "Pods-TomoWalletCoreTests";
@@ -2267,7 +2341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDE1B14FD1CE82F88145C38E060FA00C /* Resources */ = {
+		BDD0CACC2FA08115133F3D31B0E0AD92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2638,11 +2712,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB19AD156AFA9C5B52776837B6E30379 /* Sources */ = {
+		D7B7CE1F409C177BE9D905C30434AA4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26903AA743BFB75F91BAEAD245810559 /* Pods-TomoWalletCoreTests-dummy.m in Sources */,
+				454A34366CABBB492ECFD7571AFDCAAF /* Pods-TomoWalletCoreTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2678,17 +2752,59 @@
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 826595B693650C0162D7B54C55FD457F /* PBXContainerItemProxy */;
 		};
+		03D1D38E252BBAB71B903CA9417E7CFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Result;
+			target = E163AC315AD24CFBD60C178D602BFC83 /* Result */;
+			targetProxy = 7AFB82CB82E6CF5FC0C36BF5105F12E7 /* PBXContainerItemProxy */;
+		};
 		074181680E3E399BEE62C0BCCCF72AEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Moya;
 			target = 17F9141D333DA1A7BE5937F227221070 /* Moya */;
 			targetProxy = 26699010966FA4375B540176CBBA6282 /* PBXContainerItemProxy */;
 		};
+		12B1BAC1FCD42E23CDDADDAEA9B4D609 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoSwift;
+			target = 99313990C1D76A6D1D017868B6975CC8 /* CryptoSwift */;
+			targetProxy = 825D4D84D14A2FE91CF95277B3A31866 /* PBXContainerItemProxy */;
+		};
+		16499151B48486EC95D89ED923A22EFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PromiseKit;
+			target = 7C579CE66A1E7A9AA33CA5F97F9C22C5 /* PromiseKit */;
+			targetProxy = C306D19D742C832ECEF1D22D74E24054 /* PBXContainerItemProxy */;
+		};
+		2E18A2F34E96701502FC7C7E36805400 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 73CD6588904054065E815ABFEE91F115 /* PBXContainerItemProxy */;
+		};
+		33FD44DA5DEB5789A81CBE4EBA248AB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BigInt;
+			target = 09DD83B7D075842A3A5105AD410BD38A /* BigInt */;
+			targetProxy = 5D3004AB9299A16C814CD4996E974AC9 /* PBXContainerItemProxy */;
+		};
 		3696583998C87071DCDBC520A8FB154D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Result;
 			target = E163AC315AD24CFBD60C178D602BFC83 /* Result */;
 			targetProxy = D95A24F9F9573634F6E0375B85FB700D /* PBXContainerItemProxy */;
+		};
+		4233EA08DAB86CF2621F05C51A4482A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Moya;
+			target = 17F9141D333DA1A7BE5937F227221070 /* Moya */;
+			targetProxy = 9A56A17B0537EFAAF8FD150933B4B2AB /* PBXContainerItemProxy */;
+		};
+		538A1A42EDE379130DFCF12B7BC1D3D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftProtobuf;
+			target = A5F702E0DA383BC1479572581615A916 /* SwiftProtobuf */;
+			targetProxy = 0831AF4A35F194281BB770CCDC41F094 /* PBXContainerItemProxy */;
 		};
 		5F7669FA1F38FC96AC38794D5D602B73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2708,6 +2824,12 @@
 			target = 99313990C1D76A6D1D017868B6975CC8 /* CryptoSwift */;
 			targetProxy = 45DBBED6469E54BB467D590C452C3AB3 /* PBXContainerItemProxy */;
 		};
+		7BA12F1ADEECD9457AB397001D6E2A7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-TomoWalletCore";
+			target = FCBDE70276F17F8B497F4249D1F57D7B /* Pods-TomoWalletCore */;
+			targetProxy = 4580CD634A0B971FEC6AD4269ECF289D /* PBXContainerItemProxy */;
+		};
 		826E8F099EDB06229B631D37D9B1B2B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TrezorCrypto;
@@ -2720,17 +2842,23 @@
 			target = A5F702E0DA383BC1479572581615A916 /* SwiftProtobuf */;
 			targetProxy = 560C111532CBC072C0C303B1B30E5193 /* PBXContainerItemProxy */;
 		};
-		A9B0031A520FF7590D64E57C0EDDB916 /* PBXTargetDependency */ = {
+		98EE3919D58BD05FFB51B45048737926 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-TomoWalletCore";
-			target = FCBDE70276F17F8B497F4249D1F57D7B /* Pods-TomoWalletCore */;
-			targetProxy = 08935C6FFA635ED9C59E44EBDB1B4103 /* PBXContainerItemProxy */;
+			name = TrezorCrypto;
+			target = 5EA588EF05664079E2B17F07894E92C7 /* TrezorCrypto */;
+			targetProxy = 0859B9FA6040477C2CA90B02E03CA665 /* PBXContainerItemProxy */;
 		};
 		B6E0EB57CC7CF307FE048E8E2B2B66F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PromiseKit;
 			target = 7C579CE66A1E7A9AA33CA5F97F9C22C5 /* PromiseKit */;
 			targetProxy = 0ADBE15A67F84C97F7CB604750B449FC /* PBXContainerItemProxy */;
+		};
+		B7808D75047FC7BA928D98E37B3B05CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KeychainSwift;
+			target = 07E54A78BCF82272E99319D7F7F5E8C1 /* KeychainSwift */;
+			targetProxy = ECD35209385A387E01FAAF6E08F43F7A /* PBXContainerItemProxy */;
 		};
 		B857B67E314BA3122EADE26A47F9035F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2878,42 +3006,6 @@
 			};
 			name = Release;
 		};
-		26E9A7B7CC36D753291E2D3570A8DB18 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E04A288F263E83FA338E0685CF29BC29 /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				PRODUCT_MODULE_NAME = Alamofire;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		2BB042CB7DAA8DDEEB3426C5D1BA4C77 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D41824B3203A9F050D91075DC83E29A7 /* KeychainSwift.xcconfig */;
@@ -2949,12 +3041,10 @@
 			};
 			name = Debug;
 		};
-		49CAB617481241D3C1C9EAEA42EF4F2A /* Debug */ = {
+		427CC76C4A0D2313B395E0BB95F76060 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF1E0CA95844931E70357861344F3C24 /* Pods-TomoWalletCoreTests.debug.xcconfig */;
+			baseConfigurationReference = E04A288F263E83FA338E0685CF29BC29 /* Alamofire.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2964,30 +3054,64 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		54C16D2F396964BDA8A11BB62BE4F24A /* Debug */ = {
+		4516B3D028B499E90D4F5B7B88208BDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 663029106155B549131436A922C0AEF7 /* SwiftProtobuf.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftProtobuf/SwiftProtobuf-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftProtobuf/SwiftProtobuf-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftProtobuf/SwiftProtobuf.modulemap";
+				PRODUCT_MODULE_NAME = SwiftProtobuf;
+				PRODUCT_NAME = SwiftProtobuf;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6762DF2DB1B6C7A4D25CB0711813C4D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4CCA08316F786259ACAD621878B0E6B4 /* TrezorCrypto.xcconfig */;
 			buildSettings = {
@@ -3015,12 +3139,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		810751377D09B9E1EC0DF4C59D0080A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3057,6 +3182,115 @@
 			};
 			name = Debug;
 		};
+		8950A9ED4B25B9E9A5EB2437440335B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CCA08316F786259ACAD621878B0E6B4 /* TrezorCrypto.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TrezorCrypto/TrezorCrypto-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TrezorCrypto/TrezorCrypto-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TrezorCrypto/TrezorCrypto.modulemap";
+				PRODUCT_MODULE_NAME = TrezorCrypto;
+				PRODUCT_NAME = TrezorCrypto;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8F59C34C98D099B7ACE38D023335150A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 174B456A6F17697AFDF5434D6E1F2134 /* Pods-TomoWalletCoreTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		96C891B8697E2C73BABA85937639DFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E04A288F263E83FA338E0685CF29BC29 /* Alamofire.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9FAC955956B146F0839CD74DD21F6D10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A03F95577763D454ECE1D6BD84DF5C2D /* CryptoSwift.xcconfig */;
@@ -3091,81 +3325,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		A4D05230A67C9E64B8CABA41826F47E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CCA08316F786259ACAD621878B0E6B4 /* TrezorCrypto.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TrezorCrypto/TrezorCrypto-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TrezorCrypto/TrezorCrypto-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/TrezorCrypto/TrezorCrypto.modulemap";
-				PRODUCT_MODULE_NAME = TrezorCrypto;
-				PRODUCT_NAME = TrezorCrypto;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A88A8F3A186528A3F9DF954502CF579F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55A19D3E68D1020FEF60684A2D0BA8EF /* Pods-TomoWalletCoreTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		AE6F9F368B9998274EBE071DE26D3403 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3202,112 +3361,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		AFDDE5DF61FA190ED18353BE3738666B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 663029106155B549131436A922C0AEF7 /* SwiftProtobuf.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftProtobuf/SwiftProtobuf-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftProtobuf/SwiftProtobuf-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SwiftProtobuf/SwiftProtobuf.modulemap";
-				PRODUCT_MODULE_NAME = SwiftProtobuf;
-				PRODUCT_NAME = SwiftProtobuf;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B317AC7D8E348D274B743678BDC22A99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FAA7E1279CF5D26E4669CA3C94C143A0 /* BigInt.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BigInt/BigInt-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BigInt/BigInt-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/BigInt/BigInt.modulemap";
-				PRODUCT_MODULE_NAME = BigInt;
-				PRODUCT_NAME = BigInt;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B63B8B9A3DC0B86B8560A3526C388A7C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E04A288F263E83FA338E0685CF29BC29 /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				PRODUCT_MODULE_NAME = Alamofire;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		B963CC86710B44699D7402ACC2CFB8D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3373,9 +3426,45 @@
 			};
 			name = Debug;
 		};
+		BA708111284CE86C57738EDEC8155460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 663029106155B549131436A922C0AEF7 /* SwiftProtobuf.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftProtobuf/SwiftProtobuf-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftProtobuf/SwiftProtobuf-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftProtobuf/SwiftProtobuf.modulemap";
+				PRODUCT_MODULE_NAME = SwiftProtobuf;
+				PRODUCT_NAME = SwiftProtobuf;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		BD1726CF412DC462A027A77355540F37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64B7B17F9348715A53383E7D32ED1643 /* Pods-TomoWalletCore.debug.xcconfig */;
+			baseConfigurationReference = 52700D27735315ECBA698ACB367AEC5D /* Pods-TomoWalletCore.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -3440,41 +3529,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CE828D57E020BF2012A078ED01B08E8A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 663029106155B549131436A922C0AEF7 /* SwiftProtobuf.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftProtobuf/SwiftProtobuf-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftProtobuf/SwiftProtobuf-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SwiftProtobuf/SwiftProtobuf.modulemap";
-				PRODUCT_MODULE_NAME = SwiftProtobuf;
-				PRODUCT_NAME = SwiftProtobuf;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3589,7 +3643,46 @@
 			};
 			name = Release;
 		};
-		EE5EFBEF0CEBD4454214B3C01E7F355B /* Release */ = {
+		E972DDA04BBC550523AC919550EA4C61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88E85A4BD1FAD17FC5BCC5FAAB881131 /* Pods-TomoWalletCoreTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F12943A8B7ECE5C6B89C4E14BBAABC35 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FAA7E1279CF5D26E4669CA3C94C143A0 /* BigInt.xcconfig */;
 			buildSettings = {
@@ -3617,7 +3710,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3625,9 +3718,44 @@
 			};
 			name = Release;
 		};
+		F721FA4A5E3034F16ED569AB0FD30EC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAA7E1279CF5D26E4669CA3C94C143A0 /* BigInt.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BigInt/BigInt-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BigInt/BigInt-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BigInt/BigInt.modulemap";
+				PRODUCT_MODULE_NAME = BigInt;
+				PRODUCT_NAME = BigInt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		FB31EB6684B7970254B06295A707BABC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84A405079C690BE2A35AE70DB16D49D5 /* Pods-TomoWalletCore.release.xcconfig */;
+			baseConfigurationReference = 2D873DBCA5F3C124B2E38D307DA8C1C9 /* Pods-TomoWalletCore.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -3688,8 +3816,8 @@
 		1D4FA5828A893AB152E33C222AFF9137 /* Build configuration list for PBXNativeTarget "TrezorCrypto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				54C16D2F396964BDA8A11BB62BE4F24A /* Debug */,
-				A4D05230A67C9E64B8CABA41826F47E8 /* Release */,
+				8950A9ED4B25B9E9A5EB2437440335B8 /* Debug */,
+				6762DF2DB1B6C7A4D25CB0711813C4D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3706,8 +3834,8 @@
 		5104F4CC467A363177DF298548DA476E /* Build configuration list for PBXNativeTarget "BigInt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B317AC7D8E348D274B743678BDC22A99 /* Debug */,
-				EE5EFBEF0CEBD4454214B3C01E7F355B /* Release */,
+				F721FA4A5E3034F16ED569AB0FD30EC3 /* Debug */,
+				F12943A8B7ECE5C6B89C4E14BBAABC35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3742,8 +3870,8 @@
 		BEB8CCA203221A8F97E910C5CC25428F /* Build configuration list for PBXNativeTarget "SwiftProtobuf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CE828D57E020BF2012A078ED01B08E8A /* Debug */,
-				AFDDE5DF61FA190ED18353BE3738666B /* Release */,
+				4516B3D028B499E90D4F5B7B88208BDD /* Debug */,
+				BA708111284CE86C57738EDEC8155460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3757,20 +3885,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4A5194ABAF7A4780609E0E581DA6B54 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+		E140349C8C4A34D982008E3C1B4DB33E /* Build configuration list for PBXNativeTarget "Pods-TomoWalletCoreTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B63B8B9A3DC0B86B8560A3526C388A7C /* Debug */,
-				26E9A7B7CC36D753291E2D3570A8DB18 /* Release */,
+				8F59C34C98D099B7ACE38D023335150A /* Debug */,
+				E972DDA04BBC550523AC919550EA4C61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FFD3AC46DD609C82170524D612E67475 /* Build configuration list for PBXNativeTarget "Pods-TomoWalletCoreTests" */ = {
+		E4A5194ABAF7A4780609E0E581DA6B54 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				49CAB617481241D3C1C9EAEA42EF4F2A /* Debug */,
-				A88A8F3A186528A3F9DF954502CF579F /* Release */,
+				427CC76C4A0D2313B395E0BB95F76060 /* Debug */,
+				96C891B8697E2C73BABA85937639DFF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
