@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2C53F2442334B90C000231EC /* Pods_TomoWalletCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C53F2432334B90C000231EC /* Pods_TomoWalletCore.framework */; };
 		2C53F3242334C5AD000231EC /* TomoWalletCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B2DF23169622009B8954 /* TomoWalletCoreTests.swift */; };
 		2C53F3262334C603000231EC /* WalletTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53F3252334C603000231EC /* WalletTest.swift */; };
+		2C7159632338A9700076EBEB /* TestTomoKeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7159622338A9700076EBEB /* TestTomoKeystore.swift */; };
 		76C4F6760240F14CDDE179A9 /* Pods_TomoWalletCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142EEA18EC14A4164BC2045A /* Pods_TomoWalletCoreTests.framework */; };
 		8433B0EA232CD6EF00A91C8C /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B08E232CD6EF00A91C8C /* KeyStore.swift */; };
 		8433B0EC232CD6EF00A91C8C /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B08F232CD6EF00A91C8C /* Scrypt.swift */; };
@@ -110,6 +111,7 @@
 		142EEA18EC14A4164BC2045A /* Pods_TomoWalletCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TomoWalletCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C53F2432334B90C000231EC /* Pods_TomoWalletCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TomoWalletCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C53F3252334C603000231EC /* WalletTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTest.swift; sourceTree = "<group>"; };
+		2C7159622338A9700076EBEB /* TestTomoKeystore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTomoKeystore.swift; sourceTree = "<group>"; };
 		3DA8F2DF8EAC607FCE16CE78 /* Pods-TomoWalletCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomoWalletCore.debug.xcconfig"; path = "Target Support Files/Pods-TomoWalletCore/Pods-TomoWalletCore.debug.xcconfig"; sourceTree = "<group>"; };
 		49D2B27C817A8BBB5FB7F367 /* Pods-TomoWalletCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomoWalletCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54B71557750EDAD4846DAC68 /* Pods-TomoWalletCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomoWalletCoreTests.release.xcconfig"; path = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -342,15 +344,15 @@
 		8433B0B5232CD6EF00A91C8C /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				8433B0BA232CD6EF00A91C8C /* WalletCore.swift */,
+				8433B0C3232CD6EF00A91C8C /* Tomokeystore.swift */,
 				8433B0B6232CD6EF00A91C8C /* TomoKeystoreProtocol.swift */,
 				8433B0B7232CD6EF00A91C8C /* TomoKeystoreError.swift */,
 				8433B0B8232CD6EF00A91C8C /* TomoWalletType.swift */,
 				8433B0B9232CD6EF00A91C8C /* TomoWallet.swift */,
 				8433B0BD232CD6EF00A91C8C /* TomoWalletService.swift */,
-				8433B0BA232CD6EF00A91C8C /* WalletCore.swift */,
 				8433B0BB232CD6EF00A91C8C /* WalletInfo.swift */,
 				8433B0BC232CD6EF00A91C8C /* PasswordGenerator.swift */,
-				8433B0C3232CD6EF00A91C8C /* Tomokeystore.swift */,
 				8433B0BE232CD6EF00A91C8C /* Stores */,
 				84BEABCF23337C9D004A9756 /* SkipBackupFilesInitializer.swift */,
 			);
@@ -495,6 +497,7 @@
 				8461B2DF23169622009B8954 /* TomoWalletCoreTests.swift */,
 				8461B2E123169622009B8954 /* Info.plist */,
 				2C53F3252334C603000231EC /* WalletTest.swift */,
+				2C7159622338A9700076EBEB /* TestTomoKeystore.swift */,
 			);
 			path = TomoWalletCoreTests;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7159632338A9700076EBEB /* TestTomoKeystore.swift in Sources */,
 				2C53F3262334C603000231EC /* WalletTest.swift in Sources */,
 				2C53F3242334C5AD000231EC /* TomoWalletCoreTests.swift in Sources */,
 			);

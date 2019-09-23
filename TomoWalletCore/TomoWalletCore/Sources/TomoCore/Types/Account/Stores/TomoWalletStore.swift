@@ -14,12 +14,11 @@ class TomoWalletStorage {
     var walletObjectsURL: URL?
     
     
-    init() {
+    init(dataDirectory: URL ) {
         
         let walletAddressFileName = "Database"
         let fileManager = FileManager.default
-        let documentsFolder = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        let folderURL = documentsFolder.appendingPathComponent(walletAddressFileName)
+        let folderURL = dataDirectory.appendingPathComponent(walletAddressFileName)
         let folderExists = (try? folderURL.checkResourceIsReachable()) ?? false
         do {
             if !folderExists {
@@ -55,24 +54,32 @@ class TomoWalletStorage {
             print(error.localizedDescription)
         }
     }
-    func delete(address: WalletAddress) {
+    func delete(address: WalletAddress) -> Bool {
         let newAddresses = addresses.filter{$0.addressString.lowercased() != address.addressString.lowercased()}
+        guard let walletAddressURL = self.walletAddressURL else{
+            return false
+        }
         do {
             let JsonData = try JSONEncoder().encode(newAddresses)
-            try JsonData.write(to: walletAddressURL!)
+            try JsonData.write(to: walletAddressURL)
         } catch {
-            print(error.localizedDescription)
+            return false
+//            print(error.localizedDescription)
         }
+        return true
     }
     
     var addresses: [WalletAddress] {
         var walletsArddress = [WalletAddress]()
-            do {
-                let data = try Data(contentsOf: walletAddressURL!)
-                walletsArddress = try JSONDecoder().decode([WalletAddress].self, from: data)
-            } catch {
-                print(error.localizedDescription)
-            }
+        guard let walletAddressURL = self.walletAddressURL else{
+            return walletsArddress
+        }
+        do {
+            let data = try Data(contentsOf: walletAddressURL)
+            walletsArddress = try JSONDecoder().decode([WalletAddress].self, from: data)
+        } catch {
+//            print(error.localizedDescription)
+        }
         return walletsArddress
     }
     

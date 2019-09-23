@@ -71,9 +71,8 @@ public enum TomoChainNetwork{
 
 public class WalletCore {
     fileprivate let tomoKeystoreProtocol: TomoKeystoreProtocol
-    
-    public init(network: TomoChainNetwork) {
-        self.tomoKeystoreProtocol = TomoKeystore(network: network)
+    public init(network: TomoChainNetwork, dataDirectory: URL = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!)) {
+        self.tomoKeystoreProtocol = TomoKeystore(dataDirectory: dataDirectory, network: network)
         inializers()
     }
     
@@ -89,9 +88,6 @@ public class WalletCore {
         initializers.forEach { $0.perform() }
     }
 
-    
-   
-    
     public func createWallet(completion: @escaping(Result<TomoWallet, TomoKeystoreError>) -> Void){
         tomoKeystoreProtocol.createWallet(completion: completion)
     }

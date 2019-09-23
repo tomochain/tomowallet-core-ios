@@ -30,7 +30,6 @@ class TomoKeystore {
     
     
     public static let keychainKeyPrefix = "tomowallet"
-    private let datadir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
     let keysDirectory: URL
     let keyStore: KeyStore
     
@@ -67,14 +66,13 @@ class TomoKeystore {
     
     let network: TomoChainNetwork
     
-    init(network: TomoChainNetwork) {
+    init(dataDirectory: URL, network: TomoChainNetwork) {
         // keystore init
-        keysDirectory = URL(fileURLWithPath: datadir! + "/keystore")
+        keysDirectory = dataDirectory.appendingPathComponent("keystore")
         keyStore = try! KeyStore(keyDirectory: keysDirectory)
-        
         // keychain init
         keychain = KeychainSwift(keyPrefix: Constants.keychainKeyPrefix)
-        storage = TomoWalletStorage()
+        storage = TomoWalletStorage(dataDirectory: dataDirectory)
         self.network = network
     }
     
