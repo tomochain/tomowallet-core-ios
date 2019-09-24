@@ -8,6 +8,8 @@
 
 import XCTest
 @testable import TomoWalletCore
+@testable import PromiseKit
+@testable import Result
 
 extension KeyStore {
     var keyWallet: Wallet? {
@@ -51,13 +53,41 @@ class TomoWalletCoreTests: XCTestCase {
     func testLoadKeyStore() {
     }
     
-    func testCreateHDWallet() throws {
+    func testCreateHDWallet() {
         let walletCore = WalletCore(network: .Mainnet, dataDirectory: dataDirectory)
-        XCTAssertEqual(walletCore.getAllWallets().count, 0)
-    
-
+      
+        let expectation = XCTestExpectation(description: "Download apple.com home page")
+        walletCore.createWallet { (result) in
+            // Make sure we downloaded some data.
+            XCTAssertNotNil(result, "No data was downloaded.")
+            // Fulfill the expectation to indicate that the background task has finished successfully.
+            switch result{
+            case .success(let wallet):
+                 XCTAssertEqual(wallet.getAddress().count,32)
+            case .failure(let error):
+                XCTFail("Error: \(error.localizedDescription)")
+            }
+             expectation.fulfill()
+        }
+        // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+        wait(for: [expectation], timeout: 600.0)
     }
-
+    func testImportPrivateKey() throws {
+        let keyStore = try KeyStore(keyDirectory: dataDirectory.appendingPathComponent("keystore"))
+        let privateKey = PrivateKey(data: Data(hexString: "9cdb5cab19aec3bd0fcd614c5f185e7a1d97634d4225730eba22497dc89a716c")!)!
+        
+        let wallet = try keyStore.import(privateKey: privateKey, password: "password", coin: .tomo)
+        
+        XCTAssertEqual(wallet.accounts.count, 1)
+        
+        
+        let account = try wallet.getAccount(password: "password")
+        print(account.address.description)
+        XCTAssertNotNil(keyStore.keyWallet)
+        XCTAssertNoThrow(try account.sign(hash: Data(repeating: 0, count: 32), password: "password"))
+        
+    }
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }

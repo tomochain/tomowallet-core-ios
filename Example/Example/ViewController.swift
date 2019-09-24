@@ -19,16 +19,16 @@ class ViewController: UIViewController {
         
         let tomoSDK = WalletCore(network: .Mainnet)
         
-         self.wallet = tomoSDK.getAllWallets().first{$0.walletType() == Type.HDWallet}
-        
-        
-        firstly {
-            wallet!.exportMnemonic()
-            }.done { (mnemonic) in
-                print(mnemonic)
-            }.catch { (error) in
-                print(error.localizedDescription)
-        }
+//         self.wallet = tomoSDK.getAllWallets().first{$0.walletType() == Type.HDWallet}
+//
+//
+//        firstly {
+//            wallet!.exportMnemonic()
+//            }.done { (mnemonic) in
+//                print(mnemonic)
+//            }.catch { (error) in
+//                print(error.localizedDescription)
+//        }
 
 //        tomoSDK.importWallet(recoveryPhase: "ordinary chest giant insane van denial twin music curve offer umbrella spot") { (result) in
 //
@@ -39,14 +39,14 @@ class ViewController: UIViewController {
 //                print(error.localizedDescription)
 //            }
 //        }
-//        tomoSDK.createWallet { (result) in
-//            switch result{
-//            case .success(let wallet):
-//                print(wallet)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+        tomoSDK.createWallet { (result) in
+            switch result{
+            case .success(let wallet):
+                print(wallet)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
 //        tomoSDK.importAddressOnly(address: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684") { (result) in
 //            switch result{
 //            case .success(let wallet):

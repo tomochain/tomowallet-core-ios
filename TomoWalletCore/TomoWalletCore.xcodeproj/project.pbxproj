@@ -11,6 +11,14 @@
 		2C53F3242334C5AD000231EC /* TomoWalletCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B2DF23169622009B8954 /* TomoWalletCoreTests.swift */; };
 		2C53F3262334C603000231EC /* WalletTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53F3252334C603000231EC /* WalletTest.swift */; };
 		2C7159632338A9700076EBEB /* TestTomoKeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7159622338A9700076EBEB /* TestTomoKeystore.swift */; };
+		2C7159712339B92F0076EBEB /* FunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7159672339B92E0076EBEB /* FunctionTests.swift */; };
+		2C7159722339B92F0076EBEB /* HDWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7159682339B92E0076EBEB /* HDWalletTests.swift */; };
+		2C7159732339B92F0076EBEB /* PrivateKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7159692339B92E0076EBEB /* PrivateKeyTests.swift */; };
+		2C7159772339B92F0076EBEB /* DataHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71596D2339B92E0076EBEB /* DataHexTests.swift */; };
+		2C7159782339B92F0076EBEB /* PublicKeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71596E2339B92E0076EBEB /* PublicKeyTests.swift */; };
+		2C71597A2339B92F0076EBEB /* DerivationPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7159702339B92F0076EBEB /* DerivationPathTests.swift */; };
+		2C71597F2339B95C0076EBEB /* RLPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71597C2339B95C0076EBEB /* RLPTests.swift */; };
+		2C7159802339B95C0076EBEB /* EthereumAddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71597D2339B95C0076EBEB /* EthereumAddressTests.swift */; };
 		76C4F6760240F14CDDE179A9 /* Pods_TomoWalletCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142EEA18EC14A4164BC2045A /* Pods_TomoWalletCoreTests.framework */; };
 		8433B0EA232CD6EF00A91C8C /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B08E232CD6EF00A91C8C /* KeyStore.swift */; };
 		8433B0EC232CD6EF00A91C8C /* Scrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B08F232CD6EF00A91C8C /* Scrypt.swift */; };
@@ -112,6 +120,14 @@
 		2C53F2432334B90C000231EC /* Pods_TomoWalletCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_TomoWalletCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C53F3252334C603000231EC /* WalletTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTest.swift; sourceTree = "<group>"; };
 		2C7159622338A9700076EBEB /* TestTomoKeystore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTomoKeystore.swift; sourceTree = "<group>"; };
+		2C7159672339B92E0076EBEB /* FunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionTests.swift; sourceTree = "<group>"; };
+		2C7159682339B92E0076EBEB /* HDWalletTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDWalletTests.swift; sourceTree = "<group>"; };
+		2C7159692339B92E0076EBEB /* PrivateKeyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKeyTests.swift; sourceTree = "<group>"; };
+		2C71596D2339B92E0076EBEB /* DataHexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHexTests.swift; sourceTree = "<group>"; };
+		2C71596E2339B92E0076EBEB /* PublicKeyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKeyTests.swift; sourceTree = "<group>"; };
+		2C7159702339B92F0076EBEB /* DerivationPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DerivationPathTests.swift; sourceTree = "<group>"; };
+		2C71597C2339B95C0076EBEB /* RLPTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLPTests.swift; sourceTree = "<group>"; };
+		2C71597D2339B95C0076EBEB /* EthereumAddressTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumAddressTests.swift; sourceTree = "<group>"; };
 		3DA8F2DF8EAC607FCE16CE78 /* Pods-TomoWalletCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomoWalletCore.debug.xcconfig"; path = "Target Support Files/Pods-TomoWalletCore/Pods-TomoWalletCore.debug.xcconfig"; sourceTree = "<group>"; };
 		49D2B27C817A8BBB5FB7F367 /* Pods-TomoWalletCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomoWalletCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54B71557750EDAD4846DAC68 /* Pods-TomoWalletCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomoWalletCoreTests.release.xcconfig"; path = "Target Support Files/Pods-TomoWalletCoreTests/Pods-TomoWalletCoreTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +243,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C7159642339B2FD0076EBEB /* TrustCore */ = {
+			isa = PBXGroup;
+			children = (
+				2C71597B2339B9480076EBEB /* Ethereum */,
+				2C71596D2339B92E0076EBEB /* DataHexTests.swift */,
+				2C7159702339B92F0076EBEB /* DerivationPathTests.swift */,
+				2C7159672339B92E0076EBEB /* FunctionTests.swift */,
+				2C7159682339B92E0076EBEB /* HDWalletTests.swift */,
+				2C7159692339B92E0076EBEB /* PrivateKeyTests.swift */,
+				2C71596E2339B92E0076EBEB /* PublicKeyTests.swift */,
+			);
+			path = TrustCore;
+			sourceTree = "<group>";
+		};
+		2C7159652339B3110076EBEB /* Keystores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Keystores;
+			sourceTree = "<group>";
+		};
+		2C7159662339B3230076EBEB /* TomoCore */ = {
+			isa = PBXGroup;
+			children = (
+				8461B2DF23169622009B8954 /* TomoWalletCoreTests.swift */,
+			);
+			path = TomoCore;
+			sourceTree = "<group>";
+		};
+		2C71597B2339B9480076EBEB /* Ethereum */ = {
+			isa = PBXGroup;
+			children = (
+				2C71597D2339B95C0076EBEB /* EthereumAddressTests.swift */,
+				2C71597C2339B95C0076EBEB /* RLPTests.swift */,
+			);
+			path = Ethereum;
+			sourceTree = "<group>";
+		};
 		806311B1F6DE130D7107FDBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,7 +548,9 @@
 		8461B2DE23169622009B8954 /* TomoWalletCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				8461B2DF23169622009B8954 /* TomoWalletCoreTests.swift */,
+				2C7159662339B3230076EBEB /* TomoCore */,
+				2C7159652339B3110076EBEB /* Keystores */,
+				2C7159642339B2FD0076EBEB /* TrustCore */,
 				8461B2E123169622009B8954 /* Info.plist */,
 				2C53F3252334C603000231EC /* WalletTest.swift */,
 				2C7159622338A9700076EBEB /* TestTomoKeystore.swift */,
@@ -777,9 +833,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7159722339B92F0076EBEB /* HDWalletTests.swift in Sources */,
 				2C7159632338A9700076EBEB /* TestTomoKeystore.swift in Sources */,
 				2C53F3262334C603000231EC /* WalletTest.swift in Sources */,
+				2C71597A2339B92F0076EBEB /* DerivationPathTests.swift in Sources */,
+				2C71597F2339B95C0076EBEB /* RLPTests.swift in Sources */,
+				2C7159802339B95C0076EBEB /* EthereumAddressTests.swift in Sources */,
+				2C7159772339B92F0076EBEB /* DataHexTests.swift in Sources */,
 				2C53F3242334C5AD000231EC /* TomoWalletCoreTests.swift in Sources */,
+				2C7159712339B92F0076EBEB /* FunctionTests.swift in Sources */,
+				2C7159782339B92F0076EBEB /* PublicKeyTests.swift in Sources */,
+				2C7159732339B92F0076EBEB /* PrivateKeyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -983,6 +1047,7 @@
 				DEVELOPMENT_TEAM = Y2YK2PND54;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = TomoWalletCoreTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1005,6 +1070,7 @@
 				DEVELOPMENT_TEAM = Y2YK2PND54;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = TomoWalletCoreTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
