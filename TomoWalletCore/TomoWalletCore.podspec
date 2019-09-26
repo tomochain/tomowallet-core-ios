@@ -16,6 +16,10 @@ Pod::Spec.new do |s|
   s.dependency 'BigInt'
   s.dependency 'CryptoSwift'
   s.dependency 'TrezorCrypto'
+  s.dependency 'Moya'
+  s.dependency 'PromiseKit'
+  s.dependency 'KeychainSwift'
+  s.dependency 'SwiftProtobuf'
 
   s.pod_target_xcconfig = { 'SWIFT_OPTIMIZATION_LEVEL' => '-Owholemodule' }
 end
