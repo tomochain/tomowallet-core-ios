@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = 'TomoWalletCore'
-  s.version      = '0.0.3'
+  s.version      = '0.0.4'
   s.summary      = 'A general-purpose TomoWallet.'
   s.homepage     = "https://github.com/tunght91/tomowallet-ios-core"
   s.license      = 'MIT'
@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
  
 
   s.source       = { git: 'https://github.com/tunght91/tomowallet-ios-core.git', tag: s.version }
-  s.source_files = 'TomoWalletCore/**/*.{swift,h,m}'
-  s.public_header_files = 'TomoWalletCore.h', 'Crypto.h'
+ s.source_files = 'TomoWalletCore/TomoWalletcore/**/*.{swift,h,m}'
+  s.public_header_files = 'TomoWalletCore/TomoWalletcore/TomoWalletCore.h', 'TomoWalletCore/TomoWalletcore/Crypto.h'
 
 
 
