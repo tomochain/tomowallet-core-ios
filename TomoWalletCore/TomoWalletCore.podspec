@@ -9,17 +9,19 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.1'  
   s.swift_version = "4.2"
-
-  s.source       = { git: 'https://github.com/tunght91/tomowallet-ios-core', tag: s.version }
-  s.source_files = "TomoWalletCore/**/*.{h,m,swift}"
-
   s.dependency 'BigInt'
   s.dependency 'CryptoSwift'
   s.dependency 'TrezorCrypto'
-s.dependency 'Moya'
-s.dependency 'PromiseKit'
-s.dependency 'SwiftProtobuf'
-s.dependency 'KeychainSwift'
+  s.dependency 'Moya'
+  s.dependency 'PromiseKit'
+  s.dependency 'SwiftProtobuf'
+  s.dependency 'KeychainSwift'
+ 
+
+  s.source       = { git: 'https://github.com/tunght91/tomowallet-ios-core.git', tag: s.version }
+  s.source_files = 'TomoWalletCore/**/*.{swift,h,m}'
+  s.public_header_files = 'TomoWalletCore/TomoWalletCore.h', 'TomoWalletCore/Crypto.h'
+
 
 
   s.pod_target_xcconfig = { 'SWIFT_OPTIMIZATION_LEVEL' => '-Owholemodule' }
