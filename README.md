@@ -1,11 +1,11 @@
-##TomoWalletCore
+## TomoWalletCore
 **TomoWallet-core** is an important part of **TomoWallet.**
 It contains functions that help you interact with **TomoChain** more easier and simpler.
 In the next version, we will provider built-in screens to create a wallet, import a wallet via private key/recovery phrase, backup wallet, send fund and confirm a transaction.
 
 TomoWalletcore supports iOS, with CocoaPods and macOS.
 
-##Feature
+## Feature
 - Create wallet.
 - Manage wallets.
 - Import wallet.
@@ -15,7 +15,7 @@ TomoWalletcore supports iOS, with CocoaPods and macOS.
 - Get balance.
 - Get token info.
 
-##Installation
+## Installation
 CocoaPods
 TomoWalletCore is available through CocoaPods. To install
 
@@ -29,7 +29,7 @@ After the installation you can import TomoWalletCore in your .swift files.
 ```
 import TomoWalletCore
 ```
-##How to use
+## How to use
 Interaction TomoChain
 With TomoWalletCore you can connect to TomoChain **Mainnet** or **Testnet**.
 The base class for all available methods is WalletCore.
@@ -37,11 +37,11 @@ The base class for all available methods is WalletCore.
 let walletCore = WalletCore(network: .Mainnet)
 ```
 
-#####WalletCore provide the methods:
+##### WalletCore provide the methods:
 - CreateWallet
 - ImportWallet
 
-#####TomoWallet provide the methods:
+##### TomoWallet provide the methods:
 
 - get tomo balance.
 - get token balance.
@@ -49,7 +49,7 @@ let walletCore = WalletCore(network: .Mainnet)
 - make transaction.
 - send or sign transaction.
 
-###Create your wallet
+### Create your wallet
 **Parameters**: none
 **Returns**: ```tomoWallet```
 ```Swift
@@ -66,7 +66,7 @@ walletCore.createWallet { (result) in
     }
 }
 ```
-###Import wallet with private key
+### Import wallet with private key
 **Parameters**: “745044ccdb778fb6d2d999c561f4329deb57ee3628672d7a2954a53e20b167e”
 **Returns**: ```tomoWallet```
 ```Swift
@@ -81,7 +81,7 @@ walletCore.importWallet(hexPrivateKey: "Input your private key here") { (result)
     }
 }
 ```
-###Import wallet with Mnemonic
+### Import wallet with Mnemonic
 **Parameters**:” ordinary chest giant insane van denial twin music curve offer umbrella spot”
 **Returns**: ```tomoWallet```
 ```Swift
@@ -96,7 +96,7 @@ walletCore.importWallet(recoveryPhase: "Input your mnemonic here") { (result) in
     }
 }
 ```
-###Import wallet with Address read-only
+### Import wallet with Address read-only
 **Parameters**: “0x36d0701257ab74000588e6bdaff014583e03775b “
 **Returns**: ```tomoWallet```
 ```Swift
@@ -113,7 +113,7 @@ walletCore.importAddressOnly(address: "Input your address here") { (result) in
 ```
 >*note: If you import address read-only, you can't create or sign transactions by this wallet.*
 
-##Manage Wallets
+## Manage Wallets
 The TomoWalletCore is support mulitiple wallets, you can create one or more wallets.
 
 TomoWallet have 3 type:
@@ -131,7 +131,7 @@ case .HDWallet:
     print("HDWallet")
 }
 ```
-###List all wallets
+### List all wallets
 List all wallets you had created and imported
 **Parameters**: none
 **Returns** : ```[tomoWallet]```
@@ -140,7 +140,7 @@ List all wallets you had created and imported
 let wallets = walletCore.getAllWallets()
 print(wallets.count)
 ```
-###Get a wallet that you have created or imported
+### Get a wallet that you have created or imported
 **Parameters**: “0x36d0701257ab74000588e6bdaff014583e03775b”
 **Returns**: ```tomoWallet```
 
@@ -156,7 +156,7 @@ walletCore.getWallet(address: "Input your Address") { (result) in
     }
 }
 ```
-###Get balance
+### Get balance
 The first, You must import framwork PromiseKit. Promises simplify asynchronous programming.
 https://github.com/mxcl/PromiseKit
 ```Swift
@@ -176,7 +176,7 @@ import PromiseKit
             print("error")
         }
 ```
-###Get TokenInfo
+### Get TokenInfo
 **Parameters**: Contract address
 **Returns** : ```tokenObject```
 ```Swift
@@ -217,7 +217,7 @@ firstly {
             print(error)
         }
 ```
-###Send Tomo transaction
+### Send Tomo transaction
 **Parameters**: 
 - toAddress
 - Amount tomo 
@@ -232,7 +232,7 @@ firstly {
             print( error)
         }
 ```
-###Send Token transaction
+### Send Token transaction
 **Parameters**: 
 - contractAddress
 - Address
@@ -248,5 +248,5 @@ firstly {
             print( error)
         }
 ```
-##License
+## License
 MIT
