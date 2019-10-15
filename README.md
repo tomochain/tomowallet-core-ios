@@ -4,7 +4,6 @@ It contains functions that help you interact with **TomoChain** more easier and 
 In the next version, we will provider built-in screens to create a wallet, import a wallet via private key/recovery phrase, backup wallet, send fund and confirm a transaction.
 
 TomoWalletcore supports iOS, with CocoaPods and macOS.
-
 ## Feature
 - Create wallet.
 - Manage wallets.
@@ -29,6 +28,17 @@ After the installation you can import TomoWalletCore in your .swift files.
 ```
 import TomoWalletCore
 ```
+
+## Dependencies:
+- [Trustcore](https://github.com/trustwallet/trust-core)
+- [Trustkeystore](https://github.com/trustwallet/trust-keystore)
+- [KeychainSwift](https://github.com/evgenyneu/keychain-swift/blob/master/KeychainSwift.podspec)
+- [TrezorCrypto](https://github.com/trezor/trezor-crypto)
+- [BigInt](https://github.com/attaswift/BigInt)
+- [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift)
+- [PromiseKit](https://github.com/mxcl/PromiseKit)
+- [Moya](https://github.com/Moya/Moya)
+
 ## How to use
 Interaction TomoChain
 With TomoWalletCore you can connect to TomoChain **Mainnet** or **Testnet**.
@@ -82,7 +92,7 @@ walletCore.importWallet(hexPrivateKey: "Input your private key here") { (result)
 }
 ```
 ### Import wallet with Mnemonic
-**Parameters**:” ordinary chest giant insane van denial twin music curve offer umbrella spot”
+**Parameters**: ”ordinary chest giant insane van denial twin music curve offer umbrella spot”
 **Returns**: ```tomoWallet```
 ```Swift
 walletCore.importWallet(recoveryPhase: "Input your mnemonic here") { (result) in
@@ -176,9 +186,8 @@ import PromiseKit
             print("error")
         }
 ```
-### Get TokenInfo
+ Get TokenInfo
 **Parameters**: Contract address
-
 **Returns** : ```tokenObject```
 ```Swift
    firstly {
@@ -190,7 +199,7 @@ import PromiseKit
             print(error)
         }
 ```
-get token babance
+### get token babance
 **Parameters**: ```tokenObject```
 
 **Returns** : babance
@@ -206,7 +215,7 @@ firstly {
 ### Make a send tomo transaction
 **Parameters**: 
 - Address
-- Amount tomo
+- Amount Tomo
 
 **Returns** : signTransaction
 ``` Swift
@@ -234,6 +243,24 @@ firstly {
             print( error)
         }
 ```
+### Make a send token transaction
+**Parameters**: 
+- TokenTRC
+- Address
+- Amount Tomo
+
+**Returns** : signTransaction
+``` Swift
+
+ firstly{
+            tomoWallet.makeTokenTransaction(token: <tokenTRCObject> ,toAddress: "0x9f6b8fDD3733B099A91B6D70CDC7963ebBbd2684 ", amount: "1.0")
+        }.done { (signTransaction) in
+            print(signTransaction)
+        }.catch { (error) in
+            print(error)
+        }  
+```     
+
 ### Send Token transaction
 **Parameters**: 
 - contractAddress
