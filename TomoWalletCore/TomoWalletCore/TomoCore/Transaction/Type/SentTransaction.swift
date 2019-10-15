@@ -7,14 +7,14 @@
 //
 
 import Foundation
-enum SentTransactionType{
+public enum SentTransactionType{
     case sent
     case signed
 }
 
 public struct SentTransaction {
-    let id: String
-    let original: SignTransaction
-    let data: Data
-    let type: SentTransactionType
+    public let id: String
+    public let original: SignTransaction
+    public let data: Data
+    public let type: SentTransactionType
 }

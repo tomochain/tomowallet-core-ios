@@ -63,7 +63,6 @@
 		8433B13A232CD6F000A91C8C /* TomoWalletObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B0C1232CD6EF00A91C8C /* TomoWalletObject.swift */; };
 		8433B13C232CD6F000A91C8C /* TomoWalletStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B0C2232CD6EF00A91C8C /* TomoWalletStore.swift */; };
 		8433B13E232CD6F000A91C8C /* Tomokeystore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B0C3232CD6EF00A91C8C /* Tomokeystore.swift */; };
-		8433B140232CD6F000A91C8C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B0C5232CD6EF00A91C8C /* Constants.swift */; };
 		8433B142232CD6F000A91C8C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B0C6232CD6EF00A91C8C /* Config.swift */; };
 		8433B144232CD6F000A91C8C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B0C8232CD6EF00A91C8C /* Data.swift */; };
 		8433B146232CD6F000A91C8C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433B0C9232CD6EF00A91C8C /* String.swift */; };
@@ -176,7 +175,6 @@
 		8433B0C1232CD6EF00A91C8C /* TomoWalletObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomoWalletObject.swift; sourceTree = "<group>"; };
 		8433B0C2232CD6EF00A91C8C /* TomoWalletStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomoWalletStore.swift; sourceTree = "<group>"; };
 		8433B0C3232CD6EF00A91C8C /* Tomokeystore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tomokeystore.swift; sourceTree = "<group>"; };
-		8433B0C5232CD6EF00A91C8C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8433B0C6232CD6EF00A91C8C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8433B0C8232CD6EF00A91C8C /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		8433B0C9232CD6EF00A91C8C /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -309,25 +307,25 @@
 		8433B096232CD6EF00A91C8C /* TomoCore */ = {
 			isa = PBXGroup;
 			children = (
-				8433B097232CD6EF00A91C8C /* Types */,
+				8433B098232CD6EF00A91C8C /* Transaction */,
+				8433B0A9232CD6EF00A91C8C /* Network */,
+				8433B0B5232CD6EF00A91C8C /* Account */,
+				8433B097232CD6EF00A91C8C /* commons */,
 				8433B0C4232CD6EF00A91C8C /* Config */,
 				8433B0C7232CD6EF00A91C8C /* Extentions */,
 			);
 			path = TomoCore;
 			sourceTree = "<group>";
 		};
-		8433B097232CD6EF00A91C8C /* Types */ = {
+		8433B097232CD6EF00A91C8C /* commons */ = {
 			isa = PBXGroup;
 			children = (
-				8433B098232CD6EF00A91C8C /* Transaction */,
 				8433B0A7232CD6EF00A91C8C /* EthTypedData.swift */,
 				8433B0A8232CD6EF00A91C8C /* TomoNumberFormater.swift */,
-				8433B0A9232CD6EF00A91C8C /* Network */,
 				8433B0B3232CD6EF00A91C8C /* Unit.swift */,
 				8433B0B4232CD6EF00A91C8C /* Subscribable.swift */,
-				8433B0B5232CD6EF00A91C8C /* Account */,
 			);
-			path = Types;
+			path = commons;
 			sourceTree = "<group>";
 		};
 		8433B098232CD6EF00A91C8C /* Transaction */ = {
@@ -434,7 +432,6 @@
 		8433B0C4232CD6EF00A91C8C /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				8433B0C5232CD6EF00A91C8C /* Constants.swift */,
 				8433B0C6232CD6EF00A91C8C /* Config.swift */,
 			);
 			path = Config;
@@ -772,7 +769,6 @@
 				8433B16B232CD6F000A91C8C /* TRC21Encoder.swift in Sources */,
 				8433B189232CE04500A91C8C /* Bitcoin.swift in Sources */,
 				8433B136232CD6F000A91C8C /* TomoWalletService.swift in Sources */,
-				8433B140232CD6F000A91C8C /* Constants.swift in Sources */,
 				8433B167232CD6F000A91C8C /* ABIValue.swift in Sources */,
 				8433B124232CD6F000A91C8C /* Unit.swift in Sources */,
 				8433B116232CD6EF00A91C8C /* RPCServer.swift in Sources */,

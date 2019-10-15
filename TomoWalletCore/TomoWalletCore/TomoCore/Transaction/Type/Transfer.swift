@@ -10,12 +10,12 @@ import Foundation
 import BigInt
 
 
-struct Transfer {
+public struct Transfer {
     let server: RPCServer
     let type: TransferType
 }
 
-enum TransferType {
+public enum TransferType {
     case tomo
     case token(TRCToken, tokenBalance: BigInt)
 }

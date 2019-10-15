@@ -141,7 +141,7 @@ let wallets = walletCore.getAllWallets()
 print(wallets.count)
 ```
 ### Get a wallet that you have created or imported
-**Parameters**: “0x36d0701257ab74000588e6bdaff014583e03775b”
+**Parameters**:address
 **Returns**: ```tomoWallet```
 
 ```Swift
@@ -178,6 +178,7 @@ import PromiseKit
 ```
 ### Get TokenInfo
 **Parameters**: Contract address
+
 **Returns** : ```tokenObject```
 ```Swift
    firstly {
@@ -191,6 +192,7 @@ import PromiseKit
 ```
 get token babance
 **Parameters**: ```tokenObject```
+
 **Returns** : babance
 ```Swift
 firstly {
